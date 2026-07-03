@@ -11,7 +11,7 @@ const footerSections = [
 
 function Footer() {
 	return (
-		<footer className="border-t border-stone-800/40 bg-[radial-gradient(circle_at_top,_rgba(106,76,153,0.28),_transparent_35%),linear-gradient(180deg,_#1a1110_0%,_#0f0a0a_100%)] px-6 py-12 text-stone-100 sm:px-8 lg:px-12">
+		<footer className="border-t border-white/10 bg-[radial-gradient(circle_at_top,_rgba(168,85,247,0.28),_transparent_34%),linear-gradient(180deg,_#160f2e_0%,_#0c0818_100%)] px-6 py-12 text-stone-100 sm:px-8 lg:px-12">
 			<div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.2fr_0.8fr]">
 				<section>
 					<p className="text-xs font-semibold uppercase tracking-[0.35em] text-purple-200">DAEHWA Cafe</p>

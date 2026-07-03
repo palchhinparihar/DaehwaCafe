@@ -61,28 +61,33 @@ const WhatWeCanProvidePage = () => {
   };
 
   return (
-    <div id="what-we-can-provide" className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 pb-16">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white py-20 px-4 mb-16">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">What We Can Provide</h1>
-          <p className="text-lg md:text-xl opacity-95">Comprehensive services to support your events and initiatives</p>
+    <div
+      id="what-we-can-provide"
+      className="min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(241,232,255,0.95),_transparent_42%),linear-gradient(180deg,_#fbf7ff_0%,_#f5eeff_54%,_#efe6ff_100%)] pb-16 text-stone-900"
+    >
+      <div className="px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl rounded-[2.5rem] border border-white/70 bg-[linear-gradient(135deg,rgba(30,18,63,0.96),rgba(88,28,135,0.92))] px-6 py-12 text-center text-white shadow-[0_32px_90px_rgba(30,18,63,0.24)] sm:px-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-purple-200">What We Can Provide</p>
+          <h1 className="mt-4 text-4xl font-black uppercase leading-none tracking-tight drop-shadow-lg md:text-6xl">Modern support for events</h1>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-purple-100/90 md:text-lg">
+            Comprehensive services to support your events, initiatives, and collaborations with a polished purple-first visual language.
+          </p>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Services Grid */}
-        <div className="mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-20" data-aos="fade-up">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <div
                 key={service.id}
                 onClick={() => toggleExpand(service.id)}
-                className={`bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer border-l-4 border-indigo-600 ${
+                className={`cursor-pointer rounded-[1.75rem] border border-white/70 bg-white/85 p-6 shadow-[0_20px_50px_rgba(91,53,26,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_rgba(91,53,26,0.14)] ${
                   expandedCard === service.id
-                    ? 'bg-gradient-to-br from-indigo-600 to-purple-700 text-white transform -translate-y-2'
-                    : 'hover:-translate-y-2'
+                    ? 'border-purple-300 bg-[linear-gradient(135deg,#1f1140_0%,#5b21b6_100%)] text-white'
+                    : 'border-purple-100'
                 }`}
+                data-aos="fade-up"
               >
                 <div className="flex justify-between items-center mb-3">
                   <h3 className="text-lg font-semibold">{service.title}</h3>
@@ -91,10 +96,10 @@ const WhatWeCanProvidePage = () => {
                   </span>
                 </div>
                 <p
-                  className={`text-sm leading-relaxed overflow-hidden transition-all duration-300 ${
+                  className={`overflow-hidden text-sm leading-relaxed transition-all duration-300 ${
                     expandedCard === service.id
                       ? 'max-h-96 mt-4 text-white'
-                      : 'max-h-0 text-gray-600'
+                      : 'max-h-0 text-stone-600'
                   }`}
                 >
                   {service.description}
@@ -104,15 +109,14 @@ const WhatWeCanProvidePage = () => {
           </div>
         </div>
 
-        {/* Collaboration Section */}
-        <section className="bg-white rounded-2xl p-8 md:p-12 shadow-lg mb-16">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Why Partner With DAEHWA Cafe?</h2>
-          <p className="text-center text-gray-700 leading-relaxed max-w-2xl mx-auto mb-12">
+        <section className="mb-16 rounded-[2rem] border border-white/70 bg-white/85 p-8 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur md:p-12" data-aos="fade-up">
+          <h2 className="mb-4 text-center text-3xl font-bold text-stone-950">Why Partner With DAEHWA Cafe?</h2>
+          <p className="mx-auto mb-12 max-w-2xl text-center leading-relaxed text-stone-600">
             At DAEHWA Cafe, we believe that successful collaborations are built on creativity, professionalism, and meaningful community engagement. By partnering with us, you gain access to a passionate and growing network dedicated to delivering high-quality support and promoting meaningful connections.
           </p>
 
-          <h3 className="text-2xl font-semibold text-center text-gray-800 mb-8">We Welcome Collaborations With</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <h3 className="mb-8 text-center text-2xl font-semibold text-stone-950">We Welcome Collaborations With</h3>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[
               'Korean and International Organizations',
               'Educational Institutions',
@@ -126,7 +130,8 @@ const WhatWeCanProvidePage = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white p-5 rounded-lg font-medium text-center hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                className="rounded-2xl border border-purple-100 bg-[linear-gradient(135deg,#5b21b6_0%,#8b5cf6_100%)] p-5 text-center font-medium text-white shadow-[0_18px_40px_rgba(91,33,182,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_55px_rgba(91,33,182,0.24)]"
+                data-aos="fade-up"
               >
                 {item}
               </div>
@@ -134,10 +139,9 @@ const WhatWeCanProvidePage = () => {
           </div>
         </section>
 
-        {/* Strength Section */}
-        <section className="bg-white rounded-2xl p-8 md:p-12 shadow-lg mb-16">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Strength</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <section className="mb-16 rounded-[2rem] border border-white/70 bg-white/85 p-8 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur md:p-12" data-aos="fade-up">
+          <h2 className="mb-12 text-center text-3xl font-bold text-stone-950">Our Strength</h2>
+          <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {[
               { number: '1', text: 'Dedicated Founder & Leadership Team' },
               { number: '3', text: 'Core Team Members' },
@@ -146,26 +150,26 @@ const WhatWeCanProvidePage = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-b from-gray-50 to-gray-100 p-6 rounded-xl border-2 border-indigo-600 text-center hover:scale-105 transition-transform duration-300"
+                className="rounded-[1.5rem] border border-purple-100 bg-[linear-gradient(180deg,#faf5ff_0%,#f3e8ff_100%)] p-6 text-center transition-transform duration-300 hover:scale-105"
+                data-aos="fade-up"
               >
-                <div className="text-3xl font-bold text-indigo-600 mb-2">{item.number}</div>
-                <p className="text-gray-800 font-semibold text-sm">{item.text}</p>
+                <div className="mb-2 text-3xl font-bold text-purple-700">{item.number}</div>
+                <p className="text-sm font-semibold text-stone-800">{item.text}</p>
               </div>
             ))}
           </div>
-          <p className="text-center text-gray-700 text-base">
+          <p className="text-center text-base text-stone-600">
             Passion for Korean language, culture, education, and youth development across a growing community in India.
           </p>
         </section>
 
-        {/* Promise Section */}
-        <section className="bg-white rounded-2xl p-8 md:p-12 shadow-lg text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Promise</h2>
-          <p className="text-gray-700 leading-relaxed max-w-2xl mx-auto mb-8">
+        <section className="rounded-[2rem] border border-white/70 bg-white/85 p-8 text-center shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur md:p-12" data-aos="fade-up">
+          <h2 className="mb-6 text-3xl font-bold text-stone-950">Our Promise</h2>
+          <p className="mx-auto mb-8 max-w-2xl leading-relaxed text-stone-600">
             We are committed to building long-term partnerships based on professionalism, creativity, mutual growth, and cultural exchange. Together, we aim to create opportunities that inspire, educate, and connect people through Korea.
           </p>
-          <div className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white p-8 rounded-xl">
-            <p className="text-xl md:text-2xl font-bold italic">"Grow Yourself and Help Others Grow."</p>
+          <div className="rounded-[1.75rem] bg-[linear-gradient(135deg,#1f1140_0%,#6d28d9_100%)] p-8 text-white shadow-[0_18px_50px_rgba(91,33,182,0.24)]">
+            <p className="text-xl font-bold italic md:text-2xl">"Grow Yourself and Help Others Grow."</p>
           </div>
         </section>
       </div>

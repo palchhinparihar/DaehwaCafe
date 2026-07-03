@@ -20,15 +20,15 @@ function Home() {
         <div className="absolute bottom-[-6rem] left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-purple-200/30 blur-3xl" />
 
         <div className="relative grid w-full items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-          <div className="max-w-3xl">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-stone-300/70 bg-white/70 px-4 py-2 text-sm font-medium tracking-[0.2em] text-stone-600 shadow-sm backdrop-blur">
+          <div className="max-w-3xl" data-aos="fade-up" data-aos-delay="100">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-purple-200/70 bg-white/70 px-4 py-2 text-sm font-medium tracking-[0.2em] text-purple-700 shadow-sm backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-purple-500" />
               WELCOME TO DAEHWA CAFE
             </div>
 
             <h1 className="max-w-2xl text-5xl font-black uppercase leading-none tracking-tight text-stone-950 sm:text-6xl lg:text-8xl">
               DAEHWA
-              <span className="block text-purple-700">Cafe</span>
+              <span className="block bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-500 bg-clip-text text-transparent">Cafe</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-8 text-stone-700 sm:text-xl">
@@ -46,11 +46,12 @@ function Home() {
               ))}
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            <div className="mt-10 grid gap-4 sm:grid-cols-2" data-aos="fade-up" data-aos-delay="250">
               {highlights.map((highlight) => (
                 <article
                   key={highlight.title}
                   className="rounded-3xl border border-white/70 bg-white/75 p-5 shadow-[0_20px_50px_rgba(120,82,40,0.08)] backdrop-blur"
+                  data-aos="fade-up"
                 >
                   <h2 className="text-lg font-bold text-stone-900">{highlight.title}</h2>
                   <p className="mt-2 text-sm leading-6 text-stone-600">{highlight.description}</p>
@@ -58,7 +59,7 @@ function Home() {
               ))}
             </div>
 
-            <div className="mt-10 rounded-3xl border border-purple-200/80 bg-stone-950 px-6 py-5 text-stone-50 shadow-[0_24px_60px_rgba(37,24,15,0.22)] sm:flex sm:items-end sm:justify-between sm:gap-6">
+            <div className="mt-10 rounded-3xl border border-purple-200/80 bg-[linear-gradient(135deg,#1f1140_0%,#110b25_100%)] px-6 py-5 text-stone-50 shadow-[0_24px_60px_rgba(37,24,15,0.22)] sm:flex sm:items-end sm:justify-between sm:gap-6" data-aos="zoom-in" data-aos-delay="350">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-purple-200">Tagline</p>
                 <p className="mt-2 max-w-xl text-xl font-medium leading-8 text-stone-50 sm:text-2xl">
@@ -72,7 +73,7 @@ function Home() {
             </div>
           </div>
 
-          <div className="relative flex justify-center lg:justify-end">
+          <div className="relative flex justify-center lg:justify-end" data-aos="fade-left" data-aos-delay="200">
             <div className="absolute inset-x-8 top-10 h-72 rounded-[2.5rem] bg-stone-900/10 blur-2xl" />
             <div className="relative w-full max-w-md rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-[0_30px_80px_rgba(91,53,26,0.18)] backdrop-blur">
               <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">
@@ -80,7 +81,7 @@ function Home() {
                 <span>01</span>
               </div>
 
-              <div className="mt-6 rounded-[1.75rem] bg-[linear-gradient(180deg,_#1f130d_0%,_#3d2517_100%)] px-6 py-7 text-stone-50 shadow-inner">
+              <div className="mt-6 rounded-[1.75rem] bg-[linear-gradient(180deg,_#1f1140_0%,_#3b1d6b_100%)] px-6 py-7 text-stone-50 shadow-inner">
                 <p className="text-sm uppercase tracking-[0.3em] text-purple-200">DAEHWA Cafe</p>
                 <div className="mt-5 rounded-[1.5rem] border border-white/10 bg-white/8 p-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-purple-100/80">Logo</p>
@@ -103,7 +104,7 @@ function Home() {
                 </div>
               </div>
 
-              <div className="mt-6 grid grid-cols-2 gap-3 text-sm font-semibold text-stone-700">
+              <div className="mt-6 grid grid-cols-2 gap-3 text-sm font-semibold text-stone-700" data-aos="fade-up" data-aos-delay="450">
                 <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3">Community</div>
                 <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3">TalkRoom</div>
               </div>

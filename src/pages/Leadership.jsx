@@ -71,7 +71,7 @@ function Leadership() {
   return (
     <main id="leadership" className="min-h-screen scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(247,238,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdf9_0%,_#faf5ff_48%,_#f2e9ff_100%)] px-6 py-12 text-stone-900 sm:px-8 lg:px-12">
       <section className="mx-auto flex max-w-7xl flex-col gap-10">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border border-stone-300/70 bg-white/75 px-4 py-2 text-sm font-medium tracking-[0.2em] text-stone-600 shadow-sm backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-purple-500" />
             FOUNDERS & LEADERSHIP
@@ -93,6 +93,7 @@ function Leadership() {
             <article
               key={person.title}
               className="rounded-[2rem] border border-white/70 bg-white/85 p-7 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur"
+              data-aos="fade-up"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">{person.title}</p>
               <h2 className="mt-3 text-2xl font-bold text-stone-950">{person.name}</h2>
@@ -115,7 +116,7 @@ function Leadership() {
           ))}
         </div>
 
-        <section className="rounded-[2rem] border border-stone-900/10 bg-stone-950 p-7 text-stone-50 shadow-[0_24px_70px_rgba(37,24,15,0.24)] sm:p-8">
+        <section className="rounded-[2rem] border border-stone-900/10 bg-stone-950 p-7 text-stone-50 shadow-[0_24px_70px_rgba(37,24,15,0.24)] sm:p-8" data-aos="fade-up">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">Leadership Structure</p>
             <h2 className="mt-3 text-2xl font-bold text-white">A structure that keeps the work moving</h2>
@@ -146,7 +147,7 @@ function Leadership() {
           </div>
         </section>
 
-        <section className="grid gap-6 rounded-[2rem] border border-white/70 bg-white/85 p-7 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur lg:grid-cols-[0.95fr_1.05fr]">
+        <section className="grid gap-6 rounded-[2rem] border border-white/70 bg-white/85 p-7 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur lg:grid-cols-[0.95fr_1.05fr]" data-aos="fade-up">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Working Together</p>
             <h2 className="mt-3 text-2xl font-bold text-stone-950">One shared vision</h2>

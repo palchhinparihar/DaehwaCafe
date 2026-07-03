@@ -20,15 +20,15 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-stone-950/90 text-stone-50 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[linear-gradient(180deg,rgba(22,15,46,0.94),rgba(22,15,46,0.78))] text-white shadow-[0_16px_40px_rgba(22,15,46,0.18)] backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8 lg:px-12">
         <a href="#home" className="flex items-center gap-3 text-left" onClick={handleNavigate}>
-          <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-lg font-black tracking-[0.18em] text-purple-200 shadow-[0_16px_30px_rgba(0,0,0,0.2)]">
+          <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[linear-gradient(135deg,#a855f7_0%,#6d28d9_100%)] text-lg font-black tracking-[0.18em] text-white shadow-[0_16px_30px_rgba(0,0,0,0.2)]">
             D
           </span>
           <span>
             <span className="block text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">DAEHWA Cafe</span>
-            <span className="block text-sm text-stone-300">Community and TalkRoom</span>
+            <span className="block text-sm text-slate-300">Community and TalkRoom</span>
           </span>
         </a>
         <div className="hidden items-center gap-1 xl:flex">
@@ -36,7 +36,7 @@ const Navbar = () => {
             <a
               key={link.label}
               href={link.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-stone-300 transition hover:bg-white/5 hover:text-white"
+              className="rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/8 hover:text-white"
             >
               {link.label}
             </a>
