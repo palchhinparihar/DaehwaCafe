@@ -797,3 +797,26 @@ A simple checklist:
 * Companies
 * Event organizers
 * Korean-related organizations
+
+
+Contact Information
+
+Include:
+
+* Official Email (DAEHWA Cafe Community )
+* Official Email (DAEHWA Cafe TalkRoom)
+* Official Instagram
+* Official Facebook
+* Official Website (if available)
+* QR Code
+* Contact Number (if appropriate)
+
+Closing Page
+
+Thank You
+
+“We look forward to building meaningful collaborations and creating opportunities together.”
+
+DAEHWA Cafe
+
+“Grow Yourself and Help Others Grow.”

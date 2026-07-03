@@ -13,7 +13,7 @@ const pillars = ['Logo', 'Mascot', 'Growth', 'Support'];
 
 function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(241,232,255,0.95),_transparent_42%),linear-gradient(180deg,_#fbf7ff_0%,_#f5eeff_54%,_#efe6ff_100%)] text-stone-900">
+    <main id="home" className="min-h-screen scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(241,232,255,0.95),_transparent_42%),linear-gradient(180deg,_#fbf7ff_0%,_#f5eeff_54%,_#efe6ff_100%)] text-stone-900">
       <section className="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 py-12 sm:px-8 lg:px-12">
         <div className="absolute left-[-8rem] top-[-6rem] h-64 w-64 rounded-full bg-purple-200/50 blur-3xl" />
         <div className="absolute right-[-7rem] top-16 h-72 w-72 rounded-full bg-purple-200/50 blur-3xl" />

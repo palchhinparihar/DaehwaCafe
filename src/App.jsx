@@ -6,18 +6,27 @@ import Activities from './pages/Activities.jsx';
 import FutureProjects from './pages/FutureProjects.jsx';
 import Collaborate from './pages/Collaborate.jsx';
 import WhatWeCanProvide from './pages/WhatWeCanProvide.jsx';
+import Contact from './pages/Contact.jsx';
+import Footer from './components/common/Footer.jsx';
+import Navbar from './components/common/Navbar.jsx';
 
 function App() {
   return (
     <>
-      <Home />
-      <About />
-      <Leadership />
-      <Service />
-      <Activities />
-      <FutureProjects />
-      <Collaborate />
-      <WhatWeCanProvide />
+      <Navbar />
+      <main>
+        <Home />
+        <About />
+        <Leadership />
+        <Service />
+        <Activities />
+        <FutureProjects />
+        <Collaborate />
+        <WhatWeCanProvide />
+        <Contact />
+      </main>
+
+      <Footer />
     </>
   )
 }

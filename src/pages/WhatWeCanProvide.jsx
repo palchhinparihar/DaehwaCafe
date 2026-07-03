@@ -61,7 +61,7 @@ const WhatWeCanProvidePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 pb-16">
+    <div id="what-we-can-provide" className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 pb-16">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white py-20 px-4 mb-16">
         <div className="max-w-6xl mx-auto text-center">
