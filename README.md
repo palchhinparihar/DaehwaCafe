@@ -326,7 +326,7 @@ Our STEP UP Workshop Series includes:
 
 
 
-*DAEHWA Cafe.TalkRoom*
+*DAEHWA Cafe TalkRoom*
 
 Korean Language Education
 
@@ -392,7 +392,217 @@ Our Commitment
 
 DAEHWA Cafe is committed to providing meaningful educational experiences, promoting Korean culture, empowering youth, and building strong national and international collaborations through professional, creative, and community-driven initiatives.
 
+
+
+*Why Collaborate With DAEHWA Cafe?*
+
+*At DAEHWA Cafe, we believe that successful collaborations are built on creativity, professionalism, and meaningful community engagement. We work closely with organizations, educational institutions, brands, and cultural partners to create impactful experiences related to Korea, education, and youth development.*
+
+*By partnering with DAEHWA Cafe, you gain access to a passionate and growing network dedicated to delivering high-quality support and promoting meaningful connections.*
+
+
+
+*What We Can Provide*
+
+*Volunteer Team*
+
+A trained and enthusiastic volunteer team to assist with event operations, registration, guest management, audience engagement, and on-site support.
+
+*Event Promotion*
+
+Promotion of your event through our official community platforms and network to help increase visibility and participation.
+
+*Social Media Promotion*
+
+Creative promotional content, posters, reels, stories, photography, and digital campaigns to reach a wider audience.
+
+*Community Outreach*
+
+Direct access to an active community of Korean language learners, Korean culture enthusiasts, students, and young professionals across India.
+
+*Student Network*
+
+Connection with students interested in Korean language, higher education, scholarships, cultural exchange, and career opportunities related to Korea.
+
+*Youth Engagement*
+
+Interactive activities, volunteer opportunities, leadership programs, and community initiatives designed to encourage active youth participation.
+
+*Korean Culture Promotion*
+
+Support in promoting Korean culture through workshops, seminars, cultural events, educational programs, and community activities.
+
+Workshop & Seminar Management
+
+Planning, coordination, registration support, volunteer management, creative support, and smooth execution of workshops and seminars.
+
+Creative Design & Content Support
+
+Assistance with posters, presentations, event branding, photography, videography, social media creatives, and promotional materials.
+
+Event Coordination
+
+Support in planning and managing educational, cultural, corporate, and community events from concept to execution.
+
+
+
+Our Strength
+
+* Dedicated Founder & Leadership Team
+* 3 Core Team Members
+* 8 Main Team Members
+* 80+ Active Interns & Volunteers
+* Growing community across India
+* Passion for Korean language, culture, education, and youth development
+
+
+
+*We Welcome Collaborations With*
+
+* Korean and International Organizations
+* Educational Institutions
+* Universities & Colleges
+* Cultural Centers
+* Event Organizers
+* Government & Non-Government Organizations
+* Brands & Companies
+* Media Partners
+* Youth Organizations
+
+
+*Our Promise*
+
+We are committed to building long-term partnerships based on professionalism, creativity, mutual growth, and cultural exchange.
+
+Together, we aim to create opportunities that inspire, educate, and connect people through Korea.
+
 Our Motto
 
 “Grow Yourself and Help Others Grow.”
 
+*Previous Activities*
+
+*Since its establishment, DAEHWA Cafe Community and DAEHWA Cafe.TalkRoom have organized various educational, cultural, creative, and youth development programs. Our activities focus on Korean language, Korean culture, leadership, community engagement, and personal growth.*
+
+Note: Add high-quality photographs for every activity wherever possible.
+
+
+
+*DAEHWA Cafe.TalkRoom*
+
+🇰🇷 *Tteokbokki Workshop*
+
+One of the signature activities organized by DAEHWA Cafe.TalkRoom was the Tteokbokki Workshop, where participants learned about the history, cultural significance, and preparation of one of Korea’s most popular traditional street foods.
+
+The workshop combined Korean language, Korean culture, and hands-on learning to provide participants with an enjoyable cultural experience.
+
+📷 Add photographs.
+
+
+
+*DAEHWA Cafe Community*
+
+🇰🇷 *Kimbap Making Workshop*
+
+A Korean cultural food workshop where participants learned how to prepare Kimbap while exploring Korean food culture and traditions.
+
+📷 Add photographs.
+
+
+
+🌍 *International Global Influencer Collaboration Competition*
+
+One of our flagship online projects connecting creators and Korean culture enthusiasts from different regions.
+
+*The competition encourages:*
+
+* Creativity
+* Content Creation
+* Community Engagement
+* International Networking
+
+📷 Add photographs.
+
+
+
+🌍 *Influencer Competition*
+
+DAEHWA Cafe Community continues to organize influencer competitions to encourage young creators and promote Korean culture through social media.
+
+📷 Add photographs.
+
+
+
+💜 *Motivation & Personal Growth Workshop*
+
+A youth development workshop designed to help participants overcome:
+
+* Insecurity
+* Inferiority feelings
+* Lack of confidence
+* Communication barriers
+
+The workshop focused on helping young people build confidence, improve communication skills, and develop leadership qualities.
+
+📷 Add photographs.
+
+
+
+🎵 *K-Music Workshop*
+
+An interactive workshop introducing participants to Korean music, the K-pop industry, and Korean entertainment culture.
+
+📷 Add photographs.
+
+
+
+❓ *K-Quiz Program*
+
+An engaging quiz event designed to improve participants’ knowledge of Korean language, culture, history, traditions, and entertainment.
+
+📷 Add photographs.
+
+
+
+*Current Collaboration*
+
+🇰🇷 *Study Korea Online Seminar*
+
+DAEHWA Cafe Community and DAEHWA Cafe.TalkRoom are currently collaborating with Study Korea to organize an official online seminar for students interested in studying in Korea.
+
+*The seminar provides guidance on:*
+
+* Study opportunities in Korea
+* Korean universities
+* Student life
+* Higher education pathways
+* Future opportunities
+
+📷 Add seminar posters and photographs after the event.
+
+
+*Upcoming Projects*
+
+We are continuously expanding our activities through:
+
+* Korean Language Workshops
+* Korean Culture Programs
+* Study Korea Projects
+* Youth Leadership Programs
+* Volunteer Activities
+* Community Development Projects
+* Creative Workshops
+* Cultural Exchange Programs
+* New Influencer Competitions
+
+
+
+*Our Commitment*
+
+DAEHWA Cafe Community is more than a Korean culture community.
+
+We believe in supporting young people through education, creativity, leadership, cultural exchange, confidence-building, and community support, helping every member grow personally and professionally.
+
+Our Motto
+
+“Grow Yourself and Help Others Grow.”
