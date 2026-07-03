@@ -158,3 +158,241 @@ Our Core Values
 Our Official Motto
 
 “Learn Korean. Speak Confidently. Build Your Future.”
+
+*Founder & Leadership*
+
+*The leadership of DAEHWA Cafe is built on teamwork, creativity, and a shared vision of promoting Korean language, Korean culture, youth development, and meaningful collaborations.*
+
+
+
+*Founder & Director*
+
+*Sandeep Singh*
+
+*Founder & Director – DAEHWA Cafe*
+
+* *Founder of DAEHWA Cafe.TalkRoom*
+* *Leads the overall vision and strategic development of DAEHWA Cafe.*
+* *Oversees educational programs, partnerships, and organizational growth.*
+* *Guides national and international collaborations related to Korean language and culture.*
+
+(Add a professional photograph.)
+
+
+
+*Community Creator*
+
+*JOOBUNYJ (Indrani Banerjee)*
+
+*Community Creator – DAEHWA Cafe Community*
+
+* *Creator of DAEHWA Cafe Community*
+* *Leads community planning, development, and member engagement.*
+* *Coordinates community projects, volunteer activities, and cultural initiatives.*
+* *Works to build opportunities for youth through Korean culture and educational programs.*
+
+(Add a professional photograph.)
+
+
+
+*Leadership Structure*
+
+*Founder & Director*
+
+1 Member
+
+*Community Creator*
+
+*1 Member*
+
+*Core Team*
+
+*3 Members*
+
+*Responsible for:*
+
+* *Project Planning*
+* *Event Management*
+* *Partnership Coordination*
+* *Creative Direction*
+* *Community Operations*
+
+(Add names, positions, and photographs.)
+
+
+
+*Main Team*
+
+8 Members
+
+*Responsible for:*
+
+* Community Management
+* Event Support
+* Social Media
+* Creative Projects
+* Volunteer Coordination
+* Member Engagement
+
+(Add names, positions, and photographs.)
+
+
+*Intern Team*
+
+80+ Active Interns 
+
+*Our internship program consists of enthusiastic members from different parts of India who contribute to:*
+
+* *Creative Design*
+* *Content Creation*
+* *Photography & Videography*
+* *Hosting & Communication*
+* *Event Management*
+* *Community Promotion*
+* *Korean Culture Activities*
+* *Volunteer Programs*
+
+*The internship program provides practical experience while helping members develop leadership, communication, teamwork, and professional skills.*
+⸻
+
+*Working Together*
+
+*At DAEHWA Cafe, every member plays an important role. Whether as a leader, core team member, main team member, or intern, we work together with one shared vision:*
+
+“Grow Yourself and Help Others Grow.”
+
+
+*Our Services*
+
+*DAEHWA Cafe operates through two dedicated divisions: DAEHWA Cafe Community and DAEHWA Cafe.TalkRoom. Together, we provide educational, cultural, creative, and youth development services while promoting stronger connections between India and Korea.*
+*DAEHWA Cafe Community*
+
+Volunteer Management
+
+* Volunteer recruitment and training
+* Event volunteer coordination
+* Leadership development
+* Team management
+
+*Event Support*
+
+* On-site event assistance
+* Registration management
+* Guest support
+* Event operations
+* Audience engagement
+
+*Event Coordination*
+
+* Planning and organizing events
+* Project management
+* Team coordination
+* Venue and activity support
+
+*Cultural Programs*
+
+* Korean cultural exchange programs
+* Korean food experiences
+* K-culture activities
+* Community cultural events
+
+*Workshops*
+
+Our STEP UP Workshop Series includes:
+
+* K-Pop Workshop
+* K-Beauty Workshop
+* Korean Culture Workshop
+* AI for Korean Language Workshop
+* Motivation & Personal Growth Workshop
+* Leadership & Communication Workshop
+
+*Youth Activities*
+
+* Internship Programs
+* Volunteer Programs
+* Influencer Competitions
+* Leadership Development
+* Community Networking
+* Personal Growth Activities
+
+*Social Media & Creative Promotion*
+
+* Creative content support
+* Photography & Videography
+* Poster & Canva design
+* Social media promotion
+* Event branding
+
+
+
+*DAEHWA Cafe.TalkRoom*
+
+Korean Language Education
+
+* Beginner to Advanced Korean Classes
+* Speaking-focused learning
+* Pronunciation improvement
+* Practical conversation training
+
+Study Korea Guidance
+
+* Study in Korea consultation
+* University guidance
+* Scholarship information
+* Student life guidance
+
+Student Support
+
+* Academic guidance
+* Learning support
+* Career-related consultation
+* International student preparation
+
+*Language Workshops*
+
+* Korean Speaking Workshops
+* Korean Grammar Workshops
+* Korean Conversation Practice
+* AI for Korean Language Learning
+* TOPIK Preparation Guidance
+
+Korean Culture Education
+
+* Korean traditions
+* Korean etiquette
+* Korean history
+* Korean lifestyle
+* Korean food culture
+
+Career Guidance Related to Korea
+
+* Opportunities related to Korean language
+* Cultural career pathways
+* Education and professional development
+
+
+
+Additional Services
+
+* Workshop Planning & Management
+* Seminar Coordination
+* Community Building
+* Event Promotion
+* Social Media Promotion
+* Community Outreach
+* Student Network Development
+* Youth Engagement Programs
+* Korean Culture Promotion
+* International Collaboration Support
+
+
+
+Our Commitment
+
+DAEHWA Cafe is committed to providing meaningful educational experiences, promoting Korean culture, empowering youth, and building strong national and international collaborations through professional, creative, and community-driven initiatives.
+
+Our Motto
+
+“Grow Yourself and Help Others Grow.”
+
