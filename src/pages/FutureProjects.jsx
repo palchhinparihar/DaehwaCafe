@@ -83,12 +83,8 @@ const growthGoals = [
 
 function SectionCard({ title, children, dark = false }) {
   return (
-    <article
-      className={dark
-        ? 'rounded-[2rem] border border-white/10 bg-white/5 p-6 text-stone-50 shadow-sm'
-        : 'rounded-[2rem] border border-stone-200 bg-stone-50 p-6 text-stone-900 shadow-sm'}
-    >
-      <h3 className={dark ? 'text-2xl font-bold text-white' : 'text-2xl font-bold text-stone-950'}>{title}</h3>
+    <article className="border-t border-purple-200/70 pt-6">
+      <h3 className="text-2xl font-bold text-stone-950">{title}</h3>
       <div className="mt-5">{children}</div>
     </article>
   );
@@ -122,13 +118,13 @@ function FutureProjects() {
 
         <section className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
           <SectionCard title="STEP UP Workshop Series" dark>
-            <div className="grid gap-4">
+            <div className="divide-y divide-purple-100">
               {stepUpWorkshops.map((workshop) => (
-                <article key={workshop.title} className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
-                  <h4 className="text-lg font-bold text-white">{workshop.title}</h4>
-                  <ul className="mt-3 space-y-2 text-sm leading-6 text-stone-200">
+                <article key={workshop.title} className="py-5">
+                  <h4 className="text-lg font-bold text-stone-950">{workshop.title}</h4>
+                  <ul className="mt-3 space-y-2 text-sm leading-6 text-stone-600">
                     {workshop.items.map((item) => (
-                      <li key={item} className="rounded-2xl bg-white/5 px-4 py-2.5">
+                      <li key={item} className="border-b border-stone-200 pb-2 last:border-b-0 last:pb-0">
                         {item}
                       </li>
                     ))}
@@ -144,17 +140,17 @@ function FutureProjects() {
               practical opportunities for members and partners.
             </p>
 
-            <div className="mt-6 grid gap-3">
+            <div className="mt-6 divide-y divide-purple-100 overflow-hidden border border-purple-100 bg-white/70">
               {futureInitiatives.map((item) => (
-                <div key={item} className="rounded-2xl border border-stone-200 bg-white px-4 py-3 text-sm font-medium text-stone-700">
+                <div key={item} className="px-5 py-4 text-sm font-medium text-stone-700">
                   {item}
                 </div>
               ))}
             </div>
 
-            <div className="mt-6 rounded-[1.75rem] bg-stone-950 px-5 py-5 text-stone-50 shadow-[0_18px_50px_rgba(37,24,15,0.18)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">Our Vision</p>
-              <p className="mt-2 text-lg font-medium leading-8 text-white">
+            <div className="mt-6 border-t border-purple-200/70 pt-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Our Vision</p>
+              <p className="mt-2 text-lg font-medium leading-8 text-stone-900">
                 Through Step Up, DAEHWA Cafe Community and DAEHWA Cafe.TalkRoom aim to become a bridge between India and Korea.
               </p>
             </div>
@@ -163,9 +159,9 @@ function FutureProjects() {
 
         <section className="grid gap-6 lg:grid-cols-3">
           <SectionCard title="Korean Cultural Festivals">
-            <div className="grid gap-3">
+            <div className="divide-y divide-purple-100 overflow-hidden border border-purple-100 bg-white/70">
               {festivalIdeas.map((item) => (
-                <div key={item} className="rounded-2xl border border-stone-200 bg-white px-4 py-3 text-sm font-medium text-stone-700">
+                <div key={item} className="px-5 py-4 text-sm font-medium text-stone-700">
                   {item}
                 </div>
               ))}
@@ -173,9 +169,9 @@ function FutureProjects() {
           </SectionCard>
 
           <SectionCard title="Volunteer Programs">
-            <div className="grid gap-3">
+            <div className="divide-y divide-purple-100 overflow-hidden border border-purple-100 bg-white/70">
               {volunteerTracks.map((item) => (
-                <div key={item} className="rounded-2xl border border-stone-200 bg-white px-4 py-3 text-sm font-medium text-stone-700">
+                <div key={item} className="px-5 py-4 text-sm font-medium text-stone-700">
                   {item}
                 </div>
               ))}
@@ -183,9 +179,9 @@ function FutureProjects() {
           </SectionCard>
 
           <SectionCard title="Personal Growth & Well-being">
-            <div className="grid gap-3">
+            <div className="divide-y divide-purple-100 overflow-hidden border border-purple-100 bg-white/70">
               {growthGoals.map((item) => (
-                <div key={item} className="rounded-2xl border border-stone-200 bg-white px-4 py-3 text-sm font-medium text-stone-700">
+                <div key={item} className="px-5 py-4 text-sm font-medium text-stone-700">
                   {item}
                 </div>
               ))}
@@ -195,14 +191,14 @@ function FutureProjects() {
 
         <section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <SectionCard title="International Collaborations" dark>
-            <p className="text-sm leading-7 text-stone-300">
+            <p className="text-sm leading-7 text-stone-600">
               We plan to strengthen collaborations with organizations across education, culture, events, youth development, and the
               Korean entertainment ecosystem.
             </p>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="mt-6 grid gap-0 overflow-hidden border border-purple-100 bg-white/70 sm:grid-cols-2">
               {collaborationTargets.map((item) => (
-                <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-stone-200">
+                <div key={item} className="border-b border-r border-purple-100 px-5 py-4 text-sm font-medium text-stone-700 last:border-b-0 sm:[&:nth-child(2n)]:border-r-0">
                   {item}
                 </div>
               ))}
@@ -215,10 +211,7 @@ function FutureProjects() {
               and grow with confidence.
             </p>
 
-            <div className="mt-6 rounded-[1.75rem] bg-stone-950 px-5 py-5 text-stone-50 shadow-[0_18px_50px_rgba(37,24,15,0.18)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">Official Motto</p>
-              <p className="mt-2 text-lg font-medium leading-8 text-white">“Grow Yourself and Help Others Grow.”</p>
-            </div>
+            <p className="mt-6 text-lg font-semibold italic text-purple-700">“Grow Yourself and Help Others Grow.”</p>
           </SectionCard>
         </section>
       </section>

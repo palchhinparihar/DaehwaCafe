@@ -2,10 +2,12 @@ const footerSections = [
 	{
 		title: 'Explore',
 		links: ['Home', 'About', 'Leadership', 'Services', 'Activities', 'Future Projects'],
+		hrefs: ['#home', '#about', '#leadership', '#services', '#activities', '#future-projects'],
 	},
 	{
 		title: 'Connect',
 		links: ['Official Email', 'Instagram', 'Facebook', 'Website', 'Contact Number'],
+		hrefs: ['#official-email', '#instagram', '#facebook', '#website', '#contact-number'],
 	},
 ];
 
@@ -27,7 +29,7 @@ function Footer() {
 						{['Community', 'TalkRoom', 'Culture', 'Learning'].map((item) => (
 							<span
 								key={item}
-								className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-stone-200"
+								className="rounded-full border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(255,255,255,0.04))] px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-stone-100 shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
 							>
 								{item}
 							</span>
@@ -37,12 +39,17 @@ function Footer() {
 
 				<section className="grid gap-6 sm:grid-cols-2">
 					{footerSections.map((section) => (
-						<article key={section.title} className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur">
+						<article
+							key={section.title}
+							className="border-t border-white/10 pt-6"
+						>
 							<h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-purple-200">{section.title}</h3>
 							<ul className="mt-4 space-y-3 text-sm leading-6 text-stone-300">
-								{section.links.map((link) => (
-									<li key={link} className="border-b border-white/5 pb-3 last:border-b-0 last:pb-0">
-										{link}
+								{section.links.map((link, index) => (
+									<li key={link} className="border-b border-white/10 pb-3 last:border-b-0 last:pb-0">
+										<a href={section.hrefs[index]} className="hover:text-purple-300">
+											{link}
+										</a>
 									</li>
 								))}
 							</ul>

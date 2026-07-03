@@ -78,20 +78,11 @@ const additionalServices = [
 
 function ServiceSection({ title, items, dark = false }) {
   return (
-    <article
-      className={dark
-        ? 'rounded-[2rem] border border-stone-900/10 bg-stone-950 p-6 text-stone-50 shadow-[0_24px_70px_rgba(37,24,15,0.24)]'
-        : 'rounded-[2rem] border border-white/70 bg-white/85 p-6 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur'}
-    >
-      <h3 className={dark ? 'text-2xl font-bold text-white' : 'text-2xl font-bold text-stone-950'}>{title}</h3>
-      <ul className="mt-5 space-y-3">
+    <article className="border-t border-purple-200/70 pt-6">
+      <h3 className="text-2xl font-bold text-stone-950">{title}</h3>
+      <ul className="mt-5 divide-y divide-purple-100 overflow-hidden rounded-[1.5rem] border border-purple-100 bg-white/70">
         {items.map((item) => (
-          <li
-            key={item}
-            className={dark
-              ? 'rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm leading-6 text-stone-200'
-              : 'rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm leading-6 text-stone-700'}
-          >
+          <li key={item} className="px-5 py-4 text-sm leading-6 text-stone-700">
             {item}
           </li>
         ))}
@@ -123,7 +114,7 @@ function Service() {
         </div>
 
         <section className="grid gap-6 lg:grid-cols-2">
-          <article className="rounded-[2rem] border border-white/70 bg-white/85 p-7 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur" data-aos="fade-up">
+          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">DAEHWA Cafe Community</p>
             <h2 className="mt-3 text-3xl font-bold text-stone-950">Programs that connect and empower people</h2>
             <p className="mt-3 text-sm leading-7 text-stone-600">
@@ -131,13 +122,13 @@ function Service() {
               collaboration.
             </p>
 
-            <div className="mt-6 grid gap-5">
+            <div className="mt-6 divide-y divide-purple-100 overflow-hidden border border-purple-100 bg-white/70">
               {communityServices.map((service) => (
-                <div key={service.title} className="rounded-[1.5rem] border border-stone-200 bg-stone-50 p-5">
+                <div key={service.title} className="px-5 py-5">
                   <h3 className="text-lg font-bold text-stone-950">{service.title}</h3>
                   <ul className="mt-3 space-y-2 text-sm leading-6 text-stone-700">
                     {service.items.map((item) => (
-                      <li key={item} className="rounded-2xl bg-white px-4 py-2.5 shadow-sm">
+                      <li key={item} className="border-b border-stone-200 pb-2 last:border-b-0 last:pb-0">
                         {item}
                       </li>
                     ))}
@@ -147,21 +138,21 @@ function Service() {
             </div>
           </article>
 
-          <article className="rounded-[2rem] border border-stone-900/10 bg-stone-950 p-7 text-stone-50 shadow-[0_24px_70px_rgba(37,24,15,0.24)]" data-aos="fade-up" data-aos-delay="100">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">DAEHWA Cafe.TalkRoom</p>
-            <h2 className="mt-3 text-3xl font-bold text-white">Practical Korean learning and student guidance</h2>
-            <p className="mt-3 text-sm leading-7 text-stone-300">
+          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up" data-aos-delay="100">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">DAEHWA Cafe.TalkRoom</p>
+            <h2 className="mt-3 text-3xl font-bold text-stone-950">Practical Korean learning and student guidance</h2>
+            <p className="mt-3 text-sm leading-7 text-stone-600">
               TalkRoom services are designed to make Korean language education accessible, confidence-building, and closely
               connected to real opportunities.
             </p>
 
-            <div className="mt-6 grid gap-5">
+            <div className="mt-6 divide-y divide-purple-100 overflow-hidden border border-purple-100 bg-white/70">
               {talkRoomServices.map((service) => (
-                <div key={service.title} className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
-                  <h3 className="text-lg font-bold text-white">{service.title}</h3>
-                  <ul className="mt-3 space-y-2 text-sm leading-6 text-stone-200">
+                <div key={service.title} className="px-5 py-5">
+                  <h3 className="text-lg font-bold text-stone-950">{service.title}</h3>
+                  <ul className="mt-3 space-y-2 text-sm leading-6 text-stone-700">
                     {service.items.map((item) => (
-                      <li key={item} className="rounded-2xl bg-white/5 px-4 py-2.5">
+                      <li key={item} className="border-b border-purple-100 pb-2 last:border-b-0 last:pb-0">
                         {item}
                       </li>
                     ))}
@@ -173,23 +164,23 @@ function Service() {
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <article className="rounded-[2rem] border border-stone-900/10 bg-stone-950 p-7 text-stone-50 shadow-[0_24px_70px_rgba(37,24,15,0.24)]" data-aos="fade-up">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">Additional Services</p>
-            <h2 className="mt-3 text-2xl font-bold text-white">Support that extends across programs</h2>
-            <p className="mt-3 text-sm leading-7 text-stone-300">
+          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Additional Services</p>
+            <h2 className="mt-3 text-2xl font-bold text-stone-950">Support that extends across programs</h2>
+            <p className="mt-3 text-sm leading-7 text-stone-600">
               These services support workshops, outreach, member engagement, and collaboration across both divisions.
             </p>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="mt-6 flex flex-wrap gap-3">
               {additionalServices.map((item) => (
-                <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-stone-200">
+                <div key={item} className="rounded-full border border-purple-100 bg-white/70 px-5 py-3 text-sm font-medium text-stone-700">
                   {item}
                 </div>
               ))}
             </div>
           </article>
 
-          <article className="rounded-[2rem] border border-white/70 bg-white/85 p-7 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur" data-aos="fade-up" data-aos-delay="100">
+          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up" data-aos-delay="100">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Our Commitment</p>
             <h2 className="mt-3 text-2xl font-bold text-stone-950">A service model built around people</h2>
             <p className="mt-4 text-sm leading-7 text-stone-600">
@@ -197,9 +188,9 @@ function Service() {
               professional collaboration through community-driven initiatives.
             </p>
 
-            <div className="mt-6 rounded-[1.75rem] bg-stone-950 px-5 py-5 text-stone-50 shadow-[0_18px_50px_rgba(37,24,15,0.18)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">Official Motto</p>
-              <p className="mt-2 text-lg font-medium leading-8 text-white">“Grow Yourself and Help Others Grow.”</p>
+            <div className="mt-6 border-t border-purple-200/70 pt-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Official Motto</p>
+              <p className="mt-2 text-lg font-medium leading-8 text-stone-900">“Grow Yourself and Help Others Grow.”</p>
             </div>
           </article>
         </section>

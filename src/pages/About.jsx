@@ -37,32 +37,35 @@ function About() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
-          <article className="rounded-[2rem] border border-white/70 bg-white/85 p-7 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur" data-aos="fade-up">
+          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">DAEHWA Cafe Community</p>
             <h2 className="mt-3 text-2xl font-bold text-stone-950">A supportive community for culture and growth</h2>
             <p className="mt-3 text-sm leading-7 text-stone-600">
               DAEHWA Cafe Community connects people through Korean culture, education, creativity, and meaningful collaboration.
             </p>
 
-            <div className="mt-6 space-y-3">
+            <div className="mt-6 divide-y divide-purple-100 overflow-hidden rounded-[1.75rem] border border-purple-100 bg-white/70">
               {communityPoints.map((point) => (
-                <div key={point} className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm leading-6 text-stone-700">
+                <div
+                  key={point}
+                  className="px-5 py-4 text-sm leading-6 text-stone-700"
+                >
                   {point}
                 </div>
               ))}
             </div>
           </article>
 
-          <article className="rounded-[2rem] border border-stone-900/10 bg-stone-950 p-7 text-stone-50 shadow-[0_24px_70px_rgba(37,24,15,0.24)]" data-aos="fade-up" data-aos-delay="100">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">DAEHWA Cafe TalkRoom</p>
-            <h2 className="mt-3 text-2xl font-bold text-white">A practical platform for Korean learning</h2>
-            <p className="mt-3 text-sm leading-7 text-stone-300">
+          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up" data-aos-delay="100">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">DAEHWA Cafe TalkRoom</p>
+            <h2 className="mt-3 text-2xl font-bold text-stone-950">A practical platform for Korean learning</h2>
+            <p className="mt-3 text-sm leading-7 text-stone-600">
               DAEHWA Cafe TalkRoom helps learners build confidence in Korean language learning with practical guidance and cultural understanding.
             </p>
 
-            <div className="mt-6 space-y-3">
+            <div className="mt-6 divide-y divide-white/10 overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5">
               {talkRoomPoints.map((point) => (
-                <div key={point} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm leading-6 text-stone-200">
+                <div key={point} className="px-5 py-4 text-sm leading-6 text-stone-600">
                   {point}
                 </div>
               ))}

@@ -44,16 +44,12 @@ const communityActivities = [
 
 function ActivityCard({ title, description, note, highlights, focus, dark = false }) {
   return (
-    <article
-      className={dark
-        ? 'rounded-[1.75rem] border border-white/10 bg-white/5 p-5 shadow-sm'
-        : 'rounded-[1.75rem] border border-stone-200 bg-stone-50 p-5 shadow-sm'}
-    >
+    <article className={dark ? 'border-b border-white/10 py-5 last:border-b-0' : 'border-b border-stone-200 py-5 last:border-b-0'}>
       <h3 className={dark ? 'text-xl font-bold text-white' : 'text-xl font-bold text-stone-950'}>{title}</h3>
       <p className={dark ? 'mt-3 text-sm leading-7 text-stone-200' : 'mt-3 text-sm leading-7 text-stone-600'}>{description}</p>
 
       {note ? (
-        <div className={dark ? 'mt-4 rounded-2xl bg-white/5 px-4 py-3 text-sm text-stone-200' : 'mt-4 rounded-2xl bg-white px-4 py-3 text-sm text-stone-600'}>
+        <div className={dark ? 'mt-4 text-sm text-stone-200' : 'mt-4 text-sm text-stone-600'}>
           {note}
         </div>
       ) : null}
@@ -136,7 +132,7 @@ function Activities() {
           <article className="rounded-[2rem] border border-white/70 bg-white/85 p-7 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur lg:col-span-2" data-aos="fade-up">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Activity Themes</p>
             <h2 className="mt-3 text-2xl font-bold text-stone-950">What these programs are designed to build</h2>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="mt-6 grid gap-0 overflow-hidden rounded-[1.75rem] border border-purple-100 bg-white/70 sm:grid-cols-2">
               {[
                 'Korean language exposure',
                 'Cultural understanding',
@@ -147,7 +143,7 @@ function Activities() {
                 'Online and offline collaboration',
                 'Personal growth',
               ].map((item) => (
-                <div key={item} className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm font-medium text-stone-700">
+                <div key={item} className="border-b border-purple-100 px-5 py-4 text-sm font-medium text-stone-700 odd:border-r sm:border-b">
                   {item}
                 </div>
               ))}
@@ -160,7 +156,7 @@ function Activities() {
             <p className="mt-4 text-sm leading-7 text-stone-300">
               Every workshop, competition, and community event is designed to help members learn, connect, and grow together.
             </p>
-            <div className="mt-6 rounded-[1.75rem] bg-white/5 px-5 py-5">
+            <div className="mt-6 border-t border-white/10 pt-5">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-purple-200">Official Motto</p>
               <p className="mt-2 text-lg font-medium leading-8 text-white">“Grow Yourself and Help Others Grow.”</p>
             </div>

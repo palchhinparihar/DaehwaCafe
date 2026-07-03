@@ -74,7 +74,7 @@ const collaborationTargets = [
 
 function CollaborateCard({ title, description }) {
   return (
-    <article className="rounded-[1.75rem] border border-stone-200 bg-stone-50 p-5 shadow-sm">
+    <article className="border-b border-purple-100 py-5 last:border-b-0">
       <h3 className="text-lg font-bold text-stone-950">{title}</h3>
       <p className="mt-3 text-sm leading-7 text-stone-600">{description}</p>
     </article>
@@ -108,7 +108,7 @@ function Collaborate() {
         </div>
 
         <section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <article className="rounded-[2rem] border border-white/70 bg-white/85 p-7 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur" data-aos="fade-up">
+          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">What We Can Provide</p>
             <h2 className="mt-3 text-3xl font-bold text-stone-950">Practical support for events and partnerships</h2>
             <p className="mt-3 text-sm leading-7 text-stone-600">
@@ -116,7 +116,7 @@ function Collaborate() {
               engagement.
             </p>
 
-            <div className="mt-6 grid gap-4">
+            <div className="mt-6 divide-y divide-purple-100">
               {offerings.map((item) => (
                 <CollaborateCard key={item.title} title={item.title} description={item.description} />
               ))}
@@ -124,19 +124,19 @@ function Collaborate() {
           </article>
 
           <div className="flex flex-col gap-6">
-            <article className="rounded-[2rem] border border-stone-900/10 bg-stone-950 p-7 text-stone-50 shadow-[0_24px_70px_rgba(37,24,15,0.24)]" data-aos="fade-up">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">Our Strength</p>
-              <h2 className="mt-3 text-3xl font-bold text-white">A team ready to support collaboration</h2>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+            <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Our Strength</p>
+              <h2 className="mt-3 text-3xl font-bold text-stone-950">A team ready to support collaboration</h2>
+              <div className="mt-6 divide-y divide-purple-100 rounded-[1.75rem] border border-purple-100 bg-white/70">
                 {strengths.map((item) => (
-                  <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm leading-6 text-stone-200">
+                  <div key={item} className="px-5 py-4 text-sm leading-6 text-stone-700">
                     {item}
                   </div>
                 ))}
               </div>
             </article>
 
-            <article className="rounded-[2rem] border border-white/70 bg-white/85 p-7 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur" data-aos="fade-up" data-aos-delay="100">
+            <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up" data-aos-delay="100">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Our Promise</p>
               <h2 className="mt-3 text-2xl font-bold text-stone-950">Long-term partnerships with shared purpose</h2>
               <p className="mt-4 text-sm leading-7 text-stone-600">
@@ -147,27 +147,24 @@ function Collaborate() {
                 Together, we aim to create opportunities that inspire, educate, and connect people through Korea.
               </p>
 
-              <div className="mt-6 rounded-[1.75rem] bg-stone-950 px-5 py-5 text-stone-50 shadow-[0_18px_50px_rgba(37,24,15,0.18)]">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">Our Motto</p>
-                <p className="mt-2 text-lg font-medium leading-8 text-white">“Grow Yourself and Help Others Grow.”</p>
-              </div>
+              <p className="mt-6 text-lg font-semibold italic text-purple-700">“Grow Yourself and Help Others Grow.”</p>
             </article>
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-stone-900/10 bg-stone-950 p-7 text-stone-50 shadow-[0_24px_70px_rgba(37,24,15,0.24)] sm:p-8" data-aos="fade-up">
+        <section className="border-t border-purple-200/70 pt-10" data-aos="fade-up">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">We Welcome Collaborations With</p>
-            <h2 className="mt-3 text-2xl font-bold text-white">Partners who share our vision</h2>
-            <p className="mt-3 text-sm leading-7 text-stone-300">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">We Welcome Collaborations With</p>
+            <h2 className="mt-3 text-2xl font-bold text-stone-950">Partners who share our vision</h2>
+            <p className="mt-3 text-sm leading-7 text-stone-600">
               We welcome collaborations with organizations and groups that want to support education, culture, youth development,
               and community-led initiatives.
             </p>
           </div>
 
-          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-7 grid gap-0 overflow-hidden border border-purple-100 bg-white/70 sm:grid-cols-2 lg:grid-cols-3">
             {collaborationTargets.map((item) => (
-              <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-stone-200">
+              <div key={item} className="border-b border-r border-purple-100 px-5 py-4 text-sm font-medium text-stone-700 last:border-b-0 lg:[&:nth-child(3n)]:border-r-0">
                 {item}
               </div>
             ))}

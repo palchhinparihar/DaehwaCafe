@@ -56,11 +56,11 @@ function Contact() {
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-0 overflow-hidden border border-purple-100 bg-white/70 md:grid-cols-2 xl:grid-cols-3">
           {contactItems.map((item) => (
             <article
               key={`${item.title}-${item.subtitle}`}
-              className="rounded-[2rem] border border-white/70 bg-white/85 p-6 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur"
+              className="border-b border-r border-purple-100 px-5 py-6 last:border-b-0 xl:[&:nth-child(3n)]:border-r-0"
               data-aos="fade-up"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">{item.title}</p>
@@ -71,19 +71,19 @@ function Contact() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-          <article className="rounded-[2rem] border border-stone-900/10 bg-stone-950 p-7 text-stone-50 shadow-[0_24px_70px_rgba(37,24,15,0.24)]" data-aos="fade-up">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">Closing Page</p>
-            <h2 className="mt-3 text-3xl font-bold text-white">Thank You</h2>
-            <p className="mt-4 text-lg leading-8 text-stone-300">
+          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Closing Page</p>
+            <h2 className="mt-3 text-3xl font-bold text-stone-950">Thank You</h2>
+            <p className="mt-4 text-lg leading-8 text-stone-600">
               “We look forward to building meaningful collaborations and creating opportunities together.”
             </p>
-            <p className="mt-6 text-sm uppercase tracking-[0.28em] text-purple-200">DAEHWA Cafe</p>
-            <p className="mt-3 text-xl font-medium leading-8 text-stone-50">
+            <p className="mt-6 text-sm uppercase tracking-[0.28em] text-purple-700">DAEHWA Cafe</p>
+            <p className="mt-3 text-xl font-medium leading-8 text-stone-900">
               “Grow Yourself and Help Others Grow.”
             </p>
           </article>
 
-          <article className="rounded-[2rem] border border-stone-200 bg-white/80 p-7 shadow-[0_24px_70px_rgba(120,82,40,0.1)] backdrop-blur" data-aos="fade-up" data-aos-delay="100">
+          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up" data-aos-delay="100">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Contact Page Note</p>
             <h2 className="mt-3 text-2xl font-bold text-stone-950">Ready for official details</h2>
             <p className="mt-3 text-sm leading-7 text-stone-600">

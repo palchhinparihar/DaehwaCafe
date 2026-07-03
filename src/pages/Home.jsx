@@ -35,26 +35,25 @@ function Home() {
               A community built for meaningful talk, shared growth, and the kind of support that helps everyone move forward together.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              {pillars.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-stone-300 bg-white/80 px-4 py-2 text-sm font-semibold uppercase tracking-[0.16em] text-stone-700 shadow-sm"
-                >
-                  {item}
+            <div className="mt-8 flex flex-wrap items-center gap-3 text-sm font-semibold uppercase tracking-[0.18em] text-stone-600">
+              {pillars.map((item, index) => (
+                <span key={item} className="flex items-center gap-3">
+                  <span>{item}</span>
+                  {index < pillars.length - 1 ? <span className="h-1 w-1 rounded-full bg-purple-400/70" /> : null}
                 </span>
               ))}
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2" data-aos="fade-up" data-aos-delay="250">
+            <div className="mt-10 divide-y divide-purple-200/70 overflow-hidden rounded-[2rem] border border-purple-100 bg-white/65 shadow-[0_18px_50px_rgba(91,33,182,0.07)] backdrop-blur" data-aos="fade-up" data-aos-delay="250">
               {highlights.map((highlight) => (
                 <article
                   key={highlight.title}
-                  className="rounded-3xl border border-white/70 bg-white/75 p-5 shadow-[0_20px_50px_rgba(120,82,40,0.08)] backdrop-blur"
+                  className="p-5 sm:p-6"
                   data-aos="fade-up"
                 >
-                  <h2 className="text-lg font-bold text-stone-900">{highlight.title}</h2>
-                  <p className="mt-2 text-sm leading-6 text-stone-600">{highlight.description}</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Highlight</p>
+                  <h2 className="mt-2 text-lg font-bold text-stone-900">{highlight.title}</h2>
+                  <p className="mt-2 max-w-xl text-sm leading-6 text-stone-600">{highlight.description}</p>
                 </article>
               ))}
             </div>
@@ -83,30 +82,30 @@ function Home() {
 
               <div className="mt-6 rounded-[1.75rem] bg-[linear-gradient(180deg,_#1f1140_0%,_#3b1d6b_100%)] px-6 py-7 text-stone-50 shadow-inner">
                 <p className="text-sm uppercase tracking-[0.3em] text-purple-200">DAEHWA Cafe</p>
-                <div className="mt-5 rounded-[1.5rem] border border-white/10 bg-white/8 p-5">
+                  <div className="mt-5 border-l border-white/20 pl-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-purple-100/80">Logo</p>
-                  <div className="mt-4 flex h-28 items-center justify-center rounded-[1.25rem] border border-dashed border-purple-200/40 bg-white/5 text-center text-2xl font-black tracking-[0.18em] text-purple-50">
+                    <div className="mt-4 flex h-28 items-center justify-center rounded-[1.25rem] border border-dashed border-purple-200/40 bg-white/5 text-center text-2xl font-black tracking-[0.18em] text-purple-50">
                     DAEHWA
                   </div>
                 </div>
 
-                <div className="mt-5 rounded-[1.5rem] bg-purple-50 px-5 py-5 text-stone-900">
+                  <div className="mt-5 border-t border-white/10 pt-5 text-stone-50">
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-purple-700">Mascot</p>
                   <div className="mt-3 flex items-center gap-4">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-200 text-2xl">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-purple-400/20 text-2xl">
                       ☕
                     </div>
                     <div>
-                      <p className="font-bold">Warm, friendly, and welcoming</p>
-                      <p className="mt-1 text-sm text-stone-600">A face that represents support, conversation, and growth.</p>
+                        <p className="font-bold text-white">Warm, friendly, and welcoming</p>
+                        <p className="mt-1 text-sm text-stone-300">A face that represents support, conversation, and growth.</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 grid grid-cols-2 gap-3 text-sm font-semibold text-stone-700" data-aos="fade-up" data-aos-delay="450">
-                <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3">Community</div>
-                <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3">TalkRoom</div>
+                <div className="mt-6 grid grid-cols-2 gap-3 text-sm font-semibold text-stone-700" data-aos="fade-up" data-aos-delay="450">
+                  <div className="rounded-[1.25rem] border border-purple-100 bg-white/70 px-5 py-4 text-center shadow-[0_10px_30px_rgba(91,33,182,0.06)]">Community</div>
+                  <div className="rounded-[1.25rem] border border-purple-100 bg-white/70 px-5 py-4 text-center shadow-[0_10px_30px_rgba(91,33,182,0.06)]">TalkRoom</div>
               </div>
             </div>
           </div>
