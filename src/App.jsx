@@ -3,9 +3,9 @@ function App() {
 
   return (
     <>
-      <div>Hello</div>
+      <div>hello</div>
     </>
   )
 }
 
-export default App
+export default App;
