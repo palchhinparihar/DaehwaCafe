@@ -83,11 +83,11 @@ Our Official Motto
 “Grow Yourself and Help Others Grow.”
 
 
-***About DAEHWA Cafe.TalkRoom*
+***About DAEHWA Cafe TalkRoom*
 
 *Who We Are*
 
-*DAEHWA Cafe.TalkRoom is a Korean language learning platform created by our Founder & Director, Sandeep Singh, with the vision of making Korean language education more practical, affordable, and accessible for everyone.*
+*DAEHWA Cafe TalkRoom is a Korean language learning platform created by our Founder & Director, Sandeep Singh, with the vision of making Korean language education more practical, affordable, and accessible for everyone.*
 
 *Our primary goal is not only to teach Korean grammar and writing but also to help learners build the confidence to communicate naturally in Korean while understanding Korean culture and preparing for future opportunities.*
 
@@ -171,7 +171,7 @@ Our Official Motto
 
 *Founder & Director – DAEHWA Cafe*
 
-* *Founder of DAEHWA Cafe.TalkRoom*
+* *Founder of DAEHWA Cafe TalkRoom*
 * *Leads the overall vision and strategic development of DAEHWA Cafe.*
 * *Oversees educational programs, partnerships, and organizational growth.*
 * *Guides national and international collaborations related to Korean language and culture.*
@@ -264,7 +264,7 @@ Our Official Motto
 
 *Our Services*
 
-*DAEHWA Cafe operates through two dedicated divisions: DAEHWA Cafe Community and DAEHWA Cafe.TalkRoom. Together, we provide educational, cultural, creative, and youth development services while promoting stronger connections between India and Korea.*
+*DAEHWA Cafe operates through two dedicated divisions: DAEHWA Cafe Community and DAEHWA Cafe TalkRoom. Together, we provide educational, cultural, creative, and youth development services while promoting stronger connections between India and Korea.*
 *DAEHWA Cafe Community*
 
 Volunteer Management
@@ -482,17 +482,17 @@ Our Motto
 
 *Previous Activities*
 
-*Since its establishment, DAEHWA Cafe Community and DAEHWA Cafe.TalkRoom have organized various educational, cultural, creative, and youth development programs. Our activities focus on Korean language, Korean culture, leadership, community engagement, and personal growth.*
+*Since its establishment, DAEHWA Cafe Community and DAEHWA Cafe TalkRoom have organized various educational, cultural, creative, and youth development programs. Our activities focus on Korean language, Korean culture, leadership, community engagement, and personal growth.*
 
 Note: Add high-quality photographs for every activity wherever possible.
 
 
 
-*DAEHWA Cafe.TalkRoom*
+*DAEHWA Cafe TalkRoom*
 
 🇰🇷 *Tteokbokki Workshop*
 
-One of the signature activities organized by DAEHWA Cafe.TalkRoom was the Tteokbokki Workshop, where participants learned about the history, cultural significance, and preparation of one of Korea’s most popular traditional street foods.
+One of the signature activities organized by DAEHWA Cafe TalkRoom was the Tteokbokki Workshop, where participants learned about the history, cultural significance, and preparation of one of Korea’s most popular traditional street foods.
 
 The workshop combined Korean language, Korean culture, and hands-on learning to provide participants with an enjoyable cultural experience.
 
@@ -568,7 +568,7 @@ An engaging quiz event designed to improve participants’ knowledge of Korean l
 
 🇰🇷 *Study Korea Online Seminar*
 
-DAEHWA Cafe Community and DAEHWA Cafe.TalkRoom are currently collaborating with Study Korea to organize an official online seminar for students interested in studying in Korea.
+DAEHWA Cafe Community and DAEHWA Cafe TalkRoom are currently collaborating with Study Korea to organize an official online seminar for students interested in studying in Korea.
 
 *The seminar provides guidance on:*
 
@@ -610,7 +610,7 @@ Our Motto
 
 *Future Projects*
 
-DAEHWA Cafe Community and DAEHWA Cafe.TalkRoom are continuously expanding their activities to provide more opportunities in Korean language education, Korean culture, youth development, and international collaboration.
+DAEHWA Cafe Community and DAEHWA Cafe TalkRoom are continuously expanding their activities to provide more opportunities in Korean language education, Korean culture, youth development, and international collaboration.
 
 Under our official workshop series, “Step Up”, we aim to help participants develop practical skills while exploring Korea from different perspectives.
 
@@ -756,7 +756,7 @@ DAEHWA Cafe Community will continue organizing workshops that help young people:
 
 🌟 *Our Vision*
 
-Through Step Up, DAEHWA Cafe Community and DAEHWA Cafe.TalkRoom aim to become a bridge between India and Korea by creating opportunities in education, language, culture, creativity, youth empowerment, and international collaboration.
+Through Step Up, DAEHWA Cafe Community and DAEHWA Cafe TalkRoom aim to become a bridge between India and Korea by creating opportunities in education, language, culture, creativity, youth empowerment, and international collaboration.
 
 Our Motto
 

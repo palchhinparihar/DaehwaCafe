@@ -1,3 +1,5 @@
+import { CardList, Metric, SectionHeading, Surface } from '../components/common/Ui.jsx';
+
 const offerings = [
   {
     title: 'Volunteer Team',
@@ -72,103 +74,71 @@ const collaborationTargets = [
   'Youth Organizations',
 ];
 
-function CollaborateCard({ title, description }) {
-  return (
-    <article className="border-b border-purple-100 py-5 last:border-b-0">
-      <h3 className="text-lg font-bold text-stone-950">{title}</h3>
-      <p className="mt-3 text-sm leading-7 text-stone-600">{description}</p>
-    </article>
-  );
-}
-
 function Collaborate() {
   return (
-    <main id="collaborate" className="min-h-screen scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(247,238,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdf9_0%,_#faf5ff_48%,_#f2e9ff_100%)] px-6 py-12 text-stone-900 sm:px-8 lg:px-12">
+    <main id="collaborate" className="min-h-screen scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(247,238,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdfd_0%,_#faf5ff_48%,_#f2e9ff_100%)] px-6 py-12 text-stone-900 sm:px-8 lg:px-12">
       <section className="mx-auto flex max-w-7xl flex-col gap-10">
-        <div className="max-w-4xl" data-aos="fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-stone-300/70 bg-white/75 px-4 py-2 text-sm font-medium tracking-[0.2em] text-stone-600 shadow-sm backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-purple-500" />
-            WHY COLLABORATE WITH DAEHWA CAFE?
-          </div>
+        <SectionHeading
+          badge="Why Collaborate"
+          title="Collaborate"
+          accent="With DAEHWA Cafe"
+          description="We build collaborations on creativity, professionalism, and meaningful community engagement. Partners get a clearer, more polished experience built around Korea, education, and youth development."
+        />
 
-          <h1 className="mt-5 text-4xl font-black uppercase leading-none tracking-tight text-stone-950 sm:text-6xl">
-            Collaborate
-            <span className="block text-purple-700">With DAEHWA Cafe</span>
-          </h1>
-
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-stone-700 sm:text-xl">
-            At DAEHWA Cafe, we believe that successful collaborations are built on creativity, professionalism, and meaningful
-            community engagement. We work closely with organizations, educational institutions, brands, and cultural partners to
-            create impactful experiences related to Korea, education, and youth development.
-          </p>
-          <p className="mt-3 max-w-3xl text-lg leading-8 text-stone-700 sm:text-xl">
-            By partnering with DAEHWA Cafe, you gain access to a passionate and growing network dedicated to delivering
-            high-quality support and promoting meaningful connections.
-          </p>
+        <div className="grid gap-6 sm:grid-cols-3" data-aos="fade-up">
+          <Metric value="10" label="Support services available for events and partnerships" />
+          <Metric value="80+" label="Active interns and volunteers ready to help" />
+          <Metric value="Grow" label="A shared purpose for every collaboration" />
         </div>
 
         <section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">What We Can Provide</p>
-            <h2 className="mt-3 text-3xl font-bold text-stone-950">Practical support for events and partnerships</h2>
+          <Surface className="p-7" data-aos="fade-up">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-violet-700">What We Can Provide</p>
+            <h3 className="mt-3 text-3xl font-bold text-stone-950">Practical support for events and partnerships</h3>
             <p className="mt-3 text-sm leading-7 text-stone-600">
-              We provide flexible support that helps partners deliver smoother events, stronger outreach, and more meaningful
-              engagement.
+              We provide flexible support that helps partners deliver smoother events, stronger outreach, and more meaningful engagement.
             </p>
 
-            <div className="mt-6 divide-y divide-purple-100">
+            <div className="mt-6 grid gap-4">
               {offerings.map((item) => (
-                <CollaborateCard key={item.title} title={item.title} description={item.description} />
+                <div key={item.title} className="rounded-[1.5rem] border border-violet-100 bg-violet-50/70 p-5">
+                  <h4 className="text-lg font-bold text-stone-950">{item.title}</h4>
+                  <p className="mt-3 text-sm leading-7 text-stone-600">{item.description}</p>
+                </div>
               ))}
             </div>
-          </article>
+          </Surface>
 
           <div className="flex flex-col gap-6">
-            <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Our Strength</p>
-              <h2 className="mt-3 text-3xl font-bold text-stone-950">A team ready to support collaboration</h2>
-              <div className="mt-6 divide-y divide-purple-100 rounded-[1.75rem] border border-purple-100 bg-white/70">
-                {strengths.map((item) => (
-                  <div key={item} className="px-5 py-4 text-sm leading-6 text-stone-700">
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </article>
+            <Surface className="p-7" data-aos="fade-up">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-violet-700">Our Strength</p>
+              <h3 className="mt-3 text-3xl font-bold text-stone-950">A team ready to support collaboration</h3>
+              <CardList className="mt-6" items={strengths} />
+            </Surface>
 
-            <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up" data-aos-delay="100">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Our Promise</p>
-              <h2 className="mt-3 text-2xl font-bold text-stone-950">Long-term partnerships with shared purpose</h2>
-              <p className="mt-4 text-sm leading-7 text-stone-600">
-                We are committed to building long-term partnerships based on professionalism, creativity, mutual growth, and
-                cultural exchange.
+            <Surface className="p-7 bg-[linear-gradient(180deg,rgba(46,16,101,0.98),rgba(17,11,37,1))] text-white" data-aos="fade-up" data-aos-delay="100">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-violet-200">Our Promise</p>
+              <h3 className="mt-3 text-2xl font-bold text-white">Long-term partnerships with shared purpose</h3>
+              <p className="mt-4 text-sm leading-7 text-violet-100/80">
+                We are committed to building long-term partnerships based on professionalism, creativity, mutual growth, and cultural exchange.
               </p>
-              <p className="mt-4 text-sm leading-7 text-stone-600">
+              <p className="mt-4 text-sm leading-7 text-violet-100/80">
                 Together, we aim to create opportunities that inspire, educate, and connect people through Korea.
               </p>
 
-              <p className="mt-6 text-lg font-semibold italic text-purple-700">“Grow Yourself and Help Others Grow.”</p>
-            </article>
+              <p className="mt-6 text-lg font-semibold italic text-violet-200">“Grow Yourself and Help Others Grow.”</p>
+            </Surface>
           </div>
         </section>
 
-        <section className="border-t border-purple-200/70 pt-10" data-aos="fade-up">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">We Welcome Collaborations With</p>
-            <h2 className="mt-3 text-2xl font-bold text-stone-950">Partners who share our vision</h2>
-            <p className="mt-3 text-sm leading-7 text-stone-600">
-              We welcome collaborations with organizations and groups that want to support education, culture, youth development,
-              and community-led initiatives.
-            </p>
-          </div>
+        <section className="border-t border-violet-200/70 pt-10" data-aos="fade-up">
+          <SectionHeading
+            badge="We Welcome Collaborations With"
+            title="Partners who share our vision"
+            description="Organizations and groups that want to support education, culture, youth development, and community-led initiatives."
+          />
 
-          <div className="mt-7 grid gap-0 overflow-hidden border border-purple-100 bg-white/70 sm:grid-cols-2 lg:grid-cols-3">
-            {collaborationTargets.map((item) => (
-              <div key={item} className="border-b border-r border-purple-100 px-5 py-4 text-sm font-medium text-stone-700 last:border-b-0 lg:[&:nth-child(3n)]:border-r-0">
-                {item}
-              </div>
-            ))}
-          </div>
+          <CardList className="mt-7 sm:grid-cols-2 lg:grid-cols-3" items={collaborationTargets} />
         </section>
       </section>
     </main>

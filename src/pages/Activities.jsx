@@ -1,8 +1,10 @@
+import { CardList, Metric, SectionHeading, Surface } from '../components/common/Ui.jsx';
+
 const talkRoomActivities = [
   {
     title: 'Tteokbokki Workshop',
     description:
-      'A signature DAEHWA Cafe.TalkRoom activity where participants learned about the history, cultural significance, and preparation of one of Korea\'s most popular traditional street foods.',
+      'A signature DAEHWA Cafe TalkRoom activity where participants learned about the history, cultural significance, and preparation of one of Korea\'s most popular traditional street foods.',
     note: 'Combine Korean language, Korean culture, and hands-on learning.',
   },
 ];
@@ -42,79 +44,39 @@ const communityActivities = [
   },
 ];
 
-function ActivityCard({ title, description, note, highlights, focus, dark = false }) {
-  return (
-    <article className={dark ? 'border-b border-white/10 py-5 last:border-b-0' : 'border-b border-stone-200 py-5 last:border-b-0'}>
-      <h3 className={dark ? 'text-xl font-bold text-white' : 'text-xl font-bold text-stone-950'}>{title}</h3>
-      <p className={dark ? 'mt-3 text-sm leading-7 text-stone-200' : 'mt-3 text-sm leading-7 text-stone-600'}>{description}</p>
-
-      {note ? (
-        <div className={dark ? 'mt-4 text-sm text-stone-200' : 'mt-4 text-sm text-stone-600'}>
-          {note}
-        </div>
-      ) : null}
-
-      {focus ? (
-        <p className={dark ? 'mt-4 text-sm font-medium text-purple-200' : 'mt-4 text-sm font-medium text-purple-700'}>{focus}</p>
-      ) : null}
-
-      {highlights ? (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {highlights.map((item) => (
-            <span
-              key={item}
-              className={dark ? 'rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-stone-200' : 'rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-stone-600'}
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-      ) : null}
-    </article>
-  );
-}
-
 function Activities() {
   return (
-    <main id="activities" className="min-h-screen scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(247,238,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdf9_0%,_#faf5ff_48%,_#f2e9ff_100%)] px-6 py-12 text-stone-900 sm:px-8 lg:px-12">
+    <main id="activities" className="min-h-screen scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(247,238,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdfd_0%,_#faf5ff_48%,_#f2e9ff_100%)] px-6 py-12 text-stone-900 sm:px-8 lg:px-12">
       <section className="mx-auto flex max-w-7xl flex-col gap-10">
-        <div className="max-w-4xl" data-aos="fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-stone-300/70 bg-white/75 px-4 py-2 text-sm font-medium tracking-[0.2em] text-stone-600 shadow-sm backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-purple-500" />
-            PREVIOUS ACTIVITIES
-          </div>
+        <SectionHeading
+          badge="Previous Activities"
+          title="Activities"
+          accent="Community events and learning experiences"
+          description="Since its establishment, DAEHWA Cafe Community and DAEHWA Cafe TalkRoom have organized educational, cultural, creative, and youth development programs focused on Korean language, Korean culture, leadership, community engagement, and personal growth."
+        />
 
-          <h1 className="mt-5 text-4xl font-black uppercase leading-none tracking-tight text-stone-950 sm:text-6xl">
-            Activities
-            <span className="block text-purple-700">Community Events and Learning Experiences</span>
-          </h1>
+        <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+          <Surface className="p-7 bg-[linear-gradient(180deg,rgba(46,16,101,0.98),rgba(17,11,37,1))] text-white" data-aos="fade-up">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-violet-200">DAEHWA Cafe TalkRoom</p>
+            <h3 className="mt-3 text-3xl font-bold text-white">Signature learning and culture programs</h3>
+            <p className="mt-3 text-sm leading-7 text-violet-100/80">
+              Focused experiences that connect Korean language, culture, and hands-on learning.
+            </p>
 
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-stone-700 sm:text-xl">
-            Since its establishment, DAEHWA Cafe Community and DAEHWA Cafe.TalkRoom have organized educational, cultural,
-            creative, and youth development programs focused on Korean language, Korean culture, leadership, community
-            engagement, and personal growth.
-          </p>
-
-          <p className="mt-3 max-w-3xl text-sm leading-7 text-stone-600">
-            Note: Add high-quality photographs for every activity wherever possible.
-          </p>
-        </div>
-
-        <section className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-          <article className="rounded-[2rem] border border-stone-900/10 bg-stone-950 p-7 text-stone-50 shadow-[0_24px_70px_rgba(37,24,15,0.24)]" data-aos="fade-up">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">DAEHWA Cafe.TalkRoom</p>
-            <h2 className="mt-3 text-3xl font-bold text-white">Signature learning and culture programs</h2>
-
-            <div className="mt-6 space-y-4">
+            <div className="mt-6 grid gap-4">
               {talkRoomActivities.map((activity) => (
-                <ActivityCard key={activity.title} dark {...activity} />
+                <div key={activity.title} className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+                  <h4 className="text-xl font-bold text-white">{activity.title}</h4>
+                  <p className="mt-3 text-sm leading-7 text-violet-100/80">{activity.description}</p>
+                  <p className="mt-4 text-sm font-medium text-violet-200">{activity.note}</p>
+                </div>
               ))}
             </div>
-          </article>
+          </Surface>
 
-          <article className="rounded-[2rem] border border-white/70 bg-white/85 p-7 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur" data-aos="fade-up" data-aos-delay="100">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">DAEHWA Cafe Community</p>
-            <h2 className="mt-3 text-3xl font-bold text-stone-950">Creative, cultural, and youth-focused activities</h2>
+          <Surface className="p-7" data-aos="fade-up" data-aos-delay="100">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-violet-700">DAEHWA Cafe Community</p>
+            <h3 className="mt-3 text-3xl font-bold text-stone-950">Creative, cultural, and youth-focused activities</h3>
             <p className="mt-3 text-sm leading-7 text-stone-600">
               These activities reflect the community side of DAEHWA Cafe, including food workshops, creator competitions,
               personal growth sessions, and interactive cultural programs.
@@ -122,18 +84,24 @@ function Activities() {
 
             <div className="mt-6 grid gap-4">
               {communityActivities.map((activity) => (
-                <ActivityCard key={activity.title} {...activity} />
+                <div key={activity.title} className="rounded-[1.5rem] border border-violet-100 bg-violet-50/70 p-5">
+                  <h4 className="text-xl font-bold text-stone-950">{activity.title}</h4>
+                  <p className="mt-3 text-sm leading-7 text-stone-600">{activity.description}</p>
+                  {activity.focus ? <p className="mt-4 text-sm font-medium text-violet-700">{activity.focus}</p> : null}
+                  {activity.highlights ? <CardList items={activity.highlights} className="mt-4 sm:grid-cols-2" /> : null}
+                </div>
               ))}
             </div>
-          </article>
-        </section>
+          </Surface>
+        </div>
 
-        <section className="grid gap-6 lg:grid-cols-3">
-          <article className="rounded-[2rem] border border-white/70 bg-white/85 p-7 shadow-[0_24px_70px_rgba(120,82,40,0.12)] backdrop-blur lg:col-span-2" data-aos="fade-up">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Activity Themes</p>
-            <h2 className="mt-3 text-2xl font-bold text-stone-950">What these programs are designed to build</h2>
-            <div className="mt-6 grid gap-0 overflow-hidden rounded-[1.75rem] border border-purple-100 bg-white/70 sm:grid-cols-2">
-              {[
+        <div className="grid gap-6 lg:grid-cols-3">
+          <Surface className="p-7 lg:col-span-2" data-aos="fade-up">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-violet-700">Activity Themes</p>
+            <h3 className="mt-3 text-2xl font-bold text-stone-950">What these programs are designed to build</h3>
+            <CardList
+              className="mt-6 sm:grid-cols-2"
+              items={[
                 'Korean language exposure',
                 'Cultural understanding',
                 'Creative participation',
@@ -142,26 +110,22 @@ function Activities() {
                 'Youth leadership',
                 'Online and offline collaboration',
                 'Personal growth',
-              ].map((item) => (
-                <div key={item} className="border-b border-purple-100 px-5 py-4 text-sm font-medium text-stone-700 odd:border-r sm:border-b">
-                  {item}
-                </div>
-              ))}
-            </div>
-          </article>
+              ]}
+            />
+          </Surface>
 
-          <article className="rounded-[2rem] border border-stone-900/10 bg-stone-950 p-7 text-stone-50 shadow-[0_24px_70px_rgba(37,24,15,0.24)]" data-aos="fade-up" data-aos-delay="100">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">Our Motto</p>
-            <h2 className="mt-3 text-2xl font-bold text-white">Growing through shared experience</h2>
-            <p className="mt-4 text-sm leading-7 text-stone-300">
+          <Surface className="p-7 bg-[linear-gradient(180deg,rgba(46,16,101,0.98),rgba(17,11,37,1))] text-white" data-aos="fade-up" data-aos-delay="100">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-violet-200">Our Motto</p>
+            <h3 className="mt-3 text-2xl font-bold text-white">Growing through shared experience</h3>
+            <p className="mt-4 text-sm leading-7 text-violet-100/80">
               Every workshop, competition, and community event is designed to help members learn, connect, and grow together.
             </p>
             <div className="mt-6 border-t border-white/10 pt-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-purple-200">Official Motto</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-violet-200">Official Motto</p>
               <p className="mt-2 text-lg font-medium leading-8 text-white">“Grow Yourself and Help Others Grow.”</p>
             </div>
-          </article>
-        </section>
+          </Surface>
+        </div>
       </section>
     </main>
   );

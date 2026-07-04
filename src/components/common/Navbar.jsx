@@ -9,7 +9,6 @@ const navLinks = [
   { label: 'Future Projects', href: '#future-projects' },
   { label: 'Collaborate', href: '#collaborate' },
   { label: 'What We Can Provide', href: '#what-we-can-provide' },
-  { label: 'Contact', href: '#contact' },
 ];
 
 const Navbar = () => {
@@ -20,27 +19,35 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[linear-gradient(180deg,rgba(22,15,46,0.94),rgba(22,15,46,0.78))] text-white shadow-[0_16px_40px_rgba(22,15,46,0.18)] backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8 lg:px-12">
-        <a href="#home" className="flex items-center gap-3 text-left" onClick={handleNavigate}>
-          <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[linear-gradient(135deg,#a855f7_0%,#6d28d9_100%)] text-lg font-black tracking-[0.18em] text-white shadow-[0_16px_30px_rgba(0,0,0,0.2)]">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[linear-gradient(180deg,rgba(18,14,34,0.96),rgba(18,14,34,0.82))] text-white shadow-[0_18px_50px_rgba(15,11,28,0.28)] backdrop-blur-2xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 sm:px-8">
+        <a href="#home" className="flex shrink-0 items-center gap-3 text-left" onClick={handleNavigate}>
+          <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[linear-gradient(135deg,#7c3aed_0%,#a855f7_52%,#4f46e5_100%)] text-lg font-black tracking-[0.18em] text-white shadow-[0_16px_30px_rgba(0,0,0,0.22)]">
             D
           </span>
           <span>
-            <span className="block text-xs font-semibold uppercase tracking-[0.28em] text-purple-200">DAEHWA Cafe</span>
-            <span className="block text-sm text-slate-300">Community and TalkRoom</span>
+            <span className="block text-xs font-semibold uppercase tracking-[0.28em] text-violet-200">DAEHWA Cafe</span>
+            <span className="block text-sm text-slate-200">Community and TalkRoom</span>
           </span>
         </a>
-        <div className="hidden items-center gap-1 xl:flex">
+        <div className="hidden min-w-0 flex-1 items-center justify-center gap-1 xl:flex">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/8 hover:text-white"
+              className="shrink-0 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white 2xl:px-4"
             >
               {link.label}
             </a>
           ))}
+        </div>
+        <div className="hidden shrink-0 items-center gap-3 xl:flex">
+          <a
+            href="#contact"
+            className="whitespace-nowrap rounded-full border border-violet-300/20 bg-white/6 px-5 py-2 text-sm font-semibold text-slate-100 transition hover:bg-white/12"
+          >
+            Get in touch
+          </a>
         </div>
         <button
           type="button"
@@ -68,6 +75,13 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <a
+            href="#contact"
+            onClick={handleNavigate}
+            className="mt-2 rounded-2xl bg-[linear-gradient(135deg,#7c3aed_0%,#a855f7_52%,#4f46e5_100%)] px-4 py-3 text-sm font-semibold text-white shadow-[0_16px_30px_rgba(79,70,229,0.22)]"
+          >
+            Get in touch
+          </a>
         </div>
       </div>
     </header>

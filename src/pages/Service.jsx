@@ -1,3 +1,5 @@
+import { CardList, SectionHeading, Surface } from '../components/common/Ui.jsx';
+
 const communityServices = [
   {
     title: 'Volunteer Management',
@@ -76,45 +78,19 @@ const additionalServices = [
   'International Collaboration Support',
 ];
 
-function ServiceSection({ title, items, dark = false }) {
-  return (
-    <article className="border-t border-purple-200/70 pt-6">
-      <h3 className="text-2xl font-bold text-stone-950">{title}</h3>
-      <ul className="mt-5 divide-y divide-purple-100 overflow-hidden rounded-[1.5rem] border border-purple-100 bg-white/70">
-        {items.map((item) => (
-          <li key={item} className="px-5 py-4 text-sm leading-6 text-stone-700">
-            {item}
-          </li>
-        ))}
-      </ul>
-    </article>
-  );
-}
-
 function Service() {
   return (
-    <main id="services" className="min-h-screen scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(247,238,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdf9_0%,_#faf5ff_48%,_#f2e9ff_100%)] px-6 py-12 text-stone-900 sm:px-8 lg:px-12">
+    <main id="services" className="min-h-screen scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(247,238,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdfd_0%,_#faf5ff_48%,_#f2e9ff_100%)] px-6 py-12 text-stone-900 sm:px-8 lg:px-12">
       <section className="mx-auto flex max-w-7xl flex-col gap-10">
-        <div className="max-w-3xl" data-aos="fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-stone-300/70 bg-white/75 px-4 py-2 text-sm font-medium tracking-[0.2em] text-stone-600 shadow-sm backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-purple-500" />
-            OUR SERVICES
-          </div>
-
-          <h1 className="mt-5 text-4xl font-black uppercase leading-none tracking-tight text-stone-950 sm:text-6xl">
-            Services
-            <span className="block text-purple-700">Built for Community and Learning</span>
-          </h1>
-
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-700 sm:text-xl">
-            DAEHWA Cafe operates through two dedicated divisions: DAEHWA Cafe Community and DAEHWA Cafe.TalkRoom. Together,
-            they provide educational, cultural, creative, and youth development services while strengthening connections
-            between India and Korea.
-          </p>
-        </div>
+        <SectionHeading
+          badge="Our Services"
+          title="Services"
+          accent="Built for community and learning"
+          description="DAEHWA Cafe operates through two dedicated divisions: DAEHWA Cafe Community and DAEHWA Cafe TalkRoom. Together, they provide educational, cultural, creative, and youth development services while strengthening connections between India and Korea."
+        />
 
         <section className="grid gap-6 lg:grid-cols-2">
-          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up">
+          <Surface className="p-7" data-aos="fade-up">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">DAEHWA Cafe Community</p>
             <h2 className="mt-3 text-3xl font-bold text-stone-950">Programs that connect and empower people</h2>
             <p className="mt-3 text-sm leading-7 text-stone-600">
@@ -122,49 +98,37 @@ function Service() {
               collaboration.
             </p>
 
-            <div className="mt-6 divide-y divide-purple-100 overflow-hidden border border-purple-100 bg-white/70">
+            <div className="mt-6 grid gap-5">
               {communityServices.map((service) => (
-                <div key={service.title} className="px-5 py-5">
+                <div key={service.title} className="rounded-[1.4rem] border border-violet-100 bg-violet-50/60 px-5 py-5">
                   <h3 className="text-lg font-bold text-stone-950">{service.title}</h3>
-                  <ul className="mt-3 space-y-2 text-sm leading-6 text-stone-700">
-                    {service.items.map((item) => (
-                      <li key={item} className="border-b border-stone-200 pb-2 last:border-b-0 last:pb-0">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <CardList items={service.items} className="mt-4 sm:grid-cols-2" />
                 </div>
               ))}
             </div>
-          </article>
+          </Surface>
 
-          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up" data-aos-delay="100">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">DAEHWA Cafe.TalkRoom</p>
+          <Surface className="p-7" data-aos="fade-up" data-aos-delay="100">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">DAEHWA Cafe TalkRoom</p>
             <h2 className="mt-3 text-3xl font-bold text-stone-950">Practical Korean learning and student guidance</h2>
             <p className="mt-3 text-sm leading-7 text-stone-600">
               TalkRoom services are designed to make Korean language education accessible, confidence-building, and closely
               connected to real opportunities.
             </p>
 
-            <div className="mt-6 divide-y divide-purple-100 overflow-hidden border border-purple-100 bg-white/70">
+            <div className="mt-6 grid gap-5">
               {talkRoomServices.map((service) => (
-                <div key={service.title} className="px-5 py-5">
+                <div key={service.title} className="rounded-[1.4rem] border border-indigo-100 bg-indigo-50/60 px-5 py-5">
                   <h3 className="text-lg font-bold text-stone-950">{service.title}</h3>
-                  <ul className="mt-3 space-y-2 text-sm leading-6 text-stone-700">
-                    {service.items.map((item) => (
-                      <li key={item} className="border-b border-purple-100 pb-2 last:border-b-0 last:pb-0">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <CardList items={service.items} className="mt-4 sm:grid-cols-2" tone="indigo" />
                 </div>
               ))}
             </div>
-          </article>
+          </Surface>
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up">
+          <Surface className="p-7" data-aos="fade-up">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Additional Services</p>
             <h2 className="mt-3 text-2xl font-bold text-stone-950">Support that extends across programs</h2>
             <p className="mt-3 text-sm leading-7 text-stone-600">
@@ -173,14 +137,14 @@ function Service() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               {additionalServices.map((item) => (
-                <div key={item} className="rounded-full border border-purple-100 bg-white/70 px-5 py-3 text-sm font-medium text-stone-700">
+                <div key={item} className="rounded-full border border-violet-100 bg-violet-50/70 px-5 py-3 text-sm font-medium text-stone-700">
                   {item}
                 </div>
               ))}
             </div>
-          </article>
+          </Surface>
 
-          <article className="border-t border-purple-200/70 pt-6" data-aos="fade-up" data-aos-delay="100">
+          <Surface className="p-7" data-aos="fade-up" data-aos-delay="100">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Our Commitment</p>
             <h2 className="mt-3 text-2xl font-bold text-stone-950">A service model built around people</h2>
             <p className="mt-4 text-sm leading-7 text-stone-600">
@@ -188,27 +152,26 @@ function Service() {
               professional collaboration through community-driven initiatives.
             </p>
 
-            <div className="mt-6 border-t border-purple-200/70 pt-5">
+            <div className="mt-6 border-t border-violet-100 pt-5">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-purple-700">Official Motto</p>
               <p className="mt-2 text-lg font-medium leading-8 text-stone-900">“Grow Yourself and Help Others Grow.”</p>
             </div>
-          </article>
+          </Surface>
         </section>
 
         <section className="grid gap-6 lg:grid-cols-3">
-          <ServiceSection
-            title="Community Focus"
-            items={['Volunteer management', 'Event support', 'Cultural programs', 'Youth activities']}
-          />
-          <ServiceSection
-            title="TalkRoom Focus"
-            dark
-            items={['Korean classes', 'Speaking practice', 'TOPIK guidance', 'Study in Korea support']}
-          />
-          <ServiceSection
-            title="Shared Value"
-            items={['Learning with purpose', 'Confidence through practice', 'Respect and inclusivity', 'Community growth']}
-          />
+          <Surface className="p-7">
+            <h3 className="text-2xl font-bold text-stone-950">Community Focus</h3>
+            <CardList className="mt-5" items={['Volunteer management', 'Event support', 'Cultural programs', 'Youth activities']} />
+          </Surface>
+          <Surface className="p-7 bg-[linear-gradient(180deg,rgba(46,16,101,0.98),rgba(79,70,229,0.9))] text-white">
+            <h3 className="text-2xl font-bold text-white">TalkRoom Focus</h3>
+            <CardList className="mt-5" items={['Korean classes', 'Speaking practice', 'TOPIK guidance', 'Study in Korea support']} tone="indigo" />
+          </Surface>
+          <Surface className="p-7">
+            <h3 className="text-2xl font-bold text-stone-950">Shared Value</h3>
+            <CardList className="mt-5" items={['Learning with purpose', 'Confidence through practice', 'Respect and inclusivity', 'Community growth']} />
+          </Surface>
         </section>
       </section>
     </main>
