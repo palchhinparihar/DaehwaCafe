@@ -81,7 +81,7 @@ const WhatWeCanProvidePage = () => {
   };
 
   return (
-    <div
+    <section
       id="what-we-can-provide"
       className="min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(241,232,255,0.95),_transparent_42%),linear-gradient(180deg,_#fffdfd_0%,_#f5eeff_54%,_#efe6ff_100%)] pb-16 text-stone-900"
     >
@@ -161,7 +161,7 @@ const WhatWeCanProvidePage = () => {
           <p className="mt-6 text-xl font-semibold italic text-violet-700 md:text-2xl">"Grow Yourself and Help Others Grow."</p>
         </Surface>
       </div>
-    </div>
+    </section>
   );
 };
 

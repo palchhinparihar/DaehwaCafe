@@ -1,74 +1,196 @@
-const footerSections = [
-	{
-		title: 'Explore',
-		links: ['Home', 'About', 'Leadership', 'Services', 'Activities', 'Future Projects'],
-		hrefs: ['#home', '#about', '#leadership', '#services', '#activities', '#future-projects'],
-	},
-	{
-		title: 'Connect',
-		links: ['Community Email', 'TalkRoom Email', 'Instagram', 'Facebook', 'Website', 'QR Code', 'Contact Number'],
-		hrefs: ['#community-email', '#talkroom-email', '#instagram', '#facebook', '#website', '#qr-code', '#contact-number'],
-	},
-];
+import { footerSections } from "../../data/footerData";
+import { socialLinks } from "../../data/socialLinks";
+import { FiArrowUpRight } from "react-icons/fi";
 
 function Footer() {
 	return (
-		<footer className="border-t border-white/10 bg-[radial-gradient(circle_at_top,_rgba(168,85,247,0.28),_transparent_34%),linear-gradient(180deg,_#120e22_0%,_#0b0816_100%)] px-6 py-12 text-stone-100 sm:px-8 lg:px-12">
-			<div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-				<section>
-					<p className="text-xs font-semibold uppercase tracking-[0.35em] text-violet-200">DAEHWA Cafe</p>
-					<h2 className="mt-4 text-3xl font-black uppercase tracking-tight text-white sm:text-4xl">
-						Grow Yourself
-						<span className="block text-violet-200">and Help Others Grow.</span>
-					</h2>
-					<p className="mt-5 max-w-2xl text-base leading-8 text-stone-300 sm:text-lg">
-						DAEHWA Cafe Community and DAEHWA Cafe TalkRoom build opportunities for cultural exchange, learning, youth development, and meaningful collaboration.
-					</p>
+		<footer className="relative text-stone-300 overflow-hidden border-t border-white/10 bg-[radial-gradient(circle_at_top,_rgba(168,85,247,0.28),_transparent_40%),linear-gradient(180deg,_#120e22_0%,_#090611_100%)]">
+			{/* Background Blur */}
+			<div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-violet-600/20 blur-[150px]" />
 
-					<div className="mt-8 flex flex-wrap gap-3">
-						{['Community', 'TalkRoom', 'Culture', 'Learning'].map((item) => (
-							<span
-								key={item}
-								className="rounded-full border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(255,255,255,0.04))] px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-stone-100 shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
-							>
-								{item}
+			<div className="relative mx-auto flex max-w-7xl flex-col px-6 py-20 sm:px-8 lg:px-12">
+				{/* ================= HERO ================= */}
+				<div className="grid gap-16 lg:grid-cols-[1.4fr_0.9fr]">
+					{/* Left */}
+					<div>
+						<p className="text-xs font-semibold uppercase tracking-[0.45em] text-violet-200">
+							DAEHWA CAFE
+						</p>
+
+						<h2 className="mt-6 max-w-3xl text-5xl font-black uppercase leading-[0.95] tracking-tight text-white md:text-7xl">
+							Grow Yourself.
+							<span className="mt-2 block text-violet-200">
+								Help Others Grow.
 							</span>
-						))}
+						</h2>
+
+						<p className="mt-8 max-w-2xl text-base leading-8 text-stone-300">
+							DAEHWA Cafe brings together passionate people through culture,
+							conversations, learning, collaboration and youth-driven
+							opportunities. Whether you're here to connect, contribute or
+							simply grow, you're always welcome.
+						</p>
+
+						<a
+							href="#contact"
+							className="group mt-10 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-violet-600 via-fuchsia-500 to-indigo-500 px-7 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(124,58,237,0.35)]"
+						>
+							Partner With DAEHWA
+							<FiArrowUpRight className="transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+						</a>
 					</div>
 
-					<a
-						href="#contact"
-						className="mt-8 inline-flex rounded-full bg-[linear-gradient(135deg,#7c3aed_0%,#a855f7_52%,#4f46e5_100%)] px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_30px_rgba(79,70,229,0.22)] transition hover:translate-y-[-1px]"
-					>
-						Partner with DAEHWA Cafe
-					</a>
-				</section>
+					{/* Right Quote */}
+					<div className="flex items-end lg:justify-end">
+						<div className="max-w-sm border-l border-violet-500/40 pl-8">
+							<span className="text-5xl leading-none text-violet-300">
+								“
+							</span>
+							<p className="mt-4 text-lg leading-9 text-stone-300">
+								We believe communities are built through meaningful
+								conversations, shared experiences and people willing to help
+								each other grow.
+							</p>
+							<div className="mt-8 h-px w-16 bg-violet-400" />
+							<p className="mt-4 text-xs uppercase tracking-[0.35em] text-violet-200">
+								DAEHWA CAFE
+							</p>
+						</div>
+					</div>
+				</div>
 
-				<section className="grid gap-6 sm:grid-cols-2">
-					{footerSections.map((section) => (
-						<article
-							key={section.title}
-							className="border-t border-white/10 pt-6"
-						>
-							<h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-violet-200">{section.title}</h3>
-							<h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-violet-200">{section.title}</h3>
-							<ul className="mt-4 space-y-3 text-sm leading-6 text-stone-300">
-								{section.links.map((link, index) => (
-									<li key={link} className="border-b border-white/10 pb-3 last:border-b-0 last:pb-0">
-										<a href={section.hrefs[index]} className="hover:text-violet-200">
-											{link}
+				{/* Divider */}
+				<div className="my-20 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+				{/* ================= LINKS ================= */}
+				<div className="grid gap-16 lg:grid-cols-[1fr_1fr_1fr]">
+					{/* Brand */}
+					<div>
+						<h3 className="text-2xl font-bold text-white">
+							Building a community that inspires learning, culture &
+							opportunities.
+						</h3>
+						<p className="mt-6 max-w-sm leading-8 text-stone-400">
+							Join a growing network where people share ideas, collaborate on
+							projects and create opportunities together.
+						</p>
+					</div>
+					{/* Explore */}
+					<div>
+						<h3 className="mb-8 text-xs font-semibold uppercase tracking-[0.35em] text-violet-200">
+							Explore
+						</h3>
+						<ul className="space-y-5">
+							{footerSections.map((section) =>
+								section.links.map((link, index) => (
+									<li key={link}>
+										<a
+											href={section.hrefs[index]}
+											className="group inline-flex items-center gap-3 text-stone-300 text-sm transition-all duration-300 hover:text-purple-200!"
+										>
+											<span className="h-px w-0 bg-violet-400 transition-all duration-300 group-hover:w-8" />
+											<span>{link}</span>
+											<FiArrowUpRight className="opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
 										</a>
 									</li>
-								))}
-							</ul>
-						</article>
-					))}
-				</section>
-			</div>
+								))
+							)}
+						</ul>
+					</div>
 
-			<div className="mx-auto mt-10 flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 text-sm text-stone-400 sm:flex-row sm:items-center sm:justify-between">
-				<p>© 2026 DAEHWA Cafe. All rights reserved.</p>
-				<p>Built for community growth, cultural exchange, and shared learning.</p>
+					{/* Connect */}
+					<div>
+						<h3 className="mb-8 text-xs font-semibold uppercase tracking-[0.35em] text-violet-200">
+							Connect
+						</h3>
+
+						<ul className="space-y-6">
+							{socialLinks.map((link) => {
+								const Icon = link.icon;
+								return (
+									<li key={link.title}>
+										<div className="flex items-start gap-4">
+											<div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 transition duration-300 hover:border-violet-500 hover:bg-violet-500/10">
+												<Icon className="text-base text-violet-200" />
+											</div>
+
+											<div>
+												<p className="mb-2 text-xs uppercase tracking-[0.25em] text-stone-200">
+													{link.title}
+												</p>
+												{Array.isArray(link.href) ? (
+													<div className="space-y-2">
+														{link.href.map((href, index) => (
+															<a
+																key={href}
+																href={href}
+																aria-label={link.ariaLabel}
+																className="group flex w-fit items-center gap-2 text-stone-300 text-sm transition hover:text-purple-200!"
+															>
+																<span>{link.username[index]}</span>
+																<FiArrowUpRight className="text-xs opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
+															</a>
+														))}
+													</div>
+												) : (
+													<a
+														href={link.href}
+														aria-label={link.ariaLabel}
+														className="group flex w-fit items-center gap-2 text-stone-300 text-sm transition hover:text-purple-200!"
+													>
+														<span>{link.username}</span>
+														<FiArrowUpRight className="text-xs opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
+													</a>
+												)}
+											</div>
+										</div>
+									</li>
+								);
+							})}
+						</ul>
+					</div>
+				</div>
+
+				{/* Divider */}
+				<div className="my-16 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+				{/* ================= BOTTOM ================= */}
+				<div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+					{/* Left */}
+					<div>
+						<p className="max-w-xl text-2xl font-semibold leading-relaxed text-white">
+							Growing together, one conversation at a time.
+						</p>
+						<p className="mt-5 max-w-lg leading-8 text-stone-400">
+							Whether you're a student, creator, professional or simply
+							someone who loves meaningful conversations, DAEHWA Cafe is a
+							place where ideas become opportunities.
+						</p>
+					</div>
+
+					{/* Right */}
+					<div className="text-left lg:text-right">
+						<p className="text-sm uppercase tracking-[0.3em] text-violet-200">
+							Let's Build Together
+						</p>
+						<a
+							href="#contact"
+							className="group mt-4 inline-flex items-center gap-3 text-lg font-semibold text-white transition hover:text-purple-200!"
+						>
+							Contact Us
+							<FiArrowUpRight className="transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+						</a>
+					</div>
+				</div>
+
+				{/* ================= COPYRIGHT ================= */}
+				<div className="mt-16 flex flex-col gap-5 border-t border-white/10 pt-8 text-sm text-stone-500 md:flex-row md:items-center md:justify-between">
+					<p>
+						© 2026 <span className="font-semibold text-stone-300">DAEHWA Cafe</span>. All rights reserved.
+					</p>
+					<p className="text-stone-400">
+						Built for community growth, cultural exchange & lifelong learning.
+					</p>
+				</div>
 			</div>
 		</footer>
 	);

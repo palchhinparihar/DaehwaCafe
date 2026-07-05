@@ -85,7 +85,7 @@ const growthGoals = [
 
 function FutureProjects() {
   return (
-    <main id="future-projects" className="min-h-screen scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(247,238,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdfd_0%,_#faf5ff_48%,_#f2e9ff_100%)] px-6 py-12 text-stone-900 sm:px-8 lg:px-12">
+    <section id="future-projects" className="min-h-screen scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(247,238,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdfd_0%,_#faf5ff_48%,_#f2e9ff_100%)] px-6 py-12 text-stone-900 sm:px-8 lg:px-12">
       <section className="mx-auto flex max-w-7xl flex-col gap-10">
         <SectionHeading
           badge="Future Projects"
@@ -163,7 +163,7 @@ function FutureProjects() {
           <p className="mt-6 text-lg font-semibold italic text-violet-200">“Grow Yourself and Help Others Grow.”</p>
         </Surface>
       </section>
-    </main>
+    </section>
   );
 }
 

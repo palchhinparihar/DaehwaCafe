@@ -10,7 +10,7 @@ const pillars = ['Community', 'TalkRoom', 'Culture', 'Growth'];
 
 function Home() {
   return (
-    <main id="home" className="min-h-screen scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(241,232,255,0.94),_transparent_42%),linear-gradient(180deg,_#fffdfd_0%,_#f7f1ff_54%,_#ece4ff_100%)] text-stone-900">
+    <section id="home" className="min-h-screen scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(241,232,255,0.94),_transparent_42%),linear-gradient(180deg,_#fffdfd_0%,_#f7f1ff_54%,_#ece4ff_100%)] text-stone-900">
       <section className="relative mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
         <div className="absolute left-[-8rem] top-[-6rem] h-64 w-64 rounded-full bg-violet-300/40 blur-3xl" />
         <div className="absolute right-[-7rem] top-16 h-72 w-72 rounded-full bg-indigo-300/30 blur-3xl" />
@@ -111,7 +111,7 @@ function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </section>
   );
 }
 

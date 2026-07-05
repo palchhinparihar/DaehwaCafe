@@ -27,6 +27,7 @@ function App() {
   return (
     <>
       <Navbar />
+      
       <main>
         <Home />
         <About />

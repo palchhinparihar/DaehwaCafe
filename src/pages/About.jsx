@@ -14,7 +14,7 @@ const talkRoomPoints = [
 
 function About() {
   return (
-    <main id="about" className="min-h-screen scroll-mt-28 bg-[radial-gradient(circle_at_top,_rgba(247,238,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdfd_0%,_#faf5ff_48%,_#f2e9ff_100%)] px-6 py-12 text-stone-900 sm:px-8 lg:px-12">
+    <section id="about" className="min-h-screen scroll-mt-28 bg-[radial-gradient(circle_at_top,_rgba(247,238,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdfd_0%,_#faf5ff_48%,_#f2e9ff_100%)] px-6 py-12 text-stone-900 sm:px-8 lg:px-12">
       <section className="mx-auto flex max-w-7xl flex-col gap-10">
         <SectionHeading
           badge="About DAEHWA Cafe"
@@ -45,7 +45,7 @@ function About() {
           </Surface>
         </div>
       </section>
-    </main>
+    </section>
   );
 }
 
