@@ -1,111 +1,235 @@
-import { CardList, Chip, Metric, SectionBadge, Surface } from '../components/common/Ui.jsx';
-
-const highlights = [
-  'A community space for shared learning, culture, and meaningful collaboration.',
-  'TalkRoom focuses on practical Korean learning, confidence, and guidance.',
-  'Programs are designed to feel modern, credible, and useful for partners.',
-];
-
-const pillars = ['Community', 'TalkRoom', 'Culture', 'Growth'];
+import { Chip, Metric, SectionBadge, Surface } from '../components/common/Ui.jsx';
+import Logo from '../assets/logo.png';
+import Mascot from '../assets/Mascot.png';
+import { pillars, highlights } from '../data/homeData.js';
 
 function Home() {
   return (
-    <section id="home" className="min-h-screen scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(241,232,255,0.94),_transparent_42%),linear-gradient(180deg,_#fffdfd_0%,_#f7f1ff_54%,_#ece4ff_100%)] text-stone-900">
-      <section className="relative mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-12">
-        <div className="absolute left-[-8rem] top-[-6rem] h-64 w-64 rounded-full bg-violet-300/40 blur-3xl" />
-        <div className="absolute right-[-7rem] top-16 h-72 w-72 rounded-full bg-indigo-300/30 blur-3xl" />
-        <div className="absolute bottom-[-6rem] left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-fuchsia-300/20 blur-3xl" />
+    <section
+      id="home"
+      className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(168,85,247,0.18),_transparent_42%),linear-gradient(180deg,#ffffff_0%,#faf5ff_45%,#f3e8ff_100%)] text-stone-900"
+    >
+      {/* Background Blobs */}
+      <div className="absolute -left-32 top-10 h-80 w-80 rounded-full bg-violet-300/30 blur-[120px]" />
+      <div className="absolute right-0 top-0 h-[28rem] w-[28rem] rounded-full bg-fuchsia-300/20 blur-[140px]" />
+      <div className="absolute bottom-0 left-1/2 h-[24rem] w-[24rem] -translate-x-1/2 rounded-full bg-indigo-300/20 blur-[120px]" />
 
-        <div className="relative grid min-h-[calc(100vh-6rem)] items-center gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14">
-          <div className="max-w-3xl" data-aos="fade-up" data-aos-delay="100">
-            <SectionBadge>WELCOME TO DAEHWA CAFE</SectionBadge>
+      <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 py-12 sm:px-8 lg:px-12">
+        <div className="grid w-full items-center gap-16 lg:grid-cols-[1fr_0.95fr]">
+          {/* LEFT */}
+          <div data-aos="fade-up" className="max-w-2xl">
+            <SectionBadge>
+              Welcome to DAEHWA Cafe
+            </SectionBadge>
 
-            <h1 className="mt-6 max-w-2xl text-5xl font-black uppercase leading-[0.92] tracking-tight text-stone-950 sm:text-6xl lg:text-8xl">
-              Purple-led
-              <span className="block bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-500 bg-clip-text text-transparent">
-                DAEHWA Cafe
-              </span>
-            </h1>
+            <div className="mt-8 space-y-4">
+              <div className="flex flex-col md:flex-row md:justify-center md:items-center gap-5">
+                <img
+                  src={Logo}
+                  alt="DAEHWA Cafe"
+                  className="mx-auto md:mx-0 select-none"
+                  draggable="false"
+                />
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-700 sm:text-xl">
-              A modern community platform for Korean culture, practical learning, and partnerships that feel credible,
-              polished, and easy to understand.
-            </p>
+                <div className="flex flex-wrap gap-3">
+                  <span className="mx-auto md:mx-0 rounded-full border border-violet-200 bg-violet-100/90 px-4 py-2 text-xs! font-semibold uppercase tracking-[0.2em] text-violet-700">
+                    DAEHWA Cafe Community
+                  </span>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+                  <span className="mx-auto md:mx-0 rounded-full border border-indigo-200 bg-indigo-100/70 px-4 py-2 text-xs! font-semibold uppercase tracking-[0.2em] text-indigo-700">
+                    DAEHWA Cafe TalkRoom
+                  </span>
+                </div>
+              </div>
+
+              <h1 className="max-w-xl text-4xl flex flex-col font-black leading-tight text-stone-900 sm:text-5xl lg:text-6xl">
+                <span>Grow Yourself</span>
+                <span className="bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-600 bg-clip-text animate-pulse text-transparent">
+                  and Help Others Grow.
+                </span>
+              </h1>
+
+              <p className="max-w-xl text-lg leading-8 text-stone-600">
+                DAEHWA Cafe is a modern community platform where people
+                connect through Korean language, culture, meaningful
+                conversations, and collaborative opportunities.
+              </p>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#services"
-                className="rounded-full bg-[linear-gradient(135deg,#7c3aed_0%,#a855f7_52%,#4f46e5_100%)] px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_30px_rgba(79,70,229,0.18)] transition hover:-translate-y-0.5"
+                className="rounded-full bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-600 px-7 py-3.5 text-sm font-semibold text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-violet-300/40"
               >
-                Explore services
+                Explore Services
               </a>
+
               <a
                 href="#contact"
-                className="rounded-full border border-violet-200/80 bg-white/75 px-6 py-3 text-sm font-semibold text-violet-800 shadow-[0_12px_25px_rgba(91,33,182,0.08)] transition hover:bg-white"
+                className="rounded-full border border-violet-200 bg-white px-7 py-3.5 text-sm font-semibold text-violet-700 shadow-lg transition hover:border-violet-400 hover:bg-violet-50"
               >
-                Contact us
+                Contact Us
               </a>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              {pillars.map((item, index) => (
-                <Chip key={item} tone={index === 1 ? 'indigo' : 'violet'}>
-                  {item}
+            {/* Pillars */}
+            <div className="mt-10 flex flex-wrap gap-3">
+              {pillars.map((pillar, index) => (
+                <Chip
+                  key={pillar}
+                  tone={index === 1 ? 'indigo' : 'violet'}
+                >
+                  {pillar}
                 </Chip>
-              ))}
-            </div>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-3" data-aos="fade-up" data-aos-delay="250">
-              <Metric value="2" label="Focused divisions: Community and TalkRoom" />
-              <Metric value="80+" label="Active interns and volunteers driving activity" />
-              <Metric value="India → Korea" label="A clear bridge for culture, education, and exchange" />
-            </div>
-
-            <div className="mt-10 grid gap-4 md:grid-cols-3">
-              {highlights.map((highlight) => (
-                <Surface key={highlight} className="p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-violet-700">Highlight</p>
-                  <p className="mt-3 text-sm leading-7 text-stone-600">{highlight}</p>
-                </Surface>
               ))}
             </div>
           </div>
 
-          <div className="relative flex justify-center lg:justify-end" data-aos="fade-left" data-aos-delay="180">
-            <div className="absolute inset-x-8 top-10 h-72 rounded-[2.5rem] bg-stone-900/10 blur-2xl" />
-            <Surface className="relative w-full max-w-md p-6">
-              <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">
-                <span>Brand board</span>
-                <span>01</span>
-              </div>
+          {/* RIGHT */}
+          <div
+            data-aos="fade-left"
+            className="relative flex justify-center lg:justify-end"
+          >
+            {/* Glow */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="h-[28rem] w-[28rem] rounded-full bg-gradient-to-br from-violet-400/20 via-fuchsia-400/10 to-indigo-400/20 blur-[70px]" />
+            </div>
 
-              <div className="mt-6 rounded-[1.75rem] bg-[linear-gradient(180deg,_#2e1065_0%,_#6d28d9_100%)] px-6 py-7 text-white shadow-inner">
-                <p className="text-sm uppercase tracking-[0.3em] text-violet-200">DAEHWA Cafe</p>
-                <div className="mt-5 border-l border-white/20 pl-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-violet-100/80">Visual direction</p>
-                  <div className="mt-4 flex h-28 items-center justify-center rounded-[1.25rem] border border-dashed border-violet-200/40 bg-white/5 text-center text-2xl font-black tracking-[0.18em] text-violet-50">
-                    DAEHWA
-                  </div>
+            {/* Floating Card */}
+            <Surface className="absolute left-0 top-4 hidden w-48 p-4 lg:block z-10">
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-violet-700">
+                Community
+              </p>
+
+              <p className="mt-2 text-sm leading-6 text-stone-600">
+                Learn, collaborate and grow together.
+              </p>
+            </Surface>
+
+            {/* Mascot */}
+            <img
+              src={Mascot}
+              alt="DAEHWA Mascot"
+              draggable="false"
+              className="relative z-7 w-[250px] md:w-[300px] mx-auto drop-shadow-[0_30px_70px_rgba(124,58,237,0.28)] transition duration-500 hover:-translate-y-2"
+            />
+
+            {/* Floating Card */}
+            <Surface className="absolute z-10 -bottom-13 -right-5 hidden w-56 p-4 lg:block">
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-indigo-700">
+                TalkRoom
+              </p>
+
+              <p className="mt-2 text-sm leading-6 text-stone-600">
+                Practical Korean learning with confidence,
+                mentorship and consistency.
+              </p>
+            </Surface>
+          </div>
+        </div>
+      </div>
+
+      {/* ========================================= */}
+      {/* Brand Metrics */}
+      {/* ========================================= */}
+      <section className="relative pb-12">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 bg-transparent">
+          <div className="rounded-lg">
+            <div className="grid gap-6 md:grid-cols-3">
+              <Metric
+                value="2"
+                label="Focused divisions: Community & TalkRoom"
+              />
+
+              <Metric
+                value="80+"
+                label="Active interns and volunteers driving the community"
+              />
+
+              <Metric
+                value="India ↔ Korea"
+                label="Building a bridge through language, culture and collaboration"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================= */}
+      {/* Highlights */}
+      {/* ========================================= */}
+      <section className="pb-28">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          <div className="mb-12 text-center" data-aos="fade-up">
+            <SectionBadge>
+              Why DAEHWA Cafe?
+            </SectionBadge>
+
+            <h2 className="mt-5 text-4xl font-black text-stone-900">
+              More than just a community.
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-stone-600">
+              We believe learning should feel welcoming,
+              practical and inspiring. Every initiative at
+              DAEHWA Cafe is designed to help people connect,
+              learn and grow together.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {highlights.map((highlight, index) => (
+              <Surface
+                key={highlight}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                className="group relative overflow-hidden rounded-[2rem] p-7 transition duration-300 hover:-translate-y-2"
+              >
+                {/* Decorative Circle */}
+                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-200/30 blur-2xl transition duration-300 group-hover:scale-125" />
+                {/* Number */}
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-600 text-lg font-bold text-white">
+                  0{index + 1}
                 </div>
 
-                <div className="mt-5 border-t border-white/10 pt-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-violet-200">Tone</p>
-                  <div className="mt-3 flex items-center gap-4">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 text-2xl">
-                      ☕
-                    </div>
-                    <div>
-                      <p className="font-bold text-white">Warm, credible, and welcoming</p>
-                      <p className="mt-1 text-sm text-violet-100/80">A brand surface that feels premium and easy to trust.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <p className="mt-6 text-xs font-bold uppercase tracking-[0.25em] text-violet-700">
+                  Highlight
+                </p>
 
-              <div className="mt-6 grid grid-cols-2 gap-3 text-sm font-semibold text-stone-700 sm:grid-cols-3">
-                <div className="rounded-[1.25rem] border border-violet-100 bg-violet-50 px-5 py-4 text-center">Community</div>
-                <div className="rounded-[1.25rem] border border-indigo-100 bg-indigo-50 px-5 py-4 text-center">TalkRoom</div>
-                <div className="rounded-[1.25rem] border border-fuchsia-100 bg-fuchsia-50 px-5 py-4 text-center col-span-2 sm:col-span-1">Partnerships</div>
+                <p className="mt-4 text-base leading-8 text-stone-600">
+                  {highlight}
+                </p>
+              </Surface>
+            ))}
+          </div>
+
+          {/* Bottom Brand Strip */}
+          <div
+            className="mt-16"
+            data-aos="fade-up"
+          >
+            <Surface className="w-[75%]! mx-auto overflow-hidden rounded-3xl py-3!">
+              <div className="text-center p-8">
+                <div>
+                  <SectionBadge>
+                    Our Mission
+                  </SectionBadge>
+
+                  <h3 className="mt-5 text-3xl font-black text-stone-900">
+                    Creating meaningful experiences
+                    beyond language learning.
+                  </h3>
+
+                  <p className="mt-5 text-sm md:text-base leading-8 text-stone-600">
+                    DAEHWA Cafe brings together people
+                    interested in Korean language,
+                    culture, networking and collaboration.
+                    Through our Community and TalkRoom,
+                    we create opportunities where everyone
+                    can learn, contribute and grow together.
+                  </p>
+                </div>
               </div>
             </Surface>
           </div>
