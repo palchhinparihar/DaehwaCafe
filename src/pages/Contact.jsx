@@ -1,5 +1,5 @@
 import { FiArrowUpRight } from "react-icons/fi";
-import { SectionHeading, Surface } from "../components/common/Ui.jsx";
+import { SectionHeading, Surface } from "../components/layout/Ui.jsx";
 import { socialLinks } from "../data/socialLinks";
 
 function Contact() {

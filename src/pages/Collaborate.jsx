@@ -1,4 +1,4 @@
-import { CardList, Metric, SectionHeading, Surface } from '../components/common/Ui.jsx';
+import { CardList, Metric, SectionHeading, Surface } from '../components/layout/Ui.jsx';
 
 const offerings = [
   {

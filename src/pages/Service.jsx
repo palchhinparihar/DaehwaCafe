@@ -1,4 +1,4 @@
-import { CardList, SectionHeading, Surface } from '../components/common/Ui.jsx';
+import { CardList, SectionHeading, Surface } from '../components/layout/Ui.jsx';
 
 const communityServices = [
   {

@@ -1,4 +1,4 @@
-import { Chip, Metric, SectionBadge, Surface } from '../components/common/Ui.jsx';
+import { Chip, Metric, SectionBadge, Surface } from '../components/layout/Ui.jsx';
 import Logo from '../assets/logo.png';
 import Mascot from '../assets/Mascot.png';
 import { pillars, highlights } from '../data/homeData.js';
