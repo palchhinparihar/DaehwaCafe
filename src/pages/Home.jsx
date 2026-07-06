@@ -209,14 +209,14 @@ function Home() {
             className="mt-16"
             data-aos="fade-up"
           >
-            <Surface className="w-[75%]! mx-auto overflow-hidden rounded-3xl py-3!">
+            <Surface className="w-full md:w-[75%]! mx-auto overflow-hidden rounded-3xl py-3!">
               <div className="text-center p-8">
                 <div>
                   <SectionBadge>
                     Our Mission
                   </SectionBadge>
 
-                  <h3 className="mt-5 text-3xl font-black text-stone-900">
+                  <h3 className="mt-5 text-2xl md:text-3xl font-black text-stone-900">
                     Creating meaningful experiences
                     beyond language learning.
                   </h3>
