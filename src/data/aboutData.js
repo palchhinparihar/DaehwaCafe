@@ -1,17 +1,94 @@
-export const highlights = [
-  'A community space for shared learning, culture, and meaningful collaboration.',
-  'TalkRoom focuses on practical Korean learning, confidence, and guidance.',
-  'Programs are designed to feel modern, credible, and useful for partners.',
-];
+import { FiBookOpen, FiGlobe, FiMessageCircle, FiUsers } from 'react-icons/fi';
 
 export const communityPoints = [
-  'Independent community connecting people through Korean culture, education, creativity, and collaboration.',
-  'Built to support learning, growth, skill development, and meaningful cultural exchange.',
-  'Focused on youth leadership, volunteerism, and safe community engagement.',
+  'Connect with people who share an interest in Korean language and culture.',
+  'Participate in community events, discussions, and collaborative projects.',
+  'Grow through learning, volunteering, leadership, and shared experiences.',
 ];
 
 export const talkRoomPoints = [
-  'Korean language learning platform created to make education practical, affordable, and accessible.',
-  'Helps learners build confidence in speaking, writing, and understanding Korean culture.',
-  'Supports TOPIK preparation, study in Korea guidance, and future opportunities related to Korea.',
+  'Practice speaking, listening, reading, and writing with confidence.',
+  'Prepare for TOPIK and explore study opportunities in Korea.',
+  'Learn through practical sessions, cultural insights, and guided support.',
+];
+
+export const aboutSections = [
+  {
+    id: 'community',
+    label: 'DAEHWA Cafe Community',
+    title: 'A place where',
+    accent: 'people connect.',
+    description:
+      'A welcoming community that brings together learners, enthusiasts, and creators through shared interests and meaningful experiences.',
+    icon: FiUsers,
+    tone: 'violet',
+    points: communityPoints,
+  },
+
+  {
+    id: 'talkroom',
+    label: 'DAEHWA Cafe TalkRoom',
+    title: 'Learn Korean',
+    accent: 'with confidence.',
+    description:
+      'A practical learning platform designed to help learners build confidence through consistent practice and cultural understanding.',
+    icon: FiMessageCircle,
+    tone: 'indigo',
+    points: talkRoomPoints,
+  },
+];
+
+export const featureCards = [
+  {
+    id: 1,
+    title: 'People Before Platforms',
+    description:
+      'Meaningful communities are built through genuine conversations, shared experiences, and mutual support.',
+    icon: FiUsers,
+    tone: 'violet',
+  },
+
+  {
+    id: 2,
+    title: 'Learning That Feels Practical',
+    description:
+      'We focus on confidence, consistency, and real-world communication instead of memorization alone.',
+    icon: FiBookOpen,
+    tone: 'indigo',
+  },
+
+  {
+    id: 3,
+    title: 'Opportunities to Grow',
+    description:
+      'Discover volunteering, networking, cultural events, and collaborations beyond the classroom.',
+    icon: FiGlobe,
+    tone: 'fuchsia',
+  },
+];
+
+export const missionCards = [
+  {
+    id: 1,
+    title: 'Connect',
+    description:
+      'Meet people who share your interests and learn from one another.',
+    tone: 'violet',
+  },
+
+  {
+    id: 2,
+    title: 'Learn',
+    description:
+      'Build practical Korean skills through guidance and consistent practice.',
+    tone: 'indigo',
+  },
+
+  {
+    id: 3,
+    title: 'Belong',
+    description:
+      'Become part of a welcoming community that grows together.',
+    tone: 'fuchsia',
+  },
 ];
