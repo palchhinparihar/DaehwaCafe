@@ -1,10 +1,34 @@
 export const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Leadership', href: '#leadership' },
-  { label: 'Services', href: '#services' },
-  { label: 'Activities', href: '#activities' },
-  { label: 'Future Projects', href: '#future-projects' },
-  { label: 'Collaborate', href: '#collaborate' },
-  { label: 'What We Can Provide', href: '#what-we-can-provide' },
+  {
+    label: "Home",
+    path: "/",
+  },
+  {
+    label: "About",
+    path: "/about",
+  },
+  {
+    label: "Leadership",
+    path: "/leadership",
+  },
+  {
+    label: "Services",
+    path: "/services",
+  },
+  {
+    label: "Activities",
+    path: "/activities",
+  },
+  {
+    label: "Future Projects",
+    path: "/future-projects",
+  },
+  {
+    label: "Collaborate",
+    path: "/collaborate",
+  },
+  {
+    label: "Contact",
+    path: "/contact",
+  },
 ];

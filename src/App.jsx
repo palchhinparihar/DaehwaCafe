@@ -1,23 +1,27 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
-import Service from './pages/Service.jsx';
-import Leadership from './pages/Leadership.jsx';
-import Activities from './pages/Activities.jsx';
-import FutureProjects from './pages/FutureProjects.jsx';
-import Collaborate from './pages/Collaborate.jsx';
-import WhatWeCanProvide from './pages/WhatWeCanProvide.jsx';
-import Contact from './pages/Contact.jsx';
-import Footer from './components/common/Footer.jsx';
-import Navbar from './components/common/Navbar.jsx';
+import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import Navbar from "./components/common/Navbar";
+import Footer from "./components/common/Footer";
+import ScrollToTop from "./components/common/ScrollToTop";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Leadership from "./pages/Leadership";
+import Service from "./pages/Service";
+import Activities from "./pages/Activities";
+import FutureProjects from "./pages/FutureProjects";
+import Collaborate from "./pages/Collaborate";
+import WhatWeCanProvide from "./pages/WhatWeCanProvide";
+import Contact from "./pages/Contact";
 
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 850,
-      easing: 'ease-out-cubic',
+      easing: "ease-out-cubic",
       offset: 120,
       once: true,
       mirror: false,
@@ -27,22 +31,25 @@ function App() {
   return (
     <>
       <Navbar />
-      
-      <main>
-        <Home />
-        <About />
-        <Leadership />
-        <Service />
-        <Activities />
-        <FutureProjects />
-        <Collaborate />
-        <WhatWeCanProvide />
-        <Contact />
+      <ScrollToTop />
+
+      <main className="min-h-screen">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/leadership" element={<Leadership />} />
+          <Route path="/services" element={<Service />} />
+          <Route path="/activities" element={<Activities />} />
+          <Route path="/future-projects" element={<FutureProjects />} />
+          <Route path="/collaborate" element={<Collaborate />} />
+          <Route path="/what-we-provide" element={<WhatWeCanProvide />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
 
       <Footer />
     </>
-  )
+  );
 }
 
 export default App;
