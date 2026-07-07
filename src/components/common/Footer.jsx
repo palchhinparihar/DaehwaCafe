@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { footerSections } from "../../data/footerData";
 import { socialLinks } from "../../data/socialLinks";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -17,7 +18,7 @@ function Footer() {
 							DAEHWA CAFE
 						</p>
 
-						<h2 className="mt-6 max-w-3xl text-5xl font-black uppercase leading-[0.95] tracking-tight text-white md:text-7xl">
+						<h2 className="mt-6 max-w-3xl text-3xl md:text-5xl font-black uppercase leading-[0.95] tracking-tight text-white md:text-7xl">
 							Grow Yourself.
 							<span className="mt-2 block text-violet-200">
 								Help Others Grow.
@@ -31,13 +32,13 @@ function Footer() {
 							simply grow, you're always welcome.
 						</p>
 
-						<a
-							href="#contact"
+						<NavLink
+							to="/contact"
 							className="group mt-10 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-violet-600 via-fuchsia-500 to-indigo-500 px-7 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(124,58,237,0.35)]"
 						>
 							Partner With DAEHWA
 							<FiArrowUpRight className="transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-						</a>
+						</NavLink>
 					</div>
 
 					{/* Right Quote */}
@@ -46,12 +47,15 @@ function Footer() {
 							<span className="text-5xl leading-none text-violet-300">
 								“
 							</span>
+
 							<p className="mt-4 text-lg leading-9 text-stone-300">
 								We believe communities are built through meaningful
 								conversations, shared experiences and people willing to help
 								each other grow.
 							</p>
+
 							<div className="mt-8 h-px w-16 bg-violet-400" />
+
 							<p className="mt-4 text-xs uppercase tracking-[0.35em] text-violet-200">
 								DAEHWA CAFE
 							</p>
@@ -70,28 +74,31 @@ function Footer() {
 							Building a community that inspires learning, culture &
 							opportunities.
 						</h3>
+
 						<p className="mt-6 max-w-sm leading-8 text-stone-400">
 							Join a growing network where people share ideas, collaborate on
 							projects and create opportunities together.
 						</p>
 					</div>
+
 					{/* Explore */}
 					<div>
 						<h3 className="mb-8 text-xs font-semibold uppercase tracking-[0.35em] text-violet-200">
 							Explore
 						</h3>
+
 						<ul className="space-y-5">
 							{footerSections.map((section) =>
 								section.links.map((link, index) => (
 									<li key={link}>
-										<a
-											href={section.hrefs[index]}
+										<NavLink
+											to={section.paths[index]}
 											className="group inline-flex items-center gap-3 text-stone-300 text-sm transition-all duration-300 hover:text-purple-200!"
 										>
 											<span className="h-px w-0 bg-violet-400 transition-all duration-300 group-hover:w-8" />
 											<span>{link}</span>
 											<FiArrowUpRight className="opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
-										</a>
+										</NavLink>
 									</li>
 								))
 							)}
@@ -107,6 +114,7 @@ function Footer() {
 						<ul className="space-y-6">
 							{socialLinks.map((link) => {
 								const Icon = link.icon;
+
 								return (
 									<li key={link.title}>
 										<div className="flex items-start gap-4">
@@ -118,30 +126,41 @@ function Footer() {
 												<p className="mb-2 text-xs uppercase tracking-[0.25em] text-stone-200">
 													{link.title}
 												</p>
-												{Array.isArray(link.href) ? (
-													<div className="space-y-2">
-														{link.href.map((href, index) => (
+
+												<div className="space-y-2">
+													{Array.isArray(link.href) ? (
+														link.href.map((href, index) => (
 															<a
 																key={href}
 																href={href}
 																aria-label={link.ariaLabel}
-																className="group flex w-fit items-center gap-2 text-stone-300 text-sm transition hover:text-purple-200!"
+																className="group flex w-fit items-center gap-2 text-sm text-stone-300 transition hover:text-purple-200!"
 															>
-																<span>{link.username[index]}</span>
-																<FiArrowUpRight className="text-xs opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
+																<span>
+																	{link.username[index]}
+																</span>
+
+																<FiArrowUpRight
+																	className="text-xs opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100"
+																/>
 															</a>
-														))}
-													</div>
-												) : (
-													<a
-														href={link.href}
-														aria-label={link.ariaLabel}
-														className="group flex w-fit items-center gap-2 text-stone-300 text-sm transition hover:text-purple-200!"
-													>
-														<span>{link.username}</span>
-														<FiArrowUpRight className="text-xs opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
-													</a>
-												)}
+														))
+													) : (
+														<a
+															href={link.href}
+															aria-label={link.ariaLabel}
+															className="group flex w-fit items-center gap-2 text-sm text-stone-300 transition hover:text-purple-200!"
+														>
+															<span>
+																{link.username}
+															</span>
+
+															<FiArrowUpRight
+																className="text-xs opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100"
+															/>
+														</a>
+													)}
+												</div>
 											</div>
 										</div>
 									</li>
@@ -160,6 +179,7 @@ function Footer() {
 						<p className="max-w-xl text-2xl font-semibold leading-relaxed text-white">
 							Growing together, one conversation at a time.
 						</p>
+
 						<p className="mt-5 max-w-lg leading-8 text-stone-400">
 							Whether you're a student, creator, professional or simply
 							someone who loves meaningful conversations, DAEHWA Cafe is a
@@ -172,21 +192,23 @@ function Footer() {
 						<p className="text-sm uppercase tracking-[0.3em] text-violet-200">
 							Let's Build Together
 						</p>
-						<a
-							href="#contact"
+
+						<NavLink
+							to="/contact"
 							className="group mt-4 inline-flex items-center gap-3 text-lg font-semibold text-white transition hover:text-purple-200!"
 						>
 							Contact Us
 							<FiArrowUpRight className="transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-						</a>
+						</NavLink>
 					</div>
 				</div>
 
 				{/* ================= COPYRIGHT ================= */}
 				<div className="mt-16 flex flex-col gap-5 border-t border-white/10 pt-8 text-sm text-stone-500 md:flex-row md:items-center md:justify-between">
 					<p>
-						© 2026 <span className="font-semibold text-stone-300">DAEHWA Cafe</span>. All rights reserved.
+						© 2026 <span className="font-medium text-stone-300">DAEHWA Cafe</span>. All rights reserved.
 					</p>
+
 					<p className="text-stone-400">
 						Built for community growth, cultural exchange & lifelong learning.
 					</p>
