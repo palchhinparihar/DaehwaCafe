@@ -44,7 +44,7 @@ export const leadershipRoles = [
     image: IndraniProfile,
 
     socials: {
-      linkedin: null,
+      linkedin: 'https://www.linkedin.com/in/indrani-banerjee-38747623a',
       instagram: 'https://www.instagram.com/joobunyj',
       portfolio: null,
     },
