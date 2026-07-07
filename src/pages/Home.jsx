@@ -1,9 +1,10 @@
 import { Chip, Metric, SectionBadge, Surface } from '../components/layout/Ui.jsx';
 import Logo from '../assets/logo.png';
 import Mascot from '../assets/Mascot.png';
-import { pillars, highlights } from '../data/homeData.js';
 
 function Home() {
+  const pillars = ['Community', 'TalkRoom', 'Culture', 'Growth'];
+
   return (
     <section
       id="home"
@@ -152,86 +153,6 @@ function Home() {
                 label="Building a bridge through language, culture and collaboration"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================= */}
-      {/* Highlights */}
-      {/* ========================================= */}
-      <section className="pb-28">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="mb-12 text-center" data-aos="fade-up">
-            <SectionBadge>
-              Why DAEHWA Cafe?
-            </SectionBadge>
-
-            <h2 className="mt-5 text-4xl font-black text-stone-900">
-              More than just a community.
-            </h2>
-
-            <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-stone-600">
-              We believe learning should feel welcoming,
-              practical and inspiring. Every initiative at
-              DAEHWA Cafe is designed to help people connect,
-              learn and grow together.
-            </p>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-3">
-            {highlights.map((highlight, index) => (
-              <Surface
-                key={highlight}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-                className="group relative overflow-hidden rounded-[2rem] p-7 transition duration-300 hover:-translate-y-2"
-              >
-                {/* Decorative Circle */}
-                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-200/30 blur-2xl transition duration-300 group-hover:scale-125" />
-                {/* Number */}
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-600 text-lg font-bold text-white">
-                  0{index + 1}
-                </div>
-
-                <p className="mt-6 text-xs font-bold uppercase tracking-[0.25em] text-violet-700">
-                  Highlight
-                </p>
-
-                <p className="mt-4 text-base leading-8 text-stone-600">
-                  {highlight}
-                </p>
-              </Surface>
-            ))}
-          </div>
-
-          {/* Bottom Brand Strip */}
-          <div
-            className="mt-16"
-            data-aos="fade-up"
-          >
-            <Surface className="w-full md:w-[75%]! mx-auto overflow-hidden rounded-3xl py-3!">
-              <div className="text-center p-8">
-                <div>
-                  <SectionBadge>
-                    Our Mission
-                  </SectionBadge>
-
-                  <h3 className="mt-5 text-2xl md:text-3xl font-black text-stone-900">
-                    Creating meaningful experiences
-                    beyond language learning.
-                  </h3>
-
-                  <p className="mt-5 text-sm md:text-base leading-8 text-stone-600">
-                    DAEHWA Cafe brings together people
-                    interested in Korean language,
-                    culture, networking and collaboration.
-                    Through our Community and TalkRoom,
-                    we create opportunities where everyone
-                    can learn, contribute and grow together.
-                  </p>
-                </div>
-              </div>
-            </Surface>
           </div>
         </div>
       </section>
