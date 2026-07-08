@@ -1,5 +1,3 @@
-// src/data/serviceData.js
-
 export const servicesData = {
   hero: {
     badge: 'Our Services',
@@ -179,7 +177,5 @@ export const servicesData = {
     title: 'Building opportunities through education and community',
     description:
       'DAEHWA Cafe is committed to providing meaningful educational experiences, promoting Korean culture, empowering youth, and building strong national and international collaborations through professional, creative, and community-driven initiatives.',
-
-    motto: 'Grow Yourself and Help Others Grow.',
   },
 };

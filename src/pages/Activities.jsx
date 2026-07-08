@@ -146,16 +146,6 @@ function Activities() {
             <p className="mt-5 text-base leading-8 text-violet-100/80">
               {commitment.description}
             </p>
-
-            <div className="mt-8 border-t border-white/10 pt-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-violet-200">
-                Our Motto
-              </p>
-
-              <p className="mt-3 text-xl font-semibold leading-8 text-white">
-                "{commitment.motto}"
-              </p>
-            </div>
           </Surface>
         </div>
 

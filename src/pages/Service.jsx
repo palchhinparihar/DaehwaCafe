@@ -11,7 +11,6 @@ function Service() {
       className="scroll-mt-28 overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(247,238,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdfd_0%,_#faf5ff_48%,_#f2e9ff_100%)] px-6 py-16 text-stone-900 sm:px-8 lg:px-12"
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-14">
-
         <SectionHeading
           badge={hero.badge}
           title={hero.title}
@@ -22,11 +21,9 @@ function Service() {
         {/* ========================= */}
         {/* Community & TalkRoom */}
         {/* ========================= */}
-
         <div className="grid gap-8 xl:grid-cols-2">
 
           {/* Community */}
-
           <Surface
             className="overflow-hidden p-8"
             data-aos="fade-up"
@@ -52,7 +49,6 @@ function Service() {
           </Surface>
 
           {/* TalkRoom */}
-
           <Surface
             className="overflow-hidden p-8"
             data-aos="fade-up"
@@ -77,12 +73,11 @@ function Service() {
               tone="indigo"
             />
           </Surface>
-
         </div>
-                {/* ========================= */}
+
+        {/* ========================= */}
         {/* Additional Services */}
         {/* ========================= */}
-
         <Surface
           className="p-8"
           data-aos="fade-up"
@@ -116,14 +111,13 @@ function Service() {
         {/* ========================= */}
         {/* Our Commitment */}
         {/* ========================= */}
-
         <Surface
           className="overflow-hidden bg-[linear-gradient(135deg,#2e1065_0%,#4f46e5_100%)] p-0 text-white"
           data-aos="fade-up"
           data-aos-delay="100"
         >
           <div className="grid lg:grid-cols-[1.45fr_0.9fr]">
-                        {/* Left Content */}
+            {/* Left Content */}
 
             <div className="p-8 lg:p-10">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-violet-200">
@@ -162,16 +156,7 @@ function Service() {
             </div>
 
             {/* Motto */}
-
             <div className="flex flex-col justify-center border-t border-white/10 bg-white/5 p-8 backdrop-blur-sm lg:border-l lg:border-t-0 lg:p-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-violet-200">
-                Our Motto
-              </p>
-
-              <h3 className="mt-6 text-4xl font-bold leading-tight">
-                “{commitment.motto}”
-              </h3>
-
               <div className="mt-8 h-1 w-16 rounded-full bg-violet-300" />
 
               <p className="mt-8 text-sm leading-8 text-violet-100">
@@ -180,10 +165,8 @@ function Service() {
                 that benefit both individuals and the wider community.
               </p>
             </div>
-
           </div>
         </Surface>
-
       </div>
     </section>
   );

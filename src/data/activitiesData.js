@@ -156,6 +156,4 @@ export const commitment = {
 
   description:
     "DAEHWA Cafe Community is more than a Korean culture community. We believe in supporting young people through education, creativity, leadership, cultural exchange, confidence-building, and community support while helping every member grow personally and professionally.",
-
-  motto: "Grow Yourself and Help Others Grow.",
 };
