@@ -1,10 +1,3 @@
-// Kimbap Workshop
-// import kimbap1 from "../assets/activities/kimbap/1.webp";
-// import kimbap2 from "../assets/activities/kimbap/2.webp";
-// import kimbap3 from "../assets/activities/kimbap/3.webp";
-// import kimbap4 from "../assets/activities/kimbap/4.webp";
-// import kimbap5 from "../assets/activities/kimbap/5.webp";
-
 export const activitiesHero = {
   badge: "Previous Activities",
 
@@ -48,20 +41,27 @@ export const activitySections = [
     ],
   },
 
-  // {
-  //   id: "kimbap",
+  {
+    id: "kimbap",
 
-  //   organization: "DAEHWA Cafe Community",
+    organization: "DAEHWA Cafe Community",
 
-  //   emoji: "🇰🇷",
+    emoji: "🇰🇷",
 
-  //   title: "Kimbap Making Workshop",
+    title: "Kimbap Making Workshop",
 
-  //   description:
-  //     "A Korean cultural food workshop where participants learned how to prepare Kimbap while exploring Korean food culture and traditions.",
+    description:
+      "A Korean cultural food workshop where participants learned how to prepare Kimbap while exploring Korean food culture and traditions.",
 
-  //   images: [kimbap1, kimbap2, kimbap3, kimbap4, kimbap5],
-  // },
+    media: [
+      { src: 'https://res.cloudinary.com/qohhuivq/image/upload/1_pqpepa.jpg' },
+      { src: 'https://res.cloudinary.com/qohhuivq/image/upload/2_eqsvow.jpg' },
+      { 
+        type: "video",
+        src: 'https://res.cloudinary.com/qohhuivq/video/upload/3_re7ede.mp4',
+      },
+    ],
+  },
 
   {
     id: "influencer",
@@ -94,7 +94,7 @@ export const activitySections = [
       "Orientation designed to help new team members and interns feel more confident and integrated into the DAEHWA Cafe Community.",
 
     highlights: [
-      "Team Building",
+      "ID Card Ceremony",
       "Leadership Development",
       "Communication Skills",
       "Collaboration and Teamwork",
@@ -102,11 +102,12 @@ export const activitySections = [
 
     media: [
       { src: 'https://res.cloudinary.com/qohhuivq/image/upload/1_pfihja.jpg' },
-      { src: 'https://res.cloudinary.com/qohhuivq/image/upload/2_fvkbke.jpg' },
-      { src: 'https://res.cloudinary.com/qohhuivq/image/upload/3_ojfk0o.jpg' },
+      { src: 'https://res.cloudinary.com/qohhuivq/image/upload/2_ojfk0o.jpg' },
+      { src: 'https://res.cloudinary.com/qohhuivq/image/upload/3_qmizou.jpg' },
+      { src: 'https://res.cloudinary.com/qohhuivq/image/upload/4_tbbf1r.jpg' },
       {
         type: "video",
-        src: 'https://res.cloudinary.com/qohhuivq/video/upload/4_p8jqkl.mp4',
+        src: 'https://res.cloudinary.com/qohhuivq/video/upload/v1783501508/5_p8jqkl.mp4',
       }
     ],
   },
