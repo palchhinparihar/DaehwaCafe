@@ -28,10 +28,6 @@ export const navLinks = [
     path: "/collaborate",
   },
   {
-    label: "Partnerships",
-    path: "/partnerships",
-  },
-  {
     label: "Contact",
     path: "/contact",
   },

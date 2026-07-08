@@ -15,7 +15,6 @@ import Service from "./pages/Service";
 import Activities from "./pages/Activities";
 import FutureProjects from "./pages/FutureProjects";
 import Collaborate from "./pages/Collaborate";
-import Partnerships from "./pages/Partnerships";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -42,7 +41,6 @@ function App() {
           <Route path="/activities" element={<Activities />} />
           <Route path="/future-projects" element={<FutureProjects />} />
           <Route path="/collaborate" element={<Collaborate />} />
-          <Route path="/partnerships" element={<Partnerships />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
