@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import ScrollToTop from "./components/common/ScrollToTop";
+import FloatingActivitiesButton from "./components/common/ActivitesButton";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <>
+      <FloatingActivitiesButton />
       <Navbar />
       <ScrollToTop />
 
