@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { Chip, Metric, SectionBadge, Surface } from '../components/layout/Ui.jsx';
 import Logo from '../assets/logo.png';
 import Mascot from '../assets/Mascot.png';
@@ -59,19 +60,26 @@ function Home() {
 
             {/* CTA */}
             <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#services"
+              <NavLink
+                to="/about"
+                className="rounded-full border border-violet-200 bg-white px-7 py-3.5 text-sm font-semibold text-violet-700 shadow-lg transition hover:border-violet-400 hover:bg-violet-50"
+              >
+                Know About Us
+              </NavLink>
+
+              <NavLink
+                to="/services"
                 className="rounded-full bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-600 px-7 py-3.5 text-sm font-semibold text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-violet-300/40"
               >
                 Explore Services
-              </a>
+              </NavLink>
 
-              <a
-                href="#contact"
+              <NavLink
+                to="/contact"
                 className="rounded-full border border-violet-200 bg-white px-7 py-3.5 text-sm font-semibold text-violet-700 shadow-lg transition hover:border-violet-400 hover:bg-violet-50"
               >
                 Contact Us
-              </a>
+              </NavLink>
             </div>
 
             {/* Pillars */}

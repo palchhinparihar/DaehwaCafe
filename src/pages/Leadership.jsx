@@ -56,7 +56,7 @@ function Leadership() {
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="h-56 w-full rounded-3xl border border-violet-100 object-cover shadow-lg lg:h-64"
+                    className="h-56 w-full rounded-3xl border border-violet-100 object-contain md:object-cover shadow-lg lg:h-64"
                   />
 
                   <div className="mt-5 flex items-center justify-center gap-3">
