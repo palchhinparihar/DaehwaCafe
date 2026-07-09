@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { FiArrowUpRight } from "react-icons/fi";
 import Logo from "../../assets/logo.png";
-import { footerSections } from "../../data/footerData";
+import { navLinks } from "../../data/navLinks";
 import { socialLinks } from "../../data/socialLinks";
 
 function Footer() {
@@ -48,23 +48,21 @@ function Footer() {
 							Explore
 						</h3>
 
-						<ul className="space-y-5">
-							{footerSections.map((section) =>
-								section.links.map((link, index) => (
-									<li key={link}>
-										<NavLink
-											to={section.paths[index]}
-											className="group inline-flex items-center gap-3 text-sm text-stone-300 transition-all duration-300 hover:text-violet-200"
+						<ul className="space-y-4">
+							{navLinks.map((link) => (
+								<li key={link.path}>
+									<NavLink
+										to={link.path}
+										className="group inline-flex items-center gap-3 text-sm text-stone-300 transition-all duration-300 hover:text-violet-200"
 										>
 											<span className="h-px w-0 bg-violet-400 transition-all duration-300 group-hover:w-7" />
 
-											<span>{link}</span>
+											<span>{link.label}</span>
 
 											<FiArrowUpRight className="opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
 										</NavLink>
 									</li>
-								))
-							)}
+								))}
 						</ul>
 					</div>
 
