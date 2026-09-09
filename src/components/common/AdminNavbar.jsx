@@ -47,7 +47,7 @@ const AdminNavbar = () => {
           <button
             type="button"
             onClick={handleLogout}
-            className="rounded-full bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-600 px-5 py-2 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+            className="rounded-full cursor-pointer bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-600 px-5 py-2 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
           >
             Logout
           </button>
