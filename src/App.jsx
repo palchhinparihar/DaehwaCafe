@@ -4,20 +4,10 @@ import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import Navbar from "./components/common/Navbar";
-import Footer from "./components/common/Footer";
-import ScrollToTop from "./components/common/ScrollToTop";
-import FloatingActivitiesButton from "./components/common/ActivitesButton";
-
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Leadership from "./pages/Leadership";
-import Service from "./pages/Service";
-import Activities from "./pages/Activities";
-import FutureProjects from "./pages/FutureProjects";
-import Collaborate from "./pages/Collaborate";
-import Contact from "./pages/Contact";
 import Login from "./pages/Login";
+import PublicLayout from "./layouts/PublicLayout";
+import AdminLayout from "./layouts/AdminLayout";
+import ProtectedRoute from "./components/common/ProtectedRoute";
 
 function App() {
   useEffect(() => {
@@ -30,27 +20,23 @@ function App() {
   }, []);
 
   return (
-    <>
-      <FloatingActivitiesButton />
-      <Navbar />
-      <ScrollToTop />
+    <Routes>
+      {/* Login */}
+      <Route path="/login" element={<Login />} />
 
-      <main className="min-h-screen">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/leadership" element={<Leadership />} />
-          <Route path="/services" element={<Service />} />
-          <Route path="/activities" element={<Activities />} />
-          <Route path="/future-projects" element={<FutureProjects />} />
-          <Route path="/collaborate" element={<Collaborate />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </main>
+      {/* Protected Admin */}
+      <Route
+        path="/admin/*"
+        element={
+          <ProtectedRoute>
+            <AdminLayout />
+          </ProtectedRoute>
+        }
+      />
 
-      <Footer />
-    </>
+      {/* Public Website */}
+      <Route path="*" element={<PublicLayout />} />
+    </Routes>
   );
 }
 

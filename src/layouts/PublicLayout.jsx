@@ -1,0 +1,42 @@
+import { Routes, Route } from "react-router-dom";
+
+import Navbar from "../components/common/Navbar";
+import Footer from "../components/common/Footer";
+import ScrollToTop from "../components/common/ScrollToTop";
+import FloatingActivitiesButton from "../components/common/ActivitesButton";
+
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Leadership from "../pages/Leadership";
+import Service from "../pages/Service";
+import Activities from "../pages/Activities";
+import FutureProjects from "../pages/FutureProjects";
+import Collaborate from "../pages/Collaborate";
+import Contact from "../pages/Contact";
+
+const PublicLayout = () => {
+  return (
+    <>
+      <FloatingActivitiesButton />
+      <Navbar />
+      <ScrollToTop />
+
+      <main className="min-h-screen">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/leadership" element={<Leadership />} />
+          <Route path="/services" element={<Service />} />
+          <Route path="/activities" element={<Activities />} />
+          <Route path="/future-projects" element={<FutureProjects />} />
+          <Route path="/collaborate" element={<Collaborate />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </>
+  );
+}
+
+export default PublicLayout;
