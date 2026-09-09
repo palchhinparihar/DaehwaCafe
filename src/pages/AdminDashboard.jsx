@@ -53,7 +53,11 @@ const AdminDashboard = () => {
         </NavLink>
 
         <div className="group cursor-pointer rounded-3xl border border-indigo-200/80 bg-white/80 p-7 shadow-[0_20px_70px_rgba(79,70,229,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-indigo-300 hover:shadow-[0_30px_80px_rgba(79,70,229,0.16)]">
-          <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-700 transition duration-300 group-hover:bg-indigo-700 group-hover:text-white">
+          <NavLink
+            to="/"
+            className="mt-6 text-sm font-bold text-indigo-700"
+          >
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-700 transition duration-300 group-hover:bg-indigo-700 group-hover:text-white">
             <FiGlobe size={25} aria-hidden="true" />
           </div>
 
@@ -61,21 +65,19 @@ const AdminDashboard = () => {
             View Website
           </h2>
 
-          <p className="mt-3 text-sm leading-6 text-stone-600">
+          <p className="mt-3 text-sm leading-6 font-normal text-stone-600">
             Open the public Daehwa Cafe website and see how visitors see your
             content.
           </p>
 
-          <NavLink
-            to="/"
-            className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-indigo-700"
-          >
-            Visit website
+          <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold">
+            Visit Website
             <FiArrowUpRight
               size={18}
               aria-hidden="true"
               className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
             />
+          </span>
           </NavLink>
         </div>
       </div>
