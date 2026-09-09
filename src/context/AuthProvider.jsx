@@ -1,4 +1,5 @@
-import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "./AuthContext";
+import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 
 const ADMIN_EMAILS = [

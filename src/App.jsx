@@ -17,6 +17,7 @@ import Activities from "./pages/Activities";
 import FutureProjects from "./pages/FutureProjects";
 import Collaborate from "./pages/Collaborate";
 import Contact from "./pages/Contact";
+import Login from "./pages/Login";
 
 function App() {
   useEffect(() => {
@@ -44,6 +45,7 @@ function App() {
           <Route path="/future-projects" element={<FutureProjects />} />
           <Route path="/collaborate" element={<Collaborate />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
 
