@@ -424,7 +424,7 @@ const AddEvent = () => {
               type="button"
               onClick={() => navigate("/admin/events")}
               disabled={loading}
-              className="rounded-full cursor-poiner border border-violet-200 bg-white/70 px-6 py-3 font-semibold text-violet-700 transition hover:-translate-y-0.5 hover:border-violet-300 hover:bg-violet-50 disabled:cursor-not-allowed disabled:opacity-50"
+              className="rounded-full cursor-pointer border border-violet-200 bg-white/70 px-6 py-3 font-semibold text-violet-700 transition hover:-translate-y-0.5 hover:border-violet-300 hover:bg-violet-50 disabled:cursor-not-allowed disabled:opacity-50"
             >
               Cancel
             </button>
