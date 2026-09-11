@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { FiEdit2, FiMapPin, FiPlus, FiTrash2 } from "react-icons/fi";
 
 const ManageEvents = () => {
@@ -47,14 +48,13 @@ const ManageEvents = () => {
             </p>
           </div>
 
-          <button
-            type="button"
+          <NavLink
+            to="/admin/add-event"
             className="inline-flex w-fit items-center gap-2 rounded-full bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-violet-300/40 transition duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-violet-300/50 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
-            onClick={() => console.log("Add event")}
           >
             <FiPlus aria-hidden="true" size={17} />
             Add event
-          </button>
+          </NavLink>
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-white/70 bg-white/80 shadow-[0_20px_60px_rgba(91,33,182,0.12)] backdrop-blur-sm">
