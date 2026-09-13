@@ -322,22 +322,22 @@ const EditEvent = () => {
       // -----------------------------
 
       const { data: updatedEvent, error: updateError } = await supabase
-  .from("events")
-  .update(eventData)
-  .eq("id", id)
-  .select();
+        .from("events")
+        .update(eventData)
+        .eq("id", id)
+        .select();
 
-if (updateError) {
-  throw updateError;
-}
+      if (updateError) {
+        throw updateError;
+      }
 
-console.log("Updated rows:", updatedEvent);
+      console.log("Updated rows:", updatedEvent);
 
-if (!updatedEvent || updatedEvent.length === 0) {
-  throw new Error(
-    "The event was not updated. Check the Supabase UPDATE policy."
-  );
-}
+      if (!updatedEvent || updatedEvent.length === 0) {
+        throw new Error(
+          "The event was not updated. Check the Supabase UPDATE policy."
+        );
+      }
 
       // -----------------------------
       // Back to Manage Events
@@ -349,7 +349,7 @@ if (!updatedEvent || updatedEvent.length === 0) {
 
       setError(
         err.message ||
-          "Something went wrong while updating the event."
+        "Something went wrong while updating the event."
       );
     } finally {
       setLoading(false);
