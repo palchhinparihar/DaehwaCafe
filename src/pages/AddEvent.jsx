@@ -111,7 +111,13 @@ const AddEvent = () => {
     );
 
     if (!response.ok) {
-      throw new Error("Cloudinary upload failed.");
+      const errorData = await response.json();
+
+      console.error("Cloudinary error:", errorData);
+
+      throw new Error(
+        errorData?.error?.message || "Cloudinary upload failed."
+      );
     }
 
     const data = await response.json();
@@ -129,23 +135,63 @@ const AddEvent = () => {
     setError("");
 
     try {
-      if (images.length > 5) {
-        throw new Error("You can upload a maximum of 5 images.");
-      }
+      // -----------------------------
+      // Validate Required Fields
+      // -----------------------------
 
       if (!formData.title.trim()) {
         throw new Error("Please enter an event title.");
+      }
+
+      if (!formData.event_type) {
+        throw new Error("Please select an event type.");
       }
 
       if (!formData.date) {
         throw new Error("Please select an event date.");
       }
 
+      if (!formData.location.trim()) {
+        throw new Error("Please enter an event location.");
+      }
+
+      if (!formData.category.trim()) {
+        throw new Error("Please enter an event category.");
+      }
+
       if (!formData.description.trim()) {
         throw new Error("Please enter an event description.");
       }
 
-      // Create folder name from event title
+      // -----------------------------
+      // Convert Tags to Array
+      // -----------------------------
+
+      const tagsArray = formData.tags
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean);
+
+      if (tagsArray.length === 0) {
+        throw new Error("Please add at least one tag.");
+      }
+
+      // -----------------------------
+      // Validate Images
+      // -----------------------------
+
+      if (images.length === 0) {
+        throw new Error("Please upload at least one event image.");
+      }
+
+      if (images.length > 5) {
+        throw new Error("You can upload a maximum of 5 images.");
+      }
+
+      // -----------------------------
+      // Create Cloudinary Folder
+      // -----------------------------
+
       const eventFolder = `daehwacafe/${formData.title
         .trim()
         .replace(/\s+/g, "-")
@@ -154,6 +200,7 @@ const AddEvent = () => {
       // -----------------------------
       // Upload Images
       // -----------------------------
+
       const imageUrls = await Promise.all(
         images.map((image) =>
           uploadToCloudinary(image, eventFolder)
@@ -161,8 +208,9 @@ const AddEvent = () => {
       );
 
       // -----------------------------
-      // Upload Video
+      // Upload Video (Optional)
       // -----------------------------
+
       let videoUrl = null;
 
       if (video) {
@@ -170,27 +218,24 @@ const AddEvent = () => {
       }
 
       // -----------------------------
-      // Convert tags to array
+      // Prepare Event Data
       // -----------------------------
-      const tagsArray = formData.tags
-        .split(",")
-        .map((tag) => tag.trim())
-        .filter(Boolean);
 
-      // -----------------------------
-      // Save event to Supabase
-      // -----------------------------
       const eventData = {
         title: formData.title.trim(),
         event_type: formData.event_type,
         date: formData.date,
         location: formData.location.trim(),
-        category: formData.category.trim() || null,
+        category: formData.category.trim(),
         description: formData.description.trim(),
-        tags: tagsArray.length > 0 ? tagsArray : null,
-        images: imageUrls.length > 0 ? imageUrls : null,
+        tags: tagsArray,
+        images: imageUrls,
         video: videoUrl,
       };
+
+      // -----------------------------
+      // Save Event to Supabase
+      // -----------------------------
 
       const { error: insertError } = await supabase
         .from("events")
@@ -200,7 +245,10 @@ const AddEvent = () => {
         throw insertError;
       }
 
-      // Go back to Manage Events
+      // -----------------------------
+      // Go Back to Manage Events
+      // -----------------------------
+
       navigate("/admin/events");
     } catch (err) {
       console.error("Error adding event:", err);
@@ -216,6 +264,7 @@ const AddEvent = () => {
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(246,237,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdfd_0%,_#f6efff_48%,_#efe4ff_100%)] px-6 py-12 text-stone-900 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-4xl">
+
         {/* Header */}
         <div className="mb-8">
           <span className="inline-flex items-center gap-2 rounded-full border border-violet-200/80 bg-white/75 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-violet-700 shadow-sm backdrop-blur">
@@ -236,6 +285,7 @@ const AddEvent = () => {
           onSubmit={handleSubmit}
           className="space-y-7 rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-[0_24px_70px_rgba(91,33,182,0.08)] backdrop-blur sm:p-10"
         >
+
           {/* Event Title */}
           <FormField
             label="Event Title"
@@ -291,11 +341,11 @@ const AddEvent = () => {
             value={formData.category}
             onChange={handleChange}
             placeholder="e.g. Workshop, Cultural Event"
-            optional
+            required
           />
 
           <p className="-mt-5 text-xs text-stone-500">
-            Add one category that describes the event type.
+            Add the category that best describes the event.
           </p>
 
           {/* Description */}
@@ -317,7 +367,7 @@ const AddEvent = () => {
             value={formData.tags}
             onChange={handleChange}
             placeholder="Korea, Culture, Community, Workshop"
-            optional
+            required
           />
 
           <p className="-mt-4 text-xs text-gray-500">
@@ -341,7 +391,7 @@ const AddEvent = () => {
 
             <div className="mt-2 flex items-center justify-between gap-4">
               <p className="text-xs text-stone-500">
-                Upload up to 5 images.
+                Upload 1 to 5 images. At least one image is required.
               </p>
 
               <p className="text-xs font-semibold text-violet-600">
@@ -368,9 +418,13 @@ const AddEvent = () => {
                       type="button"
                       onClick={() => handleRemoveImage(index)}
                       aria-label={`Remove ${image.name}`}
-                      className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full text-lg font-medium leading-none text-white transition cursor-pointer"
+                      className="absolute right-2 top-2 flex h-7 w-7 cursor-pointer items-center justify-center rounded-full text-lg font-medium leading-none text-white transition"
                     >
-                      <IoCloseCircle aria-hidden="true" size={26} className="text-red-200 bg-red-600 hover:bg-red-700 rounded" />
+                      <IoCloseCircle
+                        aria-hidden="true"
+                        size={26}
+                        className="rounded bg-red-600 text-red-200 hover:bg-red-700"
+                      />
                     </button>
 
                     <p className="truncate px-3 py-2 text-xs text-stone-500">
@@ -386,6 +440,7 @@ const AddEvent = () => {
           <div>
             <label className="mb-2 block text-sm font-bold text-stone-900">
               Event Video
+
               <span className="ml-2 text-xs font-medium uppercase tracking-[0.12em] text-stone-400">
                 (Optional)
               </span>
@@ -399,7 +454,7 @@ const AddEvent = () => {
             />
 
             <p className="mt-2 text-xs text-stone-500">
-              Upload one event video.
+              Upload one event video if available.
             </p>
 
             {video && (
@@ -424,7 +479,7 @@ const AddEvent = () => {
               type="button"
               onClick={() => navigate("/admin/events")}
               disabled={loading}
-              className="rounded-full cursor-pointer border border-violet-200 bg-white/70 px-6 py-3 font-semibold text-violet-700 transition hover:-translate-y-0.5 hover:border-violet-300 hover:bg-violet-50 disabled:cursor-not-allowed disabled:opacity-50"
+              className="cursor-pointer rounded-full border border-violet-200 bg-white/70 px-6 py-3 font-semibold text-violet-700 transition hover:-translate-y-0.5 hover:border-violet-300 hover:bg-violet-50 disabled:cursor-not-allowed disabled:opacity-50"
             >
               Cancel
             </button>
@@ -432,11 +487,12 @@ const AddEvent = () => {
             <button
               type="submit"
               disabled={loading}
-              className="rounded-full cursor-pointer bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow-[0_12px_24px_rgba(124,58,237,0.22)] transition hover:-translate-y-0.5 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50"
+              className="cursor-pointer rounded-full bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow-[0_12px_24px_rgba(124,58,237,0.22)] transition hover:-translate-y-0.5 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? "Uploading & Adding..." : "Add Event"}
             </button>
           </div>
+
         </form>
       </div>
     </div>
