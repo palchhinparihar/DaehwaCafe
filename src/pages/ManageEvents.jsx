@@ -267,11 +267,10 @@ const ManageEvents = () => {
                           {/* Status */}
                           <td className="px-6 py-5">
                             <span
-                              className={`inline-flex rounded-full px-3 py-1 text-xs font-bold ${
-                                status === "Upcoming"
+                              className={`inline-flex rounded-full px-3 py-1 text-xs font-bold ${status === "Upcoming"
                                   ? "bg-emerald-100 text-emerald-700"
                                   : "bg-slate-100 text-slate-600"
-                              }`}
+                                }`}
                             >
                               {status}
                             </span>
@@ -283,9 +282,8 @@ const ManageEvents = () => {
                               {event.images?.length > 0 && (
                                 <span
                                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500"
-                                  title={`${event.images.length} image${
-                                    event.images.length > 1 ? "s" : ""
-                                  }`}
+                                  title={`${event.images.length} image${event.images.length > 1 ? "s" : ""
+                                    }`}
                                 >
                                   <FiImage
                                     aria-hidden="true"
@@ -322,20 +320,17 @@ const ManageEvents = () => {
                           <td className="px-6 py-5">
                             <div className="flex justify-end gap-2">
                               {/* Edit */}
-                              <button
-                                type="button"
+                              <NavLink
+                                to={`/admin/events/edit/${event.id}`}
                                 aria-label={`Edit ${event.title}`}
                                 title={`Edit ${event.title}`}
-                                className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-violet-200 text-violet-600 transition hover:border-violet-300 hover:bg-violet-100 hover:text-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
-                                onClick={() =>
-                                  console.log("Edit event:", event.id)
-                                }
+                                className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-violet-200 text-violet-600 transition hover:border-violet-300 hover:bg-violet-200 hover:text-violet-800 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
                               >
                                 <FiEdit2
                                   aria-hidden="true"
                                   size={16}
                                 />
-                              </button>
+                              </NavLink>
 
                               {/* Delete */}
                               <button
