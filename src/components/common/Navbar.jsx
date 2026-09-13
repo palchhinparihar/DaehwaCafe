@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className="hidden shrink-0 items-center gap-3 xl:flex">
           <NavLink
             to="/contact"
-            className="whitespace-nowrap rounded-full border border-violet-300/20 bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-600 transition duration-300 hover:-translate-y-1 hover:shadow-violet-300/40 px-5 py-2 text-sm font-semibold text-slate-100 transition hover:bg-white/12"
+            className="whitespace-nowrap !text-white rounded-full border border-violet-300/20 bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-600 transition duration-300 hover:-translate-y-1 hover:shadow-violet-300/40 px-5 py-2 text-sm font-medium text-slate-100 transition hover:bg-white/12"
           >
             Get in touch
           </NavLink>
@@ -77,7 +77,7 @@ const Navbar = () => {
           <NavLink
             to="/contact"
             onClick={handleNavigate}
-            className="mt-2 rounded-2xl bg-[linear-gradient(135deg,#7c3aed_0%,#a855f7_52%,#4f46e5_100%)] px-4 py-3 text-sm font-semibold text-white shadow-[0_16px_30px_rgba(79,70,229,0.22)]"
+            className="mt-2 rounded-2xl bg-[linear-gradient(135deg,#7c3aed_0%,#a855f7_52%,#4f46e5_100%)] px-4 py-3 text-sm font-semibold !text-white shadow-[0_16px_30px_rgba(79,70,229,0.22)]"
           >
             Get in touch
           </NavLink>

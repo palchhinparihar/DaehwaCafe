@@ -69,7 +69,7 @@ function Home() {
 
               <NavLink
                 to="/services"
-                className="rounded-full bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-600 px-7 py-3.5 text-sm font-semibold text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-violet-300/40"
+                className="rounded-full bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-600 px-7 py-3.5 text-sm font-semibold !text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-violet-300/40"
               >
                 Explore Services
               </NavLink>
