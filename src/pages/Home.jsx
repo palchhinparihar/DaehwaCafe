@@ -107,7 +107,7 @@ function Home() {
 
             {/* Floating Card */}
             <Surface className="absolute left-0 top-4 hidden w-48 p-4 lg:block z-10">
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-violet-700">
+              <p className="text-lg font-bold uppercase tracking-[0.25em] text-violet-700">
                 Community
               </p>
 
@@ -126,7 +126,7 @@ function Home() {
 
             {/* Floating Card */}
             <Surface className="absolute z-10 -bottom-13 -right-5 hidden w-56 p-4 lg:block">
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-indigo-700">
+              <p className="text-lg font-bold uppercase tracking-[0.25em] text-indigo-700">
                 TalkRoom
               </p>
 
