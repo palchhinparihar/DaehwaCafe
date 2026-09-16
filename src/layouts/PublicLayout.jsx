@@ -10,6 +10,7 @@ import About from "../pages/About";
 import Leadership from "../pages/Leadership";
 import Service from "../pages/Service";
 import Activities from "../pages/Activities";
+import Activity from "../pages/Activity";
 import FutureProjects from "../pages/FutureProjects";
 import Collaborate from "../pages/Collaborate";
 import Contact from "../pages/Contact";
@@ -28,6 +29,7 @@ const PublicLayout = () => {
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/services" element={<Service />} />
           <Route path="/activities" element={<Activities />} />
+          <Route path="/activity/:id" element={<Activity />} />
           <Route path="/future-projects" element={<FutureProjects />} />
           <Route path="/collaborate" element={<Collaborate />} />
           <Route path="/contact" element={<Contact />} />
