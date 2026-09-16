@@ -19,32 +19,34 @@ const EventForm = ({
   const [imagePreviews, setImagePreviews] = useState([]);
   const [videoPreview, setVideoPreview] = useState(null);
 
-  // Create and clean up temporary image preview URLs
+  // Create and clean up image preview URLs
   useEffect(() => {
     const previews = images.map((image) => {
       if (typeof image === "string") {
-        return image;
+        return {
+          url: image,
+          isObjectUrl: false,
+        };
       }
 
-      return URL.createObjectURL(image);
+      return {
+        url: URL.createObjectURL(image),
+        isObjectUrl: true,
+      };
     });
 
     setImagePreviews(previews);
 
     return () => {
-      images.forEach((image) => {
-        if (typeof image !== "string") {
-          const url = previews[images.indexOf(image)];
-
-          if (url) {
-            URL.revokeObjectURL(url);
-          }
+      previews.forEach((preview) => {
+        if (preview.isObjectUrl) {
+          URL.revokeObjectURL(preview.url);
         }
       });
     };
   }, [images]);
 
-  // Create and clean up temporary video preview URL
+  // Create and clean up video preview URL
   useEffect(() => {
     if (!video) {
       setVideoPreview(null);
@@ -174,15 +176,15 @@ const EventForm = ({
           Upload 1 to 5 images.
         </p>
 
-        {images.length > 0 && (
+        {imagePreviews.length > 0 && (
           <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
-            {images.map((image, index) => (
+            {imagePreviews.map((preview, index) => (
               <div
-                key={`${typeof image === "string" ? image : image.name}-${index}`}
+                key={`${preview.url}-${index}`}
                 className="relative overflow-hidden rounded-lg border border-gray-200"
               >
                 <img
-                  src={imagePreviews[index]}
+                  src={preview.url}
                   alt={`Event preview ${index + 1}`}
                   className="h-32 w-full object-cover"
                 />
