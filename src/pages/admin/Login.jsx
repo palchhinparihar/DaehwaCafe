@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
-import Logo from "../assets/logo.png";
+import { AuthContext } from "../../context/AuthContext";
+import Logo from "../../assets/full-logo.png";
 
 function Login() {
   const navigate = useNavigate();

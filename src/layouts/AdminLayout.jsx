@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 
 import AdminNavbar from "../components/common/AdminNavbar";
-import AdminDashboard from "../pages/AdminDashboard";
-import ManageEvents from "../pages/ManageEvents";
-import AddEvent from "../pages/AddEvent";
-import EditEvent from "../pages/EditEvent";
+import AdminDashboard from "../pages/admin/AdminDashboard";
+import ManageEvents from "../pages/admin/ManageEvents";
+import AddEvent from "../pages/admin/AddEvent";
+import EditEvent from "../pages/admin/EditEvent";
 
 const AdminLayout = () => {
   return (

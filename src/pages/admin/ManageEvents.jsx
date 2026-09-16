@@ -9,7 +9,7 @@ import {
   FiVideo,
 } from "react-icons/fi";
 
-import { supabase } from "../lib/supabase";
+import { supabase } from "../../lib/supabase";
 
 const ManageEvents = () => {
   const [events, setEvents] = useState([]);

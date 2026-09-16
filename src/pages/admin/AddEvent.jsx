@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoCloseCircle } from "react-icons/io5";
 
-import { supabase } from "../lib/supabase";
-import FormField from "../components/common/FormField";
+import { supabase } from "../../lib/supabase";
+import FormField from "../../components/layout/FormField";
 
 const CLOUDINARY_CLOUD_NAME = "qohhuivq";
 const CLOUDINARY_UPLOAD_PRESET = "DaehwaCafe";

@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import Login from "./pages/Login";
+import Login from "./pages/admin/Login";
 import PublicLayout from "./layouts/PublicLayout";
 import AdminLayout from "./layouts/AdminLayout";
 import ProtectedRoute from "./components/common/ProtectedRoute";
