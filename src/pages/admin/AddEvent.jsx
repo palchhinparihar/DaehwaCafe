@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { IoCloseCircle } from "react-icons/io5";
 
 import { supabase } from "../../lib/supabase";
-import FormField from "../../components/layout/FormField";
+import EventForm from "../../components/layout/EventForm";
 
-const CLOUDINARY_CLOUD_NAME = "qohhuivq";
-const CLOUDINARY_UPLOAD_PRESET = "DaehwaCafe";
+const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+const CLOUDINARY_UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
 
 const AddEvent = () => {
   const navigate = useNavigate();
@@ -27,6 +26,9 @@ const AddEvent = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // -----------------------------
+  // Form Change
+  // -----------------------------
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -50,7 +52,6 @@ const AddEvent = () => {
 
     setImages((prevImages) => {
       const remainingSlots = 5 - prevImages.length;
-
       const filesToAdd = selectedFiles.slice(0, remainingSlots);
 
       if (selectedFiles.length > remainingSlots) {
@@ -90,10 +91,21 @@ const AddEvent = () => {
 
     setVideo(selectedFile);
     setError("");
+
+    // Reset input so the same file can be selected again
+    e.target.value = "";
   };
 
   // -----------------------------
-  // Upload file to Cloudinary
+  // Remove Video
+  // -----------------------------
+  const handleRemoveVideo = () => {
+    setVideo(null);
+    setError("");
+  };
+
+  // -----------------------------
+  // Upload File to Cloudinary
   // -----------------------------
   const uploadToCloudinary = async (file, folder) => {
     const uploadData = new FormData();
@@ -264,7 +276,6 @@ const AddEvent = () => {
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(246,237,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdfd_0%,_#f6efff_48%,_#efe4ff_100%)] px-6 py-12 text-stone-900 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-4xl">
-
         {/* Header */}
         <div className="mb-8">
           <span className="inline-flex items-center gap-2 rounded-full border border-violet-200/80 bg-white/75 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-violet-700 shadow-sm backdrop-blur">
@@ -281,219 +292,24 @@ const AddEvent = () => {
           </p>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-7 rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-[0_24px_70px_rgba(91,33,182,0.08)] backdrop-blur sm:p-10"
-        >
-
-          {/* Event Title */}
-          <FormField
-            label="Event Title"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            placeholder="Enter event title"
-            required
+        {/* Event Form */}
+        <div className="rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-[0_24px_70px_rgba(91,33,182,0.08)] backdrop-blur sm:p-10">
+          <EventForm
+            formData={formData}
+            handleChange={handleChange}
+            images={images}
+            video={video}
+            handleImageChange={handleImageChange}
+            handleVideoChange={handleVideoChange}
+            removeImage={handleRemoveImage}
+            removeVideo={handleRemoveVideo}
+            loading={loading}
+            error={error}
+            onSubmit={handleSubmit}
+            onCancel={() => navigate("/admin/events")}
+            submitText="Add Event"
           />
-
-          {/* Event Type */}
-          <FormField
-            label="Event Type"
-            name="event_type"
-            type="select"
-            value={formData.event_type}
-            onChange={handleChange}
-            required
-          >
-            <option value="Daehwa Cafe Community">
-              Daehwa Cafe Community
-            </option>
-
-            <option value="Daehwa Cafe Talkroom">
-              Daehwa Cafe Talkroom
-            </option>
-          </FormField>
-
-          {/* Date */}
-          <FormField
-            label="Date"
-            name="date"
-            type="date"
-            value={formData.date}
-            onChange={handleChange}
-            required
-          />
-
-          {/* Location */}
-          <FormField
-            label="Location"
-            name="location"
-            value={formData.location}
-            onChange={handleChange}
-            placeholder="Enter event location"
-            required
-          />
-
-          {/* Category */}
-          <FormField
-            label="Category"
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            placeholder="e.g. Workshop, Cultural Event"
-            required
-          />
-
-          <p className="-mt-5 text-xs text-stone-500">
-            Add the category that best describes the event.
-          </p>
-
-          {/* Description */}
-          <FormField
-            label="Description"
-            name="description"
-            type="textarea"
-            value={formData.description}
-            onChange={handleChange}
-            placeholder="Describe the event..."
-            rows={6}
-            required
-          />
-
-          {/* Tags */}
-          <FormField
-            label="Tags"
-            name="tags"
-            value={formData.tags}
-            onChange={handleChange}
-            placeholder="Korea, Culture, Community, Workshop"
-            required
-          />
-
-          <p className="-mt-4 text-xs text-gray-500">
-            Add relevant topics or keywords, separated by commas.
-          </p>
-
-          {/* Images */}
-          <div>
-            <label className="mb-2 block text-sm font-bold text-stone-900">
-              Event Images
-            </label>
-
-            <input
-              type="file"
-              accept="image/*"
-              multiple
-              onChange={handleImageChange}
-              disabled={images.length >= 5}
-              className="block w-full cursor-pointer rounded-2xl border border-dashed border-violet-200 bg-violet-50/60 px-4 py-3 text-sm font-medium text-stone-600 file:mr-4 file:cursor-pointer file:rounded-full file:border-0 file:bg-violet-700 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:border-violet-400 file:hover:bg-violet-800 disabled:cursor-not-allowed disabled:opacity-50"
-            />
-
-            <div className="mt-2 flex items-center justify-between gap-4">
-              <p className="text-xs text-stone-500">
-                Upload 1 to 5 images. At least one image is required.
-              </p>
-
-              <p className="text-xs font-semibold text-violet-600">
-                {images.length}/5 images selected
-              </p>
-            </div>
-
-            {/* Image Preview */}
-            {images.length > 0 && (
-              <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
-                {images.map((image, index) => (
-                  <div
-                    key={`${image.name}-${index}`}
-                    className="relative overflow-hidden rounded-2xl border border-violet-100 bg-white/70 shadow-sm"
-                  >
-                    <img
-                      src={URL.createObjectURL(image)}
-                      alt={`Event preview ${index + 1}`}
-                      className="h-32 w-full object-cover"
-                    />
-
-                    {/* Remove Button */}
-                    <button
-                      type="button"
-                      onClick={() => handleRemoveImage(index)}
-                      aria-label={`Remove ${image.name}`}
-                      className="absolute right-2 top-2 flex h-7 w-7 cursor-pointer items-center justify-center rounded-full text-lg font-medium leading-none text-white transition"
-                    >
-                      <IoCloseCircle
-                        aria-hidden="true"
-                        size={26}
-                        className="rounded bg-red-600 text-red-200 hover:bg-red-700"
-                      />
-                    </button>
-
-                    <p className="truncate px-3 py-2 text-xs text-stone-500">
-                      {image.name}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Video */}
-          <div>
-            <label className="mb-2 block text-sm font-bold text-stone-900">
-              Event Video
-
-              <span className="ml-2 text-xs font-medium uppercase tracking-[0.12em] text-stone-400">
-                (Optional)
-              </span>
-            </label>
-
-            <input
-              type="file"
-              accept="video/*"
-              onChange={handleVideoChange}
-              className="block w-full cursor-pointer rounded-2xl border border-dashed border-violet-200 bg-violet-50/60 px-4 py-3 text-sm font-medium text-stone-600 file:mr-4 file:cursor-pointer file:rounded-full file:border-0 file:bg-violet-700 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:border-violet-400 file:hover:bg-violet-800"
-            />
-
-            <p className="mt-2 text-xs text-stone-500">
-              Upload one event video if available.
-            </p>
-
-            {video && (
-              <div className="mt-4 rounded-2xl border border-violet-100 bg-white/70 p-3 shadow-sm">
-                <p className="truncate text-sm text-stone-600">
-                  {video.name}
-                </p>
-              </div>
-            )}
-          </div>
-
-          {/* Error */}
-          {error && (
-            <div className="rounded-2xl border border-rose-200 bg-rose-50/80 px-4 py-3 text-sm font-medium text-rose-700">
-              {error}
-            </div>
-          )}
-
-          {/* Buttons */}
-          <div className="flex flex-wrap gap-4 border-t border-violet-100 pt-7">
-            <button
-              type="button"
-              onClick={() => navigate("/admin/events")}
-              disabled={loading}
-              className="cursor-pointer rounded-full border border-violet-200 bg-white/70 px-6 py-3 font-semibold text-violet-700 transition hover:-translate-y-0.5 hover:border-violet-300 hover:bg-violet-50 disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              Cancel
-            </button>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="cursor-pointer rounded-full bg-gradient-to-r from-violet-700 via-fuchsia-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow-[0_12px_24px_rgba(124,58,237,0.22)] transition hover:-translate-y-0.5 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              {loading ? "Uploading & Adding..." : "Add Event"}
-            </button>
-          </div>
-
-        </form>
+        </div>
       </div>
     </div>
   );
