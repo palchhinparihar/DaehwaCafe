@@ -29,7 +29,7 @@ function Activities() {
       const { data, error } = await supabase
         .from("events")
         .select("*")
-        .order("date", { ascending: false });
+        .order("start_date", { ascending: false });
 
       if (error) {
         console.error("Error fetching events:", error);

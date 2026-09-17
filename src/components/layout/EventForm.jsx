@@ -142,6 +142,7 @@ const EventForm = ({
 
   return (
     <form onSubmit={onSubmit} className="space-y-8">
+      {/* 01 / Details */}
       <section className="space-y-5 rounded-[1.5rem] border border-violet-100 bg-violet-50/45 p-5 sm:p-6">
         <div className="flex items-end justify-between gap-4 border-b border-violet-100 pb-4">
           <div>
@@ -185,14 +186,30 @@ const EventForm = ({
           </option>
         </FormField>
 
-        <FormField
-          label="Date"
-          name="date"
-          type="date"
-          value={formData.date}
-          onChange={handleChange}
-          required
-        />
+        {/* Event Dates */}
+        <div className="grid gap-5 sm:grid-cols-2">
+          <FormField
+            label="Start Date"
+            name="start_date"
+            type="date"
+            value={formData.start_date}
+            onChange={handleChange}
+            required
+          />
+
+          <FormField
+            label="End Date"
+            name="end_date"
+            type="date"
+            value={formData.end_date}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <p className="-mt-2 text-xs text-stone-500">
+          For a one-day event, select the same date for both fields.
+        </p>
 
         <FormField
           label="Location"

@@ -8,6 +8,7 @@ import {
 
 import Carousel from "./Carousel.jsx";
 import { Surface } from "./Ui.jsx";
+import { formatDate } from "../../utils/formatDate.js";
 
 const DESCRIPTION_LIMIT = 100;
 
@@ -18,6 +19,19 @@ function EventCard({ event, index }) {
   const shortDescription = isLongDescription
     ? `${description.slice(0, DESCRIPTION_LIMIT).trim()}...`
     : description;
+
+  const getEventDate = () => {
+    if (!event.start_date) return "Date not available";
+
+    const startDate = formatDate(event.start_date, false);
+    const endDate = formatDate(event.end_date);
+
+    if (!endDate || event.start_date === event.end_date) {
+      return formatDate(event.start_date);
+    }
+
+    return `${startDate} - ${endDate}`;
+  };
 
   return (
     <Surface
@@ -57,7 +71,7 @@ function EventCard({ event, index }) {
                   aria-hidden="true"
                 />
 
-                <span>{event.date}</span>
+                <span>{getEventDate()}</span>
 
                 {event.time && (
                   <>

@@ -27,7 +27,7 @@ const ManageEvents = () => {
       const { data, error: fetchError } = await supabase
         .from("events")
         .select("*")
-        .order("date", { ascending: false });
+        .order("start_date", { ascending: false });
 
       if (fetchError) {
         throw fetchError;
@@ -50,7 +50,7 @@ const ManageEvents = () => {
   }, []);
 
   // -----------------------------
-  // Format Date
+  // Format Single Date
   // -----------------------------
   const formatDate = (date) => {
     if (!date) return "—";
@@ -63,18 +63,66 @@ const ManageEvents = () => {
   };
 
   // -----------------------------
+  // Format Event Date / Range
+  // -----------------------------
+  const formatEventDate = (startDate, endDate) => {
+    if (!startDate) return "—";
+
+    if (!endDate || startDate === endDate) {
+      return formatDate(startDate);
+    }
+
+    const start = new Date(`${startDate}T00:00:00`);
+    const end = new Date(`${endDate}T00:00:00`);
+
+    const startDay = start.toLocaleDateString("en-IN", {
+      day: "numeric",
+    });
+
+    const endFormatted = end.toLocaleDateString("en-IN", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
+
+    const startMonth = start.toLocaleDateString("en-IN", {
+      month: "short",
+    });
+
+    const startYear = start.getFullYear();
+    const endYear = end.getFullYear();
+
+    // Same month and year
+    if (startMonth === endFormatted.split(" ")[1] && startYear === endYear) {
+      return `${startDay} – ${endFormatted}`;
+    }
+
+    // Different month/year
+    return `${formatDate(startDate)} – ${formatDate(endDate)}`;
+  };
+
+  // -----------------------------
   // Event Status
   // -----------------------------
-  const getEventStatus = (date) => {
-    if (!date) return "Unknown";
+  const getEventStatus = (startDate, endDate) => {
+    if (!startDate) return "Unknown";
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    const eventDate = new Date(`${date}T00:00:00`);
-    eventDate.setHours(0, 0, 0, 0);
+    const eventStartDate = new Date(`${startDate}T00:00:00`);
+    eventStartDate.setHours(0, 0, 0, 0);
 
-    return eventDate >= today ? "Upcoming" : "Past";
+    const eventEndDate = new Date(
+      `${(endDate || startDate)}T00:00:00`
+    );
+    eventEndDate.setHours(0, 0, 0, 0);
+
+    if (eventEndDate >= today) {
+      return "Upcoming";
+    }
+
+    return "Past";
   };
 
   // -----------------------------
@@ -211,7 +259,10 @@ const ManageEvents = () => {
                 <tbody>
                   {events.length > 0 ? (
                     events.map((event) => {
-                      const status = getEventStatus(event.date);
+                      const status = getEventStatus(
+                        event.start_date,
+                        event.end_date
+                      );
 
                       return (
                         <tr
@@ -234,7 +285,10 @@ const ManageEvents = () => {
                           {/* Date */}
                           <td className="px-6 py-5">
                             <p className="whitespace-nowrap text-sm font-medium text-slate-600">
-                              {formatDate(event.date)}
+                              {formatEventDate(
+                                event.start_date,
+                                event.end_date
+                              )}
                             </p>
                           </td>
 
@@ -267,10 +321,11 @@ const ManageEvents = () => {
                           {/* Status */}
                           <td className="px-6 py-5">
                             <span
-                              className={`inline-flex rounded-full px-3 py-1 text-xs font-bold ${status === "Upcoming"
+                              className={`inline-flex rounded-full px-3 py-1 text-xs font-bold ${
+                                status === "Upcoming"
                                   ? "bg-emerald-100 text-emerald-700"
                                   : "bg-slate-100 text-slate-600"
-                                }`}
+                              }`}
                             >
                               {status}
                             </span>
@@ -282,8 +337,11 @@ const ManageEvents = () => {
                               {event.images?.length > 0 && (
                                 <span
                                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500"
-                                  title={`${event.images.length} image${event.images.length > 1 ? "s" : ""
-                                    }`}
+                                  title={`${event.images.length} image${
+                                    event.images.length > 1
+                                      ? "s"
+                                      : ""
+                                  }`}
                                 >
                                   <FiImage
                                     aria-hidden="true"
@@ -308,11 +366,12 @@ const ManageEvents = () => {
                                 </span>
                               )}
 
-                              {!event.images?.length && !event.video && (
-                                <span className="text-sm text-slate-400">
-                                  —
-                                </span>
-                              )}
+                              {!event.images?.length &&
+                                !event.video && (
+                                  <span className="text-sm text-slate-400">
+                                    —
+                                  </span>
+                                )}
                             </div>
                           </td>
 
@@ -339,7 +398,10 @@ const ManageEvents = () => {
                                 title={`Delete ${event.title}`}
                                 className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-rose-200 text-rose-600 transition hover:border-rose-300 hover:bg-rose-50 hover:text-rose-800 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2"
                                 onClick={() =>
-                                  handleDelete(event.id, event.title)
+                                  handleDelete(
+                                    event.id,
+                                    event.title
+                                  )
                                 }
                               >
                                 <FiTrash2

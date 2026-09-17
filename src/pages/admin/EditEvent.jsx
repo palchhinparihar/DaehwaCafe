@@ -17,7 +17,8 @@ const EditEvent = () => {
   const [formData, setFormData] = useState({
     title: "",
     event_type: "Daehwa Cafe Community",
-    date: "",
+    start_date: "",
+    end_date: "",
     location: "Delhi",
     category: "",
     description: "",
@@ -55,8 +56,10 @@ const EditEvent = () => {
 
         setFormData({
           title: data.title || "",
-          event_type: data.event_type || "Daehwa Cafe Community",
-          date: data.date || "",
+          event_type:
+            data.event_type || "Daehwa Cafe Community",
+          start_date: data.start_date || "",
+          end_date: data.end_date || "",
           location: data.location || "Delhi",
           category: data.category || "",
           description: data.description || "",
@@ -65,14 +68,17 @@ const EditEvent = () => {
             : data.tags || "",
         });
 
-        setImages(Array.isArray(data.images) ? data.images : []);
+        setImages(
+          Array.isArray(data.images) ? data.images : []
+        );
 
         setVideo(data.video || null);
       } catch (err) {
         console.error("Error fetching event:", err);
 
         setError(
-          err.message || "Something went wrong while loading the event."
+          err.message ||
+            "Something went wrong while loading the event."
         );
       } finally {
         setLoading(false);
@@ -131,7 +137,9 @@ const EditEvent = () => {
   // -----------------------------
   const handleRemoveImage = (indexToRemove) => {
     setImages((prevImages) =>
-      prevImages.filter((_, index) => index !== indexToRemove)
+      prevImages.filter(
+        (_, index) => index !== indexToRemove
+      )
     );
 
     setError("");
@@ -169,7 +177,10 @@ const EditEvent = () => {
     const uploadData = new FormData();
 
     uploadData.append("file", file);
-    uploadData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+    uploadData.append(
+      "upload_preset",
+      CLOUDINARY_UPLOAD_PRESET
+    );
     uploadData.append("folder", folder);
 
     const response = await fetch(
@@ -186,7 +197,8 @@ const EditEvent = () => {
       console.error("Cloudinary error:", errorData);
 
       throw new Error(
-        errorData?.error?.message || "Cloudinary upload failed."
+        errorData?.error?.message ||
+          "Cloudinary upload failed."
       );
     }
 
@@ -217,8 +229,18 @@ const EditEvent = () => {
         throw new Error("Please select an event type.");
       }
 
-      if (!formData.date) {
-        throw new Error("Please select an event date.");
+      if (!formData.start_date) {
+        throw new Error("Please select a start date.");
+      }
+
+      if (!formData.end_date) {
+        throw new Error("Please select an end date.");
+      }
+
+      if (formData.end_date < formData.start_date) {
+        throw new Error(
+          "End date cannot be earlier than the start date."
+        );
       }
 
       if (!formData.location.trim()) {
@@ -230,7 +252,9 @@ const EditEvent = () => {
       }
 
       if (!formData.description.trim()) {
-        throw new Error("Please enter an event description.");
+        throw new Error(
+          "Please enter an event description."
+        );
       }
 
       // -----------------------------
@@ -251,11 +275,15 @@ const EditEvent = () => {
       // -----------------------------
 
       if (images.length === 0) {
-        throw new Error("Please keep at least one event image.");
+        throw new Error(
+          "Please keep at least one event image."
+        );
       }
 
       if (images.length > 5) {
-        throw new Error("You can upload a maximum of 5 images.");
+        throw new Error(
+          "You can upload a maximum of 5 images."
+        );
       }
 
       // -----------------------------
@@ -277,7 +305,10 @@ const EditEvent = () => {
             return image;
           }
 
-          return uploadToCloudinary(image, eventFolder);
+          return uploadToCloudinary(
+            image,
+            eventFolder
+          );
         })
       );
 
@@ -293,7 +324,10 @@ const EditEvent = () => {
           videoUrl = video;
         } else {
           // Upload newly selected video
-          videoUrl = await uploadToCloudinary(video, eventFolder);
+          videoUrl = await uploadToCloudinary(
+            video,
+            eventFolder
+          );
         }
       }
 
@@ -304,7 +338,8 @@ const EditEvent = () => {
       const eventData = {
         title: formData.title.trim(),
         event_type: formData.event_type,
-        date: formData.date,
+        start_date: formData.start_date,
+        end_date: formData.end_date,
         location: formData.location.trim(),
         category: formData.category.trim(),
         description: formData.description.trim(),
@@ -317,7 +352,10 @@ const EditEvent = () => {
       // Update Supabase
       // -----------------------------
 
-      const { data: updatedEvent, error: updateError } = await supabase
+      const {
+        data: updatedEvent,
+        error: updateError,
+      } = await supabase
         .from("events")
         .update(eventData)
         .eq("id", id)
@@ -343,7 +381,8 @@ const EditEvent = () => {
       console.error("Error updating event:", err);
 
       setError(
-        err.message || "Something went wrong while updating the event."
+        err.message ||
+          "Something went wrong while updating the event."
       );
     } finally {
       setLoading(false);

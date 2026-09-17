@@ -5,7 +5,8 @@ import { supabase } from "../../lib/supabase";
 import EventForm from "../../components/layout/EventForm";
 
 const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
-const CLOUDINARY_UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
+const CLOUDINARY_UPLOAD_PRESET =
+  import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
 
 const AddEvent = () => {
   const navigate = useNavigate();
@@ -13,7 +14,8 @@ const AddEvent = () => {
   const [formData, setFormData] = useState({
     title: "",
     event_type: "Daehwa Cafe Community",
-    date: "",
+    start_date: "",
+    end_date: "",
     location: "Delhi",
     category: "",
     description: "",
@@ -159,8 +161,18 @@ const AddEvent = () => {
         throw new Error("Please select an event type.");
       }
 
-      if (!formData.date) {
-        throw new Error("Please select an event date.");
+      if (!formData.start_date) {
+        throw new Error("Please select a start date.");
+      }
+
+      if (!formData.end_date) {
+        throw new Error("Please select an end date.");
+      }
+
+      if (formData.end_date < formData.start_date) {
+        throw new Error(
+          "End date cannot be earlier than the start date."
+        );
       }
 
       if (!formData.location.trim()) {
@@ -236,7 +248,8 @@ const AddEvent = () => {
       const eventData = {
         title: formData.title.trim(),
         event_type: formData.event_type,
-        date: formData.date,
+        start_date: formData.start_date,
+        end_date: formData.end_date,
         location: formData.location.trim(),
         category: formData.category.trim(),
         description: formData.description.trim(),
@@ -266,7 +279,8 @@ const AddEvent = () => {
       console.error("Error adding event:", err);
 
       setError(
-        err.message || "Something went wrong while adding the event."
+        err.message ||
+          "Something went wrong while adding the event."
       );
     } finally {
       setLoading(false);

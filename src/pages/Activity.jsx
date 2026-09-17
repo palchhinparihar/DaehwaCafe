@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import {
   FiArrowLeft,
   FiCalendar,
-  FiClock,
   FiMapPin,
 } from "react-icons/fi";
 
@@ -43,6 +42,29 @@ function Activity() {
     fetchActivity();
   }, [id]);
 
+  const formatDate = (date) => {
+    if (!date) return "";
+
+    return new Date(date).toLocaleDateString("en-IN", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
+  };
+
+  const getEventDate = () => {
+    if (!event?.start_date) return "Date not available";
+
+    const startDate = formatDate(event.start_date);
+    const endDate = formatDate(event.end_date);
+
+    if (!endDate || event.start_date === event.end_date) {
+      return startDate;
+    }
+
+    return `${startDate} – ${endDate}`;
+  };
+
   if (loading) {
     return (
       <section className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(247,238,255,0.95),_transparent_38%),linear-gradient(180deg,_#fffdfd_0%,_#faf5ff_48%,_#f2e9ff_100%)] px-6 py-16 text-stone-900 sm:px-8 lg:px-12">
@@ -57,7 +79,7 @@ function Activity() {
 
   if (error || !event) {
     return (
-      <section className="min-h-screen  px-6 py-16 text-stone-900 sm:px-8 lg:px-12">
+      <section className="min-h-screen px-6 py-16 text-stone-900 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl">
           <Surface className="p-8 text-center lg:p-12">
             <p className="text-red-600">
@@ -116,9 +138,15 @@ function Activity() {
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-violet-100 text-violet-700">
                 <FiCalendar aria-hidden="true" />
               </span>
+
               <div className="min-w-0">
-                <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-stone-500">Date</p>
-                <p className="mt-1 truncate text-sm font-bold text-stone-900">{event.date}</p>
+                <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-stone-500">
+                  Date
+                </p>
+
+                <p className="mt-1 text-sm font-bold text-stone-900">
+                  {getEventDate()}
+                </p>
               </div>
             </div>
 
@@ -126,51 +154,64 @@ function Activity() {
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-700">
                 <FiMapPin aria-hidden="true" />
               </span>
+
               <div className="min-w-0">
-                <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-stone-500">Location</p>
-                <p className="mt-1 truncate text-sm font-bold text-stone-900">{event.location}</p>
+                <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-stone-500">
+                  Location
+                </p>
+
+                <p className="mt-1 truncate text-sm font-bold text-stone-900">
+                  {event.location}
+                </p>
               </div>
             </div>
           </div>
 
           <div className="border-t border-violet-100 p-3 sm:p-5 lg:p-6">
             <div className="relative">
-            <div className="absolute left-5 top-5 z-10 rounded-full bg-stone-950/80 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white backdrop-blur">
-              Field notes / 01
-            </div>
-            <Carousel
-              images={event.images || []}
-              video={event.video}
-              title={event.title}
-            />
+              <div className="absolute left-5 top-5 z-10 rounded-full bg-stone-950/80 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white backdrop-blur">
+                Field notes / 01
+              </div>
+
+              <Carousel
+                images={event.images || []}
+                video={event.video}
+                title={event.title}
+              />
             </div>
 
             <div className="grid gap-8 border-t border-violet-100 px-2 pb-2 pt-8 sm:px-3 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-14 lg:pt-10">
               <div>
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-violet-700">The story</p>
-              <h2 className="mt-3 text-3xl font-bold text-stone-950 sm:text-4xl">
-                About this activity
-              </h2>
+                <p className="text-xs font-bold uppercase tracking-[0.24em] text-violet-700">
+                  The story
+                </p>
 
-              <div className="mt-5 max-w-3xl whitespace-pre-line text-base leading-8 text-stone-600 sm:text-lg sm:leading-9">
-              {event.description}
-              </div>
-              </div>
+                <h2 className="mt-3 text-3xl font-bold text-stone-950 sm:text-4xl">
+                  About this activity
+                </h2>
 
-            {event.tags?.length > 0 && (
-              <div className="lg:border-l lg:border-violet-100 lg:pl-6">
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-stone-500">Themes</p>
-                <div className="mt-4 flex flex-wrap gap-2 lg:block">
-                  {event.tags.map((tag, tagIndex) => (
-                    <span
-                      key={`${event.id}-tag-${tagIndex}`}
-                      className="mb-2 mr-1 inline-flex rounded-full border border-violet-200 bg-violet-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-violet-700"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
+                <div className="mt-5 max-w-3xl whitespace-pre-line text-base leading-8 text-stone-600 sm:text-lg sm:leading-9">
+                  {event.description}
                 </div>
               </div>
+
+              {event.tags?.length > 0 && (
+                <div className="lg:border-l lg:border-violet-100 lg:pl-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-stone-500">
+                    Themes
+                  </p>
+
+                  <div className="mt-4 flex flex-wrap gap-2 lg:block">
+                    {event.tags.map((tag, tagIndex) => (
+                      <span
+                        key={`${event.id}-tag-${tagIndex}`}
+                        className="mb-2 mr-1 inline-flex rounded-full border border-violet-200 bg-violet-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-violet-700"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               )}
             </div>
           </div>
