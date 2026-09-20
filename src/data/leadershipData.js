@@ -37,10 +37,10 @@ export const leadershipRoles = [
     ],
   },
   {
-    id: 'community-creator',
-    title: 'Community Creator',
+    id: 'co-founder',
+    title: 'Co-Founder',
     name: 'JOOBUNYJ (Indrani Banerjee)',
-    subtitle: 'Community Creator - DAEHWA Cafe Community',
+    subtitle: 'Co-Founder - DAEHWA Cafe',
     image: IndraniProfile,
 
     socials: {
@@ -64,7 +64,7 @@ export const structureGroups = [
     responsibilities: [],
   },
   {
-    role: 'Community Creator',
+    role: 'Co-Founder',
     count: '1 Member',
     responsibilities: [],
   },
