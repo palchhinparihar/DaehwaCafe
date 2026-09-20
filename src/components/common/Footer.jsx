@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { FiArrowUpRight } from "react-icons/fi";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/full-logo.png";
 import { navLinks } from "../../data/navLinks";
 import { socialLinks } from "../../data/socialLinks";
 
 function Footer() {
 	return (
-		<footer className="relative overflow-hidden border-t border-white/10 bg-[radial-gradient(circle_at_top,_rgba(168,85,247,0.22),_transparent_45%),linear-gradient(180deg,_#120e22_0%,_#090611_100%)] text-stone-300">
+		<footer className="relative overflow-hidden border-t border-white/10 bg-[radial-gradient(circle_at_top_left,_rgba(196,181,253,0.82),_rgba(168,85,247,0.28)_32%,_transparent_52%),linear-gradient(180deg,_#120e22_0%,_#090611_100%)] text-stone-300">
 			{/* Background Glow */}
 			<div className="pointer-events-none absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-violet-600/20 blur-[120px]" />
 
