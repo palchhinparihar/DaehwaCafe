@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passions+Conflict&display=swap&family=Caveat:wght@400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@400..700&display=swap');
 @import "tailwindcss";
 
 * {
@@ -108,4 +108,8 @@ img {
 
 .font-caveat {
 	font-family: 'Caveat', cursive;
+}
+
+.font-passions-conflict {
+	font-family: 'Passions Conflict', cursive;
 }

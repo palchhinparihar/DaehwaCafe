@@ -25,14 +25,12 @@ function Footer() {
 								className="h-12 w-auto md:h-20"
 							/>
 
-							<p className="text-sm font-semibold uppercase tracking-[0.4em] text-violet-200">
-								DAEHWA CAFE
-							</p>
+							
 						</NavLink>
 
-						<h2 className="mt-5 text-3xl font-bold leading-tight text-white">
-							A community built around conversations, culture and growth.
-						</h2>
+						<h2 className="mt-5 text-6xl font-passions-conflict leading-10 text-white">
+								A community built around conversations, culture and growth.
+							</h2>
 
 						<p className="mt-6 max-w-md leading-8 text-stone-400">
 							Join a welcoming space where students, creators,
@@ -54,15 +52,15 @@ function Footer() {
 									<NavLink
 										to={link.path}
 										className="group inline-flex items-center gap-3 text-sm text-stone-300 transition-all duration-300 hover:text-violet-200"
-										>
-											<span className="h-px w-0 bg-violet-400 transition-all duration-300 group-hover:w-7" />
+									>
+										<span className="h-px w-0 bg-violet-400 transition-all duration-300 group-hover:w-7" />
 
-											<span>{link.label}</span>
+										<span>{link.label}</span>
 
-											<FiArrowUpRight className="opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
-										</NavLink>
-									</li>
-								))}
+										<FiArrowUpRight className="opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
+									</NavLink>
+								</li>
+							))}
 						</ul>
 					</div>
 
