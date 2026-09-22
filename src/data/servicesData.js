@@ -4,7 +4,7 @@ export const servicesData = {
     title: 'Services',
     accent: 'Built for community and learning',
     description:
-      'DAEHWA Cafe operates through two dedicated divisions: DAEHWA Cafe Community and DAEHWA Cafe.TalkRoom. Together, we provide educational, cultural, creative, and youth development services while promoting stronger connections between India and Korea.',
+      'DAEHWA Cafe operates through two dedicated divisions: DAEHWA Cafe Community and DAEHWA Cafe TalkRoom. Together, we provide educational, cultural, creative, and youth development services while promoting stronger connections between India and Korea.',
   },
 
   community: {
@@ -88,7 +88,7 @@ export const servicesData = {
   },
 
   talkRoom: {
-    badge: 'DAEHWA Cafe.TalkRoom',
+    badge: 'DAEHWA Cafe TalkRoom',
     title: 'Practical Korean learning and student guidance',
     description:
       'Designed to make Korean language education accessible, confidence-building, and closely connected to real opportunities.',
