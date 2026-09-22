@@ -31,42 +31,64 @@ function Leadership() {
         </div>
 
         {/* Founder Cards */}
-        <div className="grid gap-6 lg:grid-cols-2">
-          {leadershipRoles.map((person, index) => (
-            <Surface
-              key={person.id}
-              className="p-7"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
+        <section className="relative" aria-labelledby="leadership-team-heading">
+          <div className="mb-7 flex flex-col justify-between gap-4 border-l-2 border-violet-400 pl-5 sm:flex-row sm:items-end sm:pl-6">
+            <div>
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-violet-700">
-                {person.title}
+                The people behind DAEHWA
               </p>
+              <h3
+                id="leadership-team-heading"
+                className="mt-2 text-2xl font-bold text-stone-950 sm:text-3xl"
+              >
+                Built through shared leadership
+              </h3>
+            </div>
+            <p className="max-w-sm text-sm leading-6 text-stone-600 sm:text-right">
+              Different strengths, one shared commitment to growing the
+              community.
+            </p>
+          </div>
 
-              <h3 className="mt-3 text-2xl font-bold text-stone-950">
+          <div className="grid items-stretch gap-5 lg:grid-cols-3">
+            {leadershipRoles.map((person, index) => (
+              <Surface
+                key={person.id}
+                className="group flex flex-col p-5 transition-transform duration-300 hover:-translate-y-1 sm:p-6"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+              <div className="flex items-center gap-3">
+                <span className="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-500 shadow-[0_0_0_5px_rgba(139,92,246,0.1)]" />
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-violet-700">
+                  {person.title}
+                </p>
+              </div>
+
+              <h3 className="mt-4 min-h-14 text-xl font-bold leading-tight text-stone-950 sm:text-2xl">
                 {person.name}
               </h3>
 
-              <p className="mt-1 text-sm font-medium uppercase tracking-[0.18em] text-stone-500">
+              <p className="min-h-10 text-xs font-medium uppercase leading-5 tracking-[0.16em] text-stone-500">
                 {person.subtitle}
               </p>
 
-              <div className="mt-7 flex flex-col gap-6 lg:flex-row lg:items-start">
-                <div className="flex flex-col items-center lg:w-48 lg:flex-shrink-0">
+              <div className="mt-2 flex flex-1 flex-col gap-7">
+                <div className="flex flex-col items-center">
                   <img
                     src={person.image}
                     alt={person.name}
-                    className="h-56 w-full rounded-3xl border border-violet-100 object-contain md:object-cover shadow-lg lg:h-64"
+                    className="aspect-[4/3] h-auto w-full rounded-[1.5rem] border border-violet-100 object-cover shadow-lg transition-transform duration-500 group-hover:scale-[1.015]"
                   />
 
-                  <div className="mt-5 flex items-center justify-center gap-3">
+                  <div className="mt-4 flex items-center justify-center gap-2">
                     {person.socials.linkedin && (
                       <a
                         href={person.socials.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${person.name} LinkedIn`}
-                        className="rounded-full border border-violet-200 p-2.5 text-stone-600 transition-all duration-300 hover:-translate-y-1 hover:border-violet-500 hover:text-violet-700"
+                        className="rounded-full border border-violet-200 bg-white/70 p-2.5 text-stone-600 transition-all duration-300 hover:-translate-y-1 hover:border-violet-500 hover:text-violet-700"
                       >
                         <FiLinkedin size={18} />
                       </a>
@@ -78,7 +100,7 @@ function Leadership() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${person.name} Instagram`}
-                        className="rounded-full border border-violet-200 p-2.5 text-stone-600 transition-all duration-300 hover:-translate-y-1 hover:border-violet-500 hover:text-violet-700"
+                        className="rounded-full border border-violet-200 bg-white/70 p-2.5 text-stone-600 transition-all duration-300 hover:-translate-y-1 hover:border-violet-500 hover:text-violet-700"
                       >
                         <FiInstagram size={18} />
                       </a>
@@ -90,7 +112,7 @@ function Leadership() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${person.name} Portfolio`}
-                        className="rounded-full border border-violet-200 p-2.5 text-stone-600 transition-all duration-300 hover:-translate-y-1 hover:border-violet-500 hover:text-violet-700"
+                        className="rounded-full border border-violet-200 bg-white/70 p-2.5 text-stone-600 transition-all duration-300 hover:-translate-y-1 hover:border-violet-500 hover:text-violet-700"
                       >
                         <FiGlobe size={18} />
                       </a>
@@ -98,16 +120,20 @@ function Leadership() {
                   </div>
                 </div>
 
-                <div className="flex-1">
+                <div className="flex-1 border-t border-violet-100/90 pt-6">
+                  <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-stone-500">
+                    Focus areas
+                  </p>
                   <CardList
                     className="sm:grid-cols-1"
                     items={person.responsibilities}
                   />
                 </div>
               </div>
-            </Surface>
-          ))}
-        </div>
+              </Surface>
+            ))}
+          </div>
+        </section>
 
         {/* Leadership Structure */}
         <section

@@ -1,5 +1,6 @@
 import SandeepProfile from '../assets/sandeep-profile.jpeg';
 import IndraniProfile from '../assets/indrani-profile.jpeg';
+import PalchhinProfile from '../assets/palchhin-profile.jpeg';
 
 export const leadershipMetrics = [
   {
@@ -21,7 +22,7 @@ export const leadershipRoles = [
     id: 'founder-director',
     title: 'Founder & Director',
     name: 'Sandeep Singh',
-    subtitle: 'Founder & Director - DAEHWA Cafe',
+    subtitle: 'Founder & Director',
     image: SandeepProfile,
 
     socials: {
@@ -40,7 +41,7 @@ export const leadershipRoles = [
     id: 'co-founder',
     title: 'Co-Founder',
     name: 'JOOBUNYJ (Indrani Banerjee)',
-    subtitle: 'Co-Founder - DAEHWA Cafe',
+    subtitle: 'Co-Founder',
     image: IndraniProfile,
 
     socials: {
@@ -53,6 +54,25 @@ export const leadershipRoles = [
       'Leads community planning, development, and member engagement.',
       'Coordinates community projects, volunteer activities, and cultural initiatives.',
       'Works to build opportunities for youth through Korean culture and educational programs.',
+    ],
+  },
+  {
+    id: 'technical-lead',
+    title: 'Technical Lead',
+    name: 'Palchhin',
+    subtitle: 'Technical Lead',
+    image: PalchhinProfile,
+
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/palchhinparihar',
+      instagram: 'https://www.instagram.com/techgirliie',
+      portfolio: 'https://palchhin.netlify.app',
+    },
+
+    responsibilities: [
+      'Leads the technical development and maintenance of DAEHWA Cafe\'s digital platforms.',
+      'Oversees website and application development, ensuring a seamless user experience.',
+      'Implements innovative solutions to enhance community engagement and accessibility.',
     ],
   },
 ];
