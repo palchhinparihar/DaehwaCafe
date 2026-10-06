@@ -9,10 +9,10 @@ export const socialLinks = [
     ariaLabel: "Send email to DAEHWA Cafe",
   },
   {
-    href: "https://www.linkedin.com/in/daehwa-cafe-0346313b9/",
+    href: "https://www.linkedin.com/company/daehwacafe",
     icon: FaLinkedin,
     title: "LinkedIn", 
-    username: "daehwa-cafe-0346313b9",
+    username: "daehwacafe",
     ariaLabel: "Visit DAEHWA Cafe's LinkedIn profile",
   },
   {

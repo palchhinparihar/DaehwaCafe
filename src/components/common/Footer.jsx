@@ -24,13 +24,11 @@ function Footer() {
 								alt="DAEHWA Cafe Community and TalkRoom"
 								className="h-12 w-auto md:h-20"
 							/>
-
-							
 						</NavLink>
 
 						<h2 className="mt-5 text-6xl font-passions-conflict leading-10 text-white">
-								A community built around conversations, culture and growth.
-							</h2>
+							A community built around conversations, culture and growth.
+						</h2>
 
 						<p className="mt-6 max-w-md leading-8 text-stone-400">
 							Join a welcoming space where students, creators,
