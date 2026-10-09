@@ -48,6 +48,13 @@ git clone <repository-url>
 npm install
 ```
 
+### Configure environment variables
+
+Copy `.env.example` to `.env` and fill in the Supabase values and the two
+Cloudinary values. `VITE_CLOUDINARY_CLOUD_NAME` is the Cloudinary cloud name,
+and `VITE_CLOUDINARY_UPLOAD_PRESET` must be an unsigned upload preset that
+allows image and video uploads. Restart the Vite server after changing `.env`.
+
 ### Start the development server
 
 ```bash
