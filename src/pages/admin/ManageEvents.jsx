@@ -107,19 +107,31 @@ const ManageEvents = () => {
   const getEventStatus = (startDate, endDate) => {
     if (!startDate) return "Unknown";
 
+    const parseDate = (value) => {
+      const datePart = String(value).slice(0, 10);
+
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(datePart)) {
+        return null;
+      }
+
+      const date = new Date(`${datePart}T00:00:00`);
+      return Number.isNaN(date.getTime()) ? null : date;
+    };
+
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    const eventStartDate = new Date(`${startDate}T00:00:00`);
-    eventStartDate.setHours(0, 0, 0, 0);
+    const eventStartDate = parseDate(startDate);
+    const eventEndDate = parseDate(endDate || startDate);
 
-    const eventEndDate = new Date(
-      `${(endDate || startDate)}T00:00:00`
-    );
-    eventEndDate.setHours(0, 0, 0, 0);
+    if (!eventStartDate || !eventEndDate) return "Unknown";
 
-    if (eventEndDate >= today) {
+    if (eventStartDate > today) {
       return "Upcoming";
+    }
+
+    if (eventEndDate >= eventStartDate && eventEndDate >= today) {
+      return "Ongoing";
     }
 
     return "Past";
@@ -324,6 +336,8 @@ const ManageEvents = () => {
                               className={`inline-flex rounded-full px-3 py-1 text-xs font-bold ${
                                 status === "Upcoming"
                                   ? "bg-emerald-100 text-emerald-700"
+                                  : status === "Ongoing"
+                                  ? "bg-amber-100 text-amber-700"
                                   : "bg-slate-100 text-slate-600"
                               }`}
                             >
